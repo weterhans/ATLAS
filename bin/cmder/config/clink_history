@@ -1,0 +1,68 @@
+|CTAG_1663167284_18455859_4204_0
+|omposer create-project laravel/laravel ATLAS
+|d ATLAS
+|hp artisan migrate
+|hp artisan migrate
+|hp artisan migrate
+|hp artisan migrate
+|d ATLAS
+|hp artisan migrate
+|d ATLAS
+|hp artisan migrate
+php artisan migrate:status
+|hp artisan tinker
+|d ATLAS
+|hp artisan tinker
+|d ATLAS
+|hp artisan tinker
+|d ATLAS
+php artisan tinker
+|d ATLAS
+|hp artisan make:model CnsdActivity
+|hp artisan make:model DailyCnsdReport
+|hp artisan make:model CnsdEquipment
+|hp artisan make:model TfpActivity
+|hp artisan make:model DailyTfpReport
+|hp artisan make:model TfpEquipment
+|hp artisan make:model SchedulesCnsd
+|hp artisan make:model SchedulesTfp
+|hp artisan make:model WorkorderCnsd
+|hp artisan make:model WorkorderTfp
+|omposer require laravel/breeze --dev
+|hp artisan breeze:install
+|pm install
+|pm run dev
+|d ATLAS
+php artisan make:migration create_password_reset_tokens_table
+|hp artisan migrate
+|hp artisan migrate
+|hp artisan migrate
+composer create-project laravel/laravel airnav-app
+composer create-project laravel/laravel ATLAS
+|d ATLAS
+composer require laravel/breeze --dev
+php artisan breeze:install
+npm install
+npm run build
+|hp artisan migrate
+|hp artisan migrate
+php artisan migrate
+|hp artisan make:model CnsdActivity
+cd ATLAS
+php artisan make:model CnsdActivity
+php artisan make:model CnsdEquipment
+php artisan make:model DailyCnsdReport
+php artisan make:model TfpActivity
+php artisan make:model TfpEquipment
+php artisan make:model DailyTfpReport
+php artisan make:model WorkorderTfp
+php artisan make:model WorkorderCnsd
+php artisan make:model CnsdSavedata
+php artisan make:model TfpSavedata
+php artisan make:model SchedulesCnsd
+php artisan make:model SchedulesTfp
+npm run dev
+cd www/atlas
+atlas
+cd atlas
+php artisan serve

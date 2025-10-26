@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrasi - Perum LPPNPI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        // Konfigurasi warna kustom AirNav
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'airnav-blue': '#255A9B',
+                        'airnav-red': '#D92D20',
+                        'indigo-600': '#255A9B',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        #signature-pad {
+            border: 2px solid #e5e7eb;
+            border-radius: 0.5rem;
+            cursor: crosshair;
+            touch-action: none;
+        }
+    </style>
+</head>
+
+<body class="bg-airnav-blue">
+
+    <div class="min-h-screen flex flex-col items-center justify-center p-4">
+        <div id="register-card" class="w-full max-w-md bg-white rounded-2xl shadow-lg p-8 transition-opacity duration-1000 ease-in-out">
+            <h1 class="text-2xl font-bold text-center text-gray-900 mb-2">Registrasi Akun Baru</h1>
+            <p class="text-center text-gray-500 mb-8">Silakan isi data diri Anda</p>
+
+            @if ($errors->any())
+            <div class="mb-4 p-3 rounded-lg bg-red-100 text-red-700 text-sm" role="alert">
+                <ul class="list-disc list-inside">
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+
+            <form id="register-form" method="POST" action="{{ route('register') }}" class="space-y-4">
+                @csrf
+
+                <div>
+                    <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+                    <input type="text" id="username" name="username" required class="mt-1 block w-full bg-gray-50 border border-gray-300 rounded-lg shadow-sm py-2 px-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent" placeholder="Buat username" value="{{ old('username') }}">
+                </div>
+                <div>
+                    <label for="fullname" class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
+                    <input type="text" id="fullname" name="fullname" required class="mt-1 block w-full bg-gray-50 border border-gray-300 rounded-lg shadow-sm py-2 px-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent" placeholder="Masukkan nama lengkap" value="{{ old('fullname') }}">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" id="email" name="email" required class="mt-1 block w-full bg-gray-50 border border-gray-300 rounded-lg shadow-sm py-2 px-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent" placeholder="Masukkan alamat email" value="{{ old('email') }}">
+                </div>
+                <div>
+                    <label for="jabatan" class="block text-sm font-medium text-gray-700">Jabatan</tabel>
+                        <select id="jabatan" name="role" required class="mt-1 block w-full bg-gray-50 border border-gray-300 rounded-lg shadow-sm py-2 px-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent">
+                            <option value="Teknisi" {{ old('role') == 'Teknisi' ? 'selected' : '' }}>Teknisi TFP</option>
+                            <option value="Teknisi" {{ old('role') == 'Teknisi' ? 'selected' : '' }}>Teknisi CNSD</option>
+                            <option value="Supervisor" {{ old('role') == 'Supervisor' ? 'selected' : '' }}>Supervisor</option>
+                            <option value="Manager" {{ old('role') == 'Manager' ? 'selected' : '' }}>Manager</option>
+                        </select>
+                </div>
+                <div class="relative">
+                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" id="password" name="password" required class="mt-1 block w-full bg-gray-50 border border-gray-300 rounded-lg shadow-sm py-2 px-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent pr-10" placeholder="Buat password">
+                    <button type="button" id="toggle-password" class="absolute inset-y-0 right-0 top-6 flex items-center pr-3">
+                        <svg id="eye-icon" class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
+                            <path fill-rule="evenodd" d="M.664 10.59a1.651 1.651 0 010-1.18l.75-1.42A10.004 10.004 0 0110 4c1.97 0 3.823.57 5.586 1.59l.75 1.42a1.651 1.651 0 010 1.18l-.75 1.42A10.004 10.004 0 0110 16c-1.97 0-3.823-.57-5.586-1.59l-.75-1.42zM10 14a4 4 0 100-8 4 4 0 000 8z" clip-rule="evenodd" />
+                        </svg>
+                        <svg id="eye-slash-icon" class="h-5 w-5 text-gray-400 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M3.707 2.293a1 1 0 00-1.414 1.414l14 14a1 1 0 001.414-1.414l-1.473-1.473A10.014 10.014 0 0019.336 10c-1.546-3.418-5.044-6-9.336-6a10.014 10.014 0 00-4.33 1.015L3.707 2.293zm11.758 9.342a4 4 0 01-5.656-5.656l-1.415-1.415a6 6 0 00-1.01 7.485l1.01-1.01a4 4 0 014.646-4.646l1.415 1.415zm-3.83-3.83a2.5 2.5 0 00-3.536 3.536l1.415 1.415a2.5 2.5 0 003.536-3.536l-1.415-1.415z" clip-rule="evenodd" />
+                            <path d="M10 4a10.014 10.014 0 016.586 2.414l-1.473 1.473A8.015 8.015 0 0010 6a8.015 8.015 0 00-5.114 1.887L3.414 6.414A10.014 10.014 0 0110 4z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="relative">
+                    <label for="confirm-password" class="block text-sm font-medium text-gray-700">Konfirmasi Password</label>
+                    <input type="password" id="confirm-password" name="password_confirmation" required class="mt-1 block w-full bg-gray-50 border border-gray-300 rounded-lg shadow-sm py-2 px-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent pr-10" placeholder="Ulangi password">
+                    <button type="button" id="toggle-confirm-password" class="absolute inset-y-0 right-0 top-6 flex items-center pr-3">
+                        <svg id="confirm-eye-icon" class="h-5 w-5 text-gray-400" ...> ... </svg>
+                        <svg id="confirm-eye-slash-icon" class="h-5 w-5 text-gray-400 hidden" ...> ... </svg>
+                    </button>
+                </div>
+                <div>
+                    <label for="signature-pad" class="block text-sm font-medium text-gray-700">Tanda Tangan</label>
+                    <canvas id="signature-pad" class="w-full h-32 mt-1 bg-white"></canvas>
+                    <button type="button" id="clear-signature" class="text-sm text-gray-600 hover:text-airnav-blue mt-2">Bersihkan</button>
+
+                    <input type="hidden" name="signature_base64" id="signature-data">
+                </div>
+                <div>
+                    <button type="submit" id="register-button" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-blue-800 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        Register
+                    </button>
+                </div>
+            </form>
+            <div class="text-center mt-6">
+                <p class="text-sm text-gray-500">
+                    Sudah punya akun?
+                    <a href="{{ route('login') }}" class="font-medium text-airnav-blue hover:text-blue-800">
+                        Login disini
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="custom-alert" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 hidden">
+    </div>
+
+    <script src="{{ asset('js/renderer_register.js') }}"></script>
+
+</body>
+
+</html>
