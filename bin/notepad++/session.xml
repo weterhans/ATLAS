@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <NotepadPlus>
     <Session activeView="0">
-        <mainView activeIndex="0">
+        <mainView activeIndex="1">
             <File firstVisibleLine="0" xOffset="0" scrollWidth="511" startPos="0" endPos="0" selMode="0" offset="0" wrapCount="1" lang="Properties" encoding="-1" userReadOnly="no" filename="D:\laragon\usr\sites.conf" backupFilePath="" originalFileLastModifTimestamp="196494848" originalFileLastModifTimestampHigh="31167487" tabColourId="-1" RTL="no" tabPinned="no" mapFirstVisibleDisplayLine="-1" mapFirstVisibleDocLine="-1" mapLastVisibleDocLine="-1" mapNbLine="-1" mapHigherPos="-1" mapWidth="-1" mapHeight="-1" mapKByteInDoc="512" mapWrapIndentMode="-1" mapIsWrap="no" />
+            <File firstVisibleLine="771" xOffset="0" scrollWidth="823" startPos="37502" endPos="37502" selMode="0" offset="0" wrapCount="1" lang="INI file" encoding="-1" userReadOnly="no" filename="D:\laragon\bin\php\php-8.3.16-Win32-vs16-x64\php.ini" backupFilePath="" originalFileLastModifTimestamp="-141581227" originalFileLastModifTimestampHigh="31213220" tabColourId="-1" RTL="no" tabPinned="no" mapFirstVisibleDisplayLine="-1" mapFirstVisibleDocLine="-1" mapLastVisibleDocLine="-1" mapNbLine="-1" mapHigherPos="-1" mapWidth="-1" mapHeight="-1" mapKByteInDoc="512" mapWrapIndentMode="-1" mapIsWrap="no" />
         </mainView>
         <subView activeIndex="0" />
     </Session>

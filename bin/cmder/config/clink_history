@@ -46,7 +46,7 @@ npm install
 npm run build
 |hp artisan migrate
 |hp artisan migrate
-php artisan migrate
+|hp artisan migrate
 |hp artisan make:model CnsdActivity
 cd ATLAS
 php artisan make:model CnsdActivity
@@ -64,5 +64,17 @@ php artisan make:model SchedulesTfp
 npm run dev
 cd www/atlas
 atlas
+|d atlas
+|hp artisan serve
 cd atlas
+|hp artisan serve
+|hp artisan serve
+php artisan make:model WorkOrderCnsd -m
+|hp artisan migrate
+php artisan migrate:fresh
+|hp artisan migrate
+|hp artisan serve
+php artisan migrate
+|hp artisan serve
+|hp artisan serve
 php artisan serve

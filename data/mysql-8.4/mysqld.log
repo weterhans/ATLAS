@@ -387,3 +387,36 @@
 2025-10-26T12:29:02.527098Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
 2025-10-26T12:29:02.607746Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
 2025-10-26T12:29:02.607932Z 0 [System] [MY-010931] [Server] D:\laragon\bin\mysql\mysql-8.4.3-winx64\bin\mysqld: ready for connections. Version: '8.4.3'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2025-10-26T16:05:54.697279Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+2025-10-26T16:05:54.899069Z 0 [Warning] [MY-010097] [Server] Insecure configuration for --secure-file-priv: Current value does not restrict location of generated files. Consider setting it to a valid, non-empty path.
+2025-10-26T16:05:54.899151Z 0 [System] [MY-010116] [Server] D:\laragon\bin\mysql\mysql-8.4.3-winx64\bin\mysqld (mysqld 8.4.3) starting as process 6308
+2025-10-26T16:05:54.961445Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2025-10-26T16:05:54.962778Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2025-10-26T16:05:54.963432Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2025-10-26T16:05:54.964214Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2025-10-26T16:05:54.965241Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2025-10-26T16:05:54.965921Z 0 [ERROR] [MY-010119] [Server] Aborting
+2025-10-26T16:05:54.971204Z 0 [System] [MY-010910] [Server] D:\laragon\bin\mysql\mysql-8.4.3-winx64\bin\mysqld: Shutdown complete (mysqld 8.4.3)  MySQL Community Server - GPL.
+2025-10-26T16:05:54.972886Z 0 [System] [MY-015016] [Server] MySQL Server - end.
+2025-10-26T16:06:27.027967Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+2025-10-26T16:06:27.318873Z 0 [Warning] [MY-010097] [Server] Insecure configuration for --secure-file-priv: Current value does not restrict location of generated files. Consider setting it to a valid, non-empty path.
+2025-10-26T16:06:27.318947Z 0 [System] [MY-010116] [Server] D:\laragon\bin\mysql\mysql-8.4.3-winx64\bin\mysqld (mysqld 8.4.3) starting as process 23232
+2025-10-26T16:06:27.391900Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2025-10-26T16:06:27.393149Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2025-10-26T16:06:27.393784Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2025-10-26T16:06:27.394442Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2025-10-26T16:06:27.395361Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2025-10-26T16:06:27.395936Z 0 [ERROR] [MY-010119] [Server] Aborting
+2025-10-26T16:06:27.399444Z 0 [System] [MY-010910] [Server] D:\laragon\bin\mysql\mysql-8.4.3-winx64\bin\mysqld: Shutdown complete (mysqld 8.4.3)  MySQL Community Server - GPL.
+2025-10-26T16:06:27.400408Z 0 [System] [MY-015016] [Server] MySQL Server - end.
+2025-10-26T16:07:09.173586Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+2025-10-26T16:07:09.350828Z 0 [Warning] [MY-010097] [Server] Insecure configuration for --secure-file-priv: Current value does not restrict location of generated files. Consider setting it to a valid, non-empty path.
+2025-10-26T16:07:09.350907Z 0 [System] [MY-010116] [Server] D:\laragon\bin\mysql\mysql-8.4.3-winx64\bin\mysqld (mysqld 8.4.3) starting as process 20240
+2025-10-26T16:07:09.426369Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2025-10-26T16:07:09.427986Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2025-10-26T16:07:09.428619Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2025-10-26T16:07:09.429248Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2025-10-26T16:07:09.430179Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2025-10-26T16:07:09.430997Z 0 [ERROR] [MY-010119] [Server] Aborting
+2025-10-26T16:07:09.434626Z 0 [System] [MY-010910] [Server] D:\laragon\bin\mysql\mysql-8.4.3-winx64\bin\mysqld: Shutdown complete (mysqld 8.4.3)  MySQL Community Server - GPL.
+2025-10-26T16:07:09.435969Z 0 [System] [MY-015016] [Server] MySQL Server - end.

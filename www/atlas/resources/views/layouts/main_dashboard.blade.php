@@ -92,7 +92,7 @@
                 <div class="sidebar-header flex items-center justify-between p-4 border-b border-gray-200">
                     <div id="logo-container" class="flex items-center">
                         <img src="{{ asset('img/airnav.ico') }}" class="w-11 h-11 mr-2" alt="Logo AirNav" onerror="this.onerror=null;this.src='https://placehold.co/62x62/FFFFFF/255A9B?text=A';">
-                        <h1 id="logo-text" class="text-xl font-bold text-indigo-600">AirNav</h1>
+                        <h1 id="logo-text" class="text-xl font-bold text-indigo-600">ATLAS</h1>
                     </div>
                     <button id="sidebar-toggle" class="p-2 rounded-md hover:bg-gray-200 focus:outline-none" aria-label="Toggle navigation menu">
                         <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -127,23 +127,23 @@
                         </svg>
                         <span class="menu-text ml-3">Harian TFP</span>
                     </a>
-                    <a href="#" class="nav-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 {{ request()->routeIs('workorder.cnsd') ? 'menu-active' : '' }}">
+                    <a href="{{ route('wo.cnsd.index') }}" class="nav-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 {{ request()->routeIs('workorder.cnsd') ? 'menu-active' : '' }}">
                         <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
                         </svg>
                         <span class="menu-text ml-3">Work Orders CNSD</span>
                     </a>
-                    <a href="#" class="nav-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 {{ request()->routeIs('workorder.tfp') ? 'menu-active' : '' }}">
+                    <a href="{{ route('wo.tfp.index') }}" class="nav-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 {{ request()->routeIs('workorder.tfp') ? 'menu-active' : '' }}">
                         <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
                         </svg>
                         <span class="menu-text ml-3">Work Orders TFP</span>
                     </a>
-                    <a href="#" class="nav-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 {{ request()->routeIs('metereding') ? 'menu-active' : '' }}">
+                    <a href="#" class="nav-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 {{ request()->routeIs('Meter Reading') ? 'menu-active' : '' }}">
                         <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"></path>
                         </svg>
-                        <span class="menu-text ml-3">Metereding</span>
+                        <span class="menu-text ml-3">Meter Reading</span>
                     </a>
                 </nav>
                 <div class="absolute bottom-0 w-full p-6 border-t border-gray-200">

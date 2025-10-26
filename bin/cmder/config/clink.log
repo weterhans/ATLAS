@@ -784,3 +784,203 @@
 5a9c reset_handle              145 resetting mismatched stdout handle
 5a9c reset_handle              145 resetting mismatched stderr handle
 5a9c history_db::compact      1492 History:  27 active, 39 deleted
+0b04 inject                    545 ---- 2025/10/26 23:06:13.489 -------------------------------------------------
+0b04 inject                    546 Injecting Clink...
+0b04 inject_dll                264 Version: 1.2.46.69fc92
+0b04 inject_dll                265 Arch: x64
+0b04 inject_dll                266 DLL: C:\Users\jokof\AppData\Local\Temp\clink\dll_cache\1.2.46.69fc92_de0ae14b\clink_dll_x64.dll
+0b04 inject_dll                268 Parent pid: 20300
+0b04 check_dll_version         168 DLL version: 00010002 002e0000
+4f4c start_logger              154 ---- 2025/10/26 23:06:13.510 -------------------------------------------------
+4f4c start_logger              160 Host process is 'cmd.exe' (pid 20300)
+4f4c start_logger              164 DLL path is 'D:\laragon\bin\cmder\vendor\clink'
+4f4c start_logger              178 Windows version 10.0.26100 (x64)
+4f4c start_logger              181 Clink version 1.2.46.69fc92 (x64)
+4f4c hook_setter::hook_setter  156 >>> Started hook transaction.
+4f4c hook_setter::attach_iat   313 Attempting to hook SetEnvironmentVariableW in IAT for module 00007FF770A00000.
+4f4c pe_info::iterate_imports  160 Found import in 'api-ms-win-core-processenvironment-l1-1-0.dll'
+4f4c find_iat                  121 Found import at 00007FF770A3BE70 (value is 00007FFCE4A24450).
+4f4c hook_setter::attach_iat   313 Attempting to hook WriteConsoleW in IAT for module 00007FF770A00000.
+4f4c pe_info::iterate_imports  160 Found import in 'api-ms-win-core-console-l1-1-0.dll'
+4f4c find_iat                  121 Found import at 00007FF770A3BAB8 (value is 00007FFCE4A1E9F0).
+4f4c hook_setter::attach_iat   313 Attempting to hook GetEnvironmentVariableW in IAT for module 00007FF770A00000.
+4f4c pe_info::iterate_imports  160 Found import in 'api-ms-win-core-processenvironment-l1-1-0.dll'
+4f4c find_iat                  121 Found import at 00007FF770A3BE50 (value is 00007FFCE4A00980).
+4f4c hook_setter::commit       204 <<< Hook transaction committed.
+4f4c hook_setter::hook_setter  156 >>> Started hook transaction.
+4f4c hook_setter::detach_iat   356 Attempting to unhook 00007FFCACA8ADF0 from GetEnvironmentVariableW in IAT for module 00007FF770A00000.
+4f4c pe_info::iterate_imports  160 Found import in 'api-ms-win-core-processenvironment-l1-1-0.dll'
+4f4c find_iat                  121 Found import at 00007FF770A3BE50 (value is 00007FFCACA8ADF0).
+4f4c hook_setter::commit       204 <<< Hook transaction committed.
+4f4c hook_setter::hook_setter  156 >>> Started hook transaction.
+4f4c hook_setter::attach_iat   313 Attempting to hook ReadConsoleW in IAT for module 00007FF770A00000.
+4f4c pe_info::iterate_imports  160 Found import in 'api-ms-win-core-console-l1-1-0.dll'
+4f4c find_iat                  121 Found import at 00007FF770A3BAC8 (value is 00007FFCE4A011A0).
+4f4c hook_setter::commit       204 <<< Hook transaction committed.
+4f4c reset_handle              145 resetting mismatched stdin handle
+4f4c reset_handle              145 resetting mismatched stdout handle
+4f4c reset_handle              145 resetting mismatched stderr handle
+4f4c win_screen_buffer::begin  227 Using native terminal support; found 'ConEmuHk64.dll'.
+4f4c reset_handle              145 resetting mismatched stdout handle
+4f4c reset_handle              145 resetting mismatched stderr handle
+4f4c history_db::initialise   1268 master bank ctag: |CTAG_1663167284_18455859_4204_0
+4f4c history_db::compact      1492 History:  28 active, 39 deleted
+5624 inject                    545 ---- 2025/10/26 23:11:49.584 -------------------------------------------------
+5624 inject                    546 Injecting Clink...
+5624 inject_dll                264 Version: 1.2.46.69fc92
+5624 inject_dll                265 Arch: x64
+5624 inject_dll                266 DLL: C:\Users\jokof\AppData\Local\Temp\clink\dll_cache\1.2.46.69fc92_de0ae14b\clink_dll_x64.dll
+5624 inject_dll                268 Parent pid: 27900
+5624 check_dll_version         168 DLL version: 00010002 002e0000
+6cfc start_logger              154 ---- 2025/10/26 23:11:49.598 -------------------------------------------------
+6cfc start_logger              160 Host process is 'cmd.exe' (pid 27900)
+6cfc start_logger              164 DLL path is 'D:\laragon\bin\cmder\vendor\clink'
+6cfc start_logger              178 Windows version 10.0.26100 (x64)
+6cfc start_logger              181 Clink version 1.2.46.69fc92 (x64)
+6cfc hook_setter::hook_setter  156 >>> Started hook transaction.
+6cfc hook_setter::attach_iat   313 Attempting to hook SetEnvironmentVariableW in IAT for module 00007FF770A00000.
+6cfc pe_info::iterate_imports  160 Found import in 'api-ms-win-core-processenvironment-l1-1-0.dll'
+6cfc find_iat                  121 Found import at 00007FF770A3BE70 (value is 00007FFCE4A24450).
+6cfc hook_setter::attach_iat   313 Attempting to hook WriteConsoleW in IAT for module 00007FF770A00000.
+6cfc pe_info::iterate_imports  160 Found import in 'api-ms-win-core-console-l1-1-0.dll'
+6cfc find_iat                  121 Found import at 00007FF770A3BAB8 (value is 00007FFCE4A1E9F0).
+6cfc hook_setter::attach_iat   313 Attempting to hook GetEnvironmentVariableW in IAT for module 00007FF770A00000.
+6cfc pe_info::iterate_imports  160 Found import in 'api-ms-win-core-processenvironment-l1-1-0.dll'
+6cfc find_iat                  121 Found import at 00007FF770A3BE50 (value is 00007FFCE4A00980).
+6cfc hook_setter::commit       204 <<< Hook transaction committed.
+6cfc hook_setter::hook_setter  156 >>> Started hook transaction.
+6cfc hook_setter::detach_iat   356 Attempting to unhook 00007FFCAC66ADF0 from GetEnvironmentVariableW in IAT for module 00007FF770A00000.
+6cfc pe_info::iterate_imports  160 Found import in 'api-ms-win-core-processenvironment-l1-1-0.dll'
+6cfc find_iat                  121 Found import at 00007FF770A3BE50 (value is 00007FFCAC66ADF0).
+6cfc hook_setter::commit       204 <<< Hook transaction committed.
+6cfc hook_setter::hook_setter  156 >>> Started hook transaction.
+6cfc hook_setter::attach_iat   313 Attempting to hook ReadConsoleW in IAT for module 00007FF770A00000.
+6cfc pe_info::iterate_imports  160 Found import in 'api-ms-win-core-console-l1-1-0.dll'
+6cfc find_iat                  121 Found import at 00007FF770A3BAC8 (value is 00007FFCE4A011A0).
+6cfc hook_setter::commit       204 <<< Hook transaction committed.
+6cfc reset_handle              145 resetting mismatched stdin handle
+6cfc reset_handle              145 resetting mismatched stdout handle
+6cfc reset_handle              145 resetting mismatched stderr handle
+6cfc win_screen_buffer::begin  227 Using native terminal support; found 'ConEmuHk64.dll'.
+6cfc reset_handle              145 resetting mismatched stdout handle
+6cfc reset_handle              145 resetting mismatched stderr handle
+6cfc history_db::initialise   1268 master bank ctag: |CTAG_1663167284_18455859_4204_0
+6cfc history_db::compact      1492 History:  28 active, 39 deleted
+7714 inject                    545 ---- 2025/10/26 23:13:28.800 -------------------------------------------------
+7714 inject                    546 Injecting Clink...
+7714 inject_dll                264 Version: 1.2.46.69fc92
+7714 inject_dll                265 Arch: x64
+7714 inject_dll                266 DLL: C:\Users\jokof\AppData\Local\Temp\clink\dll_cache\1.2.46.69fc92_de0ae14b\clink_dll_x64.dll
+7714 inject_dll                268 Parent pid: 3432
+7714 check_dll_version         168 DLL version: 00010002 002e0000
+0d68 start_logger              154 ---- 2025/10/26 23:13:28.815 -------------------------------------------------
+0d68 start_logger              160 Host process is 'cmd.exe' (pid 3432)
+0d68 start_logger              164 DLL path is 'D:\laragon\bin\cmder\vendor\clink'
+0d68 start_logger              178 Windows version 10.0.26100 (x64)
+0d68 start_logger              181 Clink version 1.2.46.69fc92 (x64)
+0d68 hook_setter::hook_setter  156 >>> Started hook transaction.
+0d68 hook_setter::attach_iat   313 Attempting to hook SetEnvironmentVariableW in IAT for module 00007FF770A00000.
+0d68 pe_info::iterate_imports  160 Found import in 'api-ms-win-core-processenvironment-l1-1-0.dll'
+0d68 find_iat                  121 Found import at 00007FF770A3BE70 (value is 00007FFCE4A24450).
+0d68 hook_setter::attach_iat   313 Attempting to hook WriteConsoleW in IAT for module 00007FF770A00000.
+0d68 pe_info::iterate_imports  160 Found import in 'api-ms-win-core-console-l1-1-0.dll'
+0d68 find_iat                  121 Found import at 00007FF770A3BAB8 (value is 00007FFCE4A1E9F0).
+0d68 hook_setter::attach_iat   313 Attempting to hook GetEnvironmentVariableW in IAT for module 00007FF770A00000.
+0d68 pe_info::iterate_imports  160 Found import in 'api-ms-win-core-processenvironment-l1-1-0.dll'
+0d68 find_iat                  121 Found import at 00007FF770A3BE50 (value is 00007FFCE4A00980).
+0d68 hook_setter::commit       204 <<< Hook transaction committed.
+0d68 hook_setter::hook_setter  156 >>> Started hook transaction.
+0d68 hook_setter::detach_iat   356 Attempting to unhook 00007FFCAC7FADF0 from GetEnvironmentVariableW in IAT for module 00007FF770A00000.
+0d68 pe_info::iterate_imports  160 Found import in 'api-ms-win-core-processenvironment-l1-1-0.dll'
+0d68 find_iat                  121 Found import at 00007FF770A3BE50 (value is 00007FFCAC7FADF0).
+0d68 hook_setter::commit       204 <<< Hook transaction committed.
+0d68 hook_setter::hook_setter  156 >>> Started hook transaction.
+0d68 hook_setter::attach_iat   313 Attempting to hook ReadConsoleW in IAT for module 00007FF770A00000.
+0d68 pe_info::iterate_imports  160 Found import in 'api-ms-win-core-console-l1-1-0.dll'
+0d68 find_iat                  121 Found import at 00007FF770A3BAC8 (value is 00007FFCE4A011A0).
+0d68 hook_setter::commit       204 <<< Hook transaction committed.
+0d68 reset_handle              145 resetting mismatched stdin handle
+0d68 reset_handle              145 resetting mismatched stdout handle
+0d68 reset_handle              145 resetting mismatched stderr handle
+0d68 win_screen_buffer::begin  227 Using native terminal support; found 'ConEmuHk64.dll'.
+0d68 reset_handle              145 resetting mismatched stdout handle
+0d68 reset_handle              145 resetting mismatched stderr handle
+0d68 history_db::initialise   1268 master bank ctag: |CTAG_1663167284_18455859_4204_0
+0d68 history_db::compact      1492 History:  28 active, 39 deleted
+6d58 inject                    545 ---- 2025/10/26 23:45:08.181 -------------------------------------------------
+6d58 inject                    546 Injecting Clink...
+6d58 inject_dll                264 Version: 1.2.46.69fc92
+6d58 inject_dll                265 Arch: x64
+6d58 inject_dll                266 DLL: C:\Users\jokof\AppData\Local\Temp\clink\dll_cache\1.2.46.69fc92_de0ae14b\clink_dll_x64.dll
+6d58 inject_dll                268 Parent pid: 23928
+6d58 check_dll_version         168 DLL version: 00010002 002e0000
+5d78 start_logger              154 ---- 2025/10/26 23:45:08.196 -------------------------------------------------
+5d78 start_logger              160 Host process is 'cmd.exe' (pid 23928)
+5d78 start_logger              164 DLL path is 'D:\laragon\bin\cmder\vendor\clink'
+5d78 start_logger              178 Windows version 10.0.26100 (x64)
+5d78 start_logger              181 Clink version 1.2.46.69fc92 (x64)
+5d78 hook_setter::hook_setter  156 >>> Started hook transaction.
+5d78 hook_setter::attach_iat   313 Attempting to hook SetEnvironmentVariableW in IAT for module 00007FF770A00000.
+5d78 pe_info::iterate_imports  160 Found import in 'api-ms-win-core-processenvironment-l1-1-0.dll'
+5d78 find_iat                  121 Found import at 00007FF770A3BE70 (value is 00007FFCE4A24450).
+5d78 hook_setter::attach_iat   313 Attempting to hook WriteConsoleW in IAT for module 00007FF770A00000.
+5d78 pe_info::iterate_imports  160 Found import in 'api-ms-win-core-console-l1-1-0.dll'
+5d78 find_iat                  121 Found import at 00007FF770A3BAB8 (value is 00007FFCE4A1E9F0).
+5d78 hook_setter::attach_iat   313 Attempting to hook GetEnvironmentVariableW in IAT for module 00007FF770A00000.
+5d78 pe_info::iterate_imports  160 Found import in 'api-ms-win-core-processenvironment-l1-1-0.dll'
+5d78 find_iat                  121 Found import at 00007FF770A3BE50 (value is 00007FFCE4A00980).
+5d78 hook_setter::commit       204 <<< Hook transaction committed.
+5d78 hook_setter::hook_setter  156 >>> Started hook transaction.
+5d78 hook_setter::detach_iat   356 Attempting to unhook 00007FFC9198ADF0 from GetEnvironmentVariableW in IAT for module 00007FF770A00000.
+5d78 pe_info::iterate_imports  160 Found import in 'api-ms-win-core-processenvironment-l1-1-0.dll'
+5d78 find_iat                  121 Found import at 00007FF770A3BE50 (value is 00007FFC9198ADF0).
+5d78 hook_setter::commit       204 <<< Hook transaction committed.
+5d78 hook_setter::hook_setter  156 >>> Started hook transaction.
+5d78 hook_setter::attach_iat   313 Attempting to hook ReadConsoleW in IAT for module 00007FF770A00000.
+5d78 pe_info::iterate_imports  160 Found import in 'api-ms-win-core-console-l1-1-0.dll'
+5d78 find_iat                  121 Found import at 00007FF770A3BAC8 (value is 00007FFCE4A011A0).
+5d78 hook_setter::commit       204 <<< Hook transaction committed.
+5d78 reset_handle              145 resetting mismatched stdin handle
+5d78 reset_handle              145 resetting mismatched stdout handle
+5d78 reset_handle              145 resetting mismatched stderr handle
+5d78 win_screen_buffer::begin  227 Using native terminal support; found 'ConEmuHk64.dll'.
+5d78 reset_handle              145 resetting mismatched stdout handle
+5d78 reset_handle              145 resetting mismatched stderr handle
+5d78 history_db::initialise   1268 master bank ctag: |CTAG_1663167284_18455859_4204_0
+5d78 history_db::compact      1492 History:  28 active, 39 deleted
+5d78 reset_handle              145 resetting mismatched stdout handle
+5d78 reset_handle              145 resetting mismatched stderr handle
+5d78 history_db::compact      1492 History:  28 active, 40 deleted
+5d78 reset_handle              145 resetting mismatched stdout handle
+5d78 reset_handle              145 resetting mismatched stderr handle
+5d78 history_db::compact      1492 History:  28 active, 41 deleted
+5d78 reset_handle              145 resetting mismatched stdout handle
+5d78 reset_handle              145 resetting mismatched stderr handle
+5d78 history_db::compact      1492 History:  28 active, 42 deleted
+5d78 reset_handle              145 resetting mismatched stdout handle
+5d78 reset_handle              145 resetting mismatched stderr handle
+5d78 history_db::compact      1492 History:  29 active, 42 deleted
+5d78 reset_handle              145 resetting mismatched stdout handle
+5d78 reset_handle              145 resetting mismatched stderr handle
+5d78 history_db::compact      1492 History:  29 active, 43 deleted
+5d78 reset_handle              145 resetting mismatched stdout handle
+5d78 reset_handle              145 resetting mismatched stderr handle
+5d78 history_db::compact      1492 History:  30 active, 43 deleted
+5d78 reset_handle              145 resetting mismatched stdout handle
+5d78 reset_handle              145 resetting mismatched stderr handle
+5d78 history_db::compact      1492 History:  30 active, 44 deleted
+5d78 reset_handle              145 resetting mismatched stdout handle
+5d78 reset_handle              145 resetting mismatched stderr handle
+5d78 history_db::compact      1492 History:  30 active, 45 deleted
+5d78 reset_handle              145 resetting mismatched stdout handle
+5d78 reset_handle              145 resetting mismatched stderr handle
+5d78 history_db::compact      1492 History:  30 active, 46 deleted
+5d78 reset_handle              145 resetting mismatched stdout handle
+5d78 reset_handle              145 resetting mismatched stderr handle
+5d78 history_db::compact      1492 History:  30 active, 47 deleted
+5d78 reset_handle              145 resetting mismatched stdout handle
+5d78 reset_handle              145 resetting mismatched stderr handle
+5d78 history_db::compact      1492 History:  30 active, 48 deleted
+5d78 reset_handle              145 resetting mismatched stdout handle
+5d78 reset_handle              145 resetting mismatched stderr handle
+5d78 history_db::compact      1492 History:  30 active, 49 deleted
