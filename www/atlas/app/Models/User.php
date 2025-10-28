@@ -20,12 +20,14 @@ class User extends Authenticatable
      * Kolom yang boleh diisi.
      */
     protected $fillable = [
-        'username',  // <-- Pastiin ada
-        'fullname',  // <-- Pastiin ada
+        'username',
+        'fullname',
         'email',
         'password',
-        'role',          // <-- Pastiin ada
-        'signature_url', // <-- Pastiin ada
+        'role',
+        'signature_url',
+        'avatar_url', // <-- Pastiin ada
+        'phone_number', // <-- Kalo kamu tambahin ini juga
     ];
 
     /**

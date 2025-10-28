@@ -105,7 +105,6 @@ class ScheduleController extends Controller
             ];
 
             return response()->json($payload);
-
         } catch (\Exception $e) {
             return response()->json(['error' => 'Terjadi kesalahan pada server: ' . $e->getMessage()], 500);
         }

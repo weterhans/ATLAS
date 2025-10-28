@@ -66,7 +66,7 @@ cd www/atlas
 atlas
 |d atlas
 |hp artisan serve
-cd atlas
+|d atlas
 |hp artisan serve
 |hp artisan serve
 php artisan make:model WorkOrderCnsd -m
@@ -74,7 +74,28 @@ php artisan make:model WorkOrderCnsd -m
 php artisan migrate:fresh
 |hp artisan migrate
 |hp artisan serve
+|hp artisan migrate
+|hp artisan serve
+|hp artisan serve
+|hp artisan serve
+|d atlas
+|hp artisan serve
+|hp artisan serve
+D:
+|d atlas
+|hp artisan serve
+php artisan make:model WorkOrderCnsd
+|hp artisan serve
+php artisan make:migration add_output_lainnya_to_workorders_cnsd_table --table=workorders_cnsd
+|hp artisan migrate
 php artisan migrate
 |hp artisan serve
+php artisan config:clear
 |hp artisan serve
+|d atlas
+|hp artisan serve
+|hp artisan serve
+|hp artisan serve
+|hp artisan serve
+cd atlas
 php artisan serve

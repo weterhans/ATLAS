@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perum LPPNPI - Cabang Surabaya</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
@@ -76,6 +77,11 @@
             color: #1f2937;
         }
 
+        .time-roman {
+            font-family: 'Times New Roman', Times, serif;
+            font-style: bold;
+        }
+
         #sidebar.collapsed .nav-link {
             justify-content: center;
         }
@@ -92,7 +98,7 @@
                 <div class="sidebar-header flex items-center justify-between p-4 border-b border-gray-200">
                     <div id="logo-container" class="flex items-center">
                         <img src="{{ asset('img/airnav.ico') }}" class="w-11 h-11 mr-2" alt="Logo AirNav" onerror="this.onerror=null;this.src='https://placehold.co/62x62/FFFFFF/255A9B?text=A';">
-                        <h1 id="logo-text" class="text-xl font-bold text-indigo-600">ATLAS</h1>
+                        <h1 id="logo-text" class="text-xl font-bold text-indigo-600 time-roman">ATLAS</h1>
                     </div>
                     <button id="sidebar-toggle" class="p-2 rounded-md hover:bg-gray-200 focus:outline-none" aria-label="Toggle navigation menu">
                         <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -108,42 +114,43 @@
                         </svg>
                         <span class="menu-text ml-3">Dashboard</span>
                     </a>
-                    <a href="{{ route('profile.edit') }}" class="nav-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 {{ request()->routeIs('profile.edit') ? 'menu-active' : '' }}">
+                    <a href="#" class="nav-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 {{ request()->routeIs('profile.edit') ? 'menu-active' : '' }}">
                         <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                         </svg>
                         <span class="menu-text ml-3">Data Personal</span>
                     </a>
 
-                    <a href="#" class="nav-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 {{ request()->routeIs('cnsd.harian') ? 'menu-active' : '' }}">
+                    <a href="{{ route('cnsd.index') }}" class="nav-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 {{ request()->routeIs('cnsd.harian') ? 'menu-active' : '' }}">
                         <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                         </svg>
                         <span class="menu-text ml-3">Harian CNSD</span>
                     </a>
-                    <a href="#" class="nav-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 {{ request()->routeIs('tfp.harian') ? 'menu-active' : '' }}">
+
+                    <a href="{{ route('tfp.index') }}" class="nav-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 {{ request()->routeIs('tfp.harian') ? 'menu-active' : '' }}">
                         <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                         </svg>
                         <span class="menu-text ml-3">Harian TFP</span>
                     </a>
-                    <a href="{{ route('wo.cnsd.index') }}" class="nav-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 {{ request()->routeIs('workorder.cnsd') ? 'menu-active' : '' }}">
+                    <a href="#" class="nav-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 {{ request()->routeIs('workorder.cnsd') ? 'menu-active' : '' }}">
                         <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
                         </svg>
                         <span class="menu-text ml-3">Work Orders CNSD</span>
                     </a>
-                    <a href="{{ route('wo.tfp.index') }}" class="nav-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 {{ request()->routeIs('workorder.tfp') ? 'menu-active' : '' }}">
+                    <a href="#" class="nav-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 {{ request()->routeIs('workorder.tfp') ? 'menu-active' : '' }}">
                         <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
                         </svg>
                         <span class="menu-text ml-3">Work Orders TFP</span>
                     </a>
-                    <a href="#" class="nav-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 {{ request()->routeIs('Meter Reading') ? 'menu-active' : '' }}">
+                    <a href="#" class="nav-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 {{ request()->routeIs('metereding') ? 'menu-active' : '' }}">
                         <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"></path>
                         </svg>
-                        <span class="menu-text ml-3">Meter Reading</span>
+                        <span class="menu-text ml-3">Metereding</span>
                     </a>
                 </nav>
                 <div class="absolute bottom-0 w-full p-6 border-t border-gray-200">
@@ -174,10 +181,17 @@
                         </svg>
                     </button>
                     <div class="flex items-center space-x-4 ml-auto">
-                        <div class="relative"> ... </div>
                         <div class="relative">
                             <button id="profile-button" class="block h-10 w-10 rounded-full overflow-hidden border-2 border-gray-300 focus:outline-none focus:border-indigo-600">
-                                <img id="avatar-img" class="h-full w-full object-cover" src="https://placehold.co/100x100/E2E8F0/4A5568?text=U" alt="Your avatar" onerror="this.onerror=null;this.src='https://placehold.co/100x100/E2E8F0/4A5568?text=U';">
+                                @if (Auth::user()->avatar_url)
+                                <img id="avatar-img" class="h-full w-full object-cover" src="{{ Storage::url(Auth::user()->avatar_url) }}" alt="Avatar">
+                                @else
+                                <div class="h-full w-full bg-indigo-100 flex items-center justify-center">
+                                    <span class="text-xl font-semibold text-indigo-600">
+                                        {{ strtoupper(substr(Auth::user()->fullname ?? Auth::user()->username, 0, 1)) }}
+                                    </span>
+                                </div>
+                                @endif
                             </button>
                             <div id="profile-menu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-xl z-20">
                                 <a href="{{ route('profile.edit') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Profil</a>
@@ -202,6 +216,7 @@
     </div>
 
     <script src="{{ asset('js/renderer_index.js') }}"></script>
+    @stack('scripts')
 </body>
 
 </html>

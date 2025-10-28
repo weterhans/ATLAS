@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class CnsdEquipment extends Model
 {
     use HasFactory;
+    protected $table = 'cnsd_equipment';
+    public $timestamps = false; // Tabel ini nggak punya timestamp
+    protected $fillable = ['name'];
 }
