@@ -12,6 +12,9 @@ use App\Http\Controllers\JadwalTfpController;
 use App\Http\Controllers\DailyTfpController;
 use App\Http\Controllers\KegiatanTfpController;
 use App\Http\Controllers\SaveDataTfpController;
+use App\Http\Controllers\MeterReadingController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -54,6 +57,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/kegiatan-cnsd', [KegiatanCnsdController::class, 'store'])->name('cnsd.kegiatan.store');
     Route::get('/kegiatan-cnsd/{activity}/edit', [KegiatanCnsdController::class, 'edit'])->name('cnsd.kegiatan.edit');
     Route::put('/kegiatan-cnsd/{activity}', [KegiatanCnsdController::class, 'update'])->name('cnsd.kegiatan.update');
+
     Route::get('/save-data-cnsd', [SaveDataCnsdController::class, 'index'])->name('cnsd.save_data');
     Route::post('/save-data-cnsd', [SaveDataCnsdController::class, 'store'])->name('cnsd.save_data.store');
     Route::get('/save-data-cnsd/get-related-activity', [SaveDataCnsdController::class, 'getRelatedActivity'])->name('cnsd.save_data.getActivity');
@@ -62,8 +66,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/cnsd/save-data/{id}', [SaveDataCnsdController::class, 'destroy'])->name('cnsd.save_data.destroy');
     Route::get('/cnsd/save-data/get-range-activity', [SaveDataCnsdController::class, 'getActivitiesForDateRange'])->name('cnsd.save_data.getRangeActivity');
     Route::get('/cnsd/save-data/get-range-schedule', [SaveDataCnsdController::class, 'getSchedulesForDateRange'])->name('cnsd.save_data.getRangeSchedule');
-    Route::get('/cnsd/save-data/{id}/pdf', [SaveDataCnsdController::class, 'generatePdf'])->name('cnsd.save_data.pdf');
-    Route::get('/cnsd/save-data/{id}/preview', [SaveDataCnsdController::class, 'previewPdf'])->name('cnsd.save_data.preview');
+    Route::get('/cnsd/save-data/download/{id}', [SaveDataCnsdController::class, 'downloadReport'])->name('cnsd.save_data.download');
+
 
     // Untuk Halaman HArian TFP
     Route::get('/jadwal-tfp', [JadwalTfpController::class, 'index'])->name('tfp.jadwal');
@@ -81,6 +85,39 @@ Route::middleware('auth')->group(function () {
     Route::get('/kegiatan-tfp/{activity}/edit', [KegiatanTfpController::class, 'edit'])->name('tfp.kegiatan.edit');
     Route::put('/kegiatan-tfp/{activity}', [KegiatanTfpController::class, 'update'])->name('tfp.kegiatan.update');
     Route::get('/save-data-tfp', [SaveDataTfpController::class, 'index'])->name('tfp.save_data');
+    Route::prefix('tfp/save-data')->name('tfp.save_data')->group(function () {
+        // Halaman utama save_data (GET)
+        Route::get('/', [SaveDataTfpController::class, 'index']);
+        // Simpan data baru (POST)
+        Route::post('/', [SaveDataTfpController::class, 'store'])->name('.store');
+        // Update data (PUT)
+        Route::put('/{id}', [SaveDataTfpController::class, 'update'])->name('.update');
+        // Hapus data (DELETE)
+        Route::delete('/{id}', [SaveDataTfpController::class, 'destroy'])->name('.destroy');
+        // Download PDF (GET)
+        Route::get('/download/{id}', [SaveDataTfpController::class, 'downloadReport'])->name('.download');
+        // --- API UNTUK MODAL (AJAX) ---
+        Route::get('/get-schedule', [SaveDataTfpController::class, 'getRelatedSchedule'])->name('.getSchedule');
+        Route::get('/get-activity', [SaveDataTfpController::class, 'getRelatedActivity'])->name('.getActivity');
+        Route::get('/get-range-activity', [SaveDataTfpController::class, 'getActivitiesForDateRange'])->name('.getRangeActivity');
+        Route::get('/get-range-schedule', [SaveDataTfpController::class, 'getSchedulesForDateRange'])->name('.getRangeSchedule');
+    });
+
+    Route::get('/meter-reading', [MeterReadingController::class, 'index'])->name('meter_reading.index');
+    Route::get('/meter-reading/cnsd', [MeterReadingController::class, 'cnsd'])->name('meter_reading.cnsd');
+    Route::get('/meter-reading/tfp', [MeterReadingController::class, 'tfp'])->name('meter_reading.tfp');
+
+    Route::get('/meter-reading/cnsd/kesiapan-peralatan', [MeterReadingController::class, 'cnsdKesiapan'])->name('meter_reading.cnsd.kesiapan');
 });
+
+
+Route::get('/personal', function () {
+    return view('personal');
+})->name('personal.index'); // Kita beri nama 'personal.index'
+
+// Asumsi Anda sudah punya rute untuk dashboard
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
 
 require __DIR__ . '/auth.php';

@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perum LPPNPI - Cabang Surabaya</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.10/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.13.10/dist/cdn.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
@@ -146,11 +147,11 @@
                         </svg>
                         <span class="menu-text ml-3">Work Orders TFP</span>
                     </a>
-                    <a href="#" class="nav-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 {{ request()->routeIs('metereding') ? 'menu-active' : '' }}">
+                    <a href="{{ route('meter_reading.index') }}" class="nav-link flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 {{ request()->routeIs('metereding') ? 'menu-active' : '' }}">
                         <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"></path>
                         </svg>
-                        <span class="menu-text ml-3">Metereding</span>
+                        <span class="menu-text ml-3">Meter Reading</span>
                     </a>
                 </nav>
                 <div class="absolute bottom-0 w-full p-6 border-t border-gray-200">

@@ -19,4 +19,5 @@
 # localhost name resolution is handled within DNS itself.
 #	127.0.0.1       localhost
 #	::1             localhost
-127.0.0.1      ATLAS.test           #laragon magic!   
+127.0.0.1      atlas.test           #laragon magic!   
+127.0.0.1      temp.test            #laragon magic!   

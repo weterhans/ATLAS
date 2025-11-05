@@ -353,7 +353,7 @@ UNLOCK TABLES;
 --
 
 /*!40000 ALTER TABLE `innodb_index_stats` DISABLE KEYS */;
-INSERT  IGNORE INTO `innodb_index_stats` VALUES ('airnav_logbook_db','users','PRIMARY','2025-10-07 17:45:57','n_diff_pfx01',6,1,'id'),('airnav_logbook_db','users','PRIMARY','2025-10-07 17:45:57','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('airnav_logbook_db','users','PRIMARY','2025-10-07 17:45:57','size',1,NULL,'Number of pages in the index'),('airnav_logbook_db','users','email','2025-10-07 17:45:57','n_diff_pfx01',6,1,'email'),('airnav_logbook_db','users','email','2025-10-07 17:45:57','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('airnav_logbook_db','users','email','2025-10-07 17:45:57','size',1,NULL,'Number of pages in the index'),('airnav_logbook_db','users','username','2025-10-07 17:45:57','n_diff_pfx01',6,1,'username'),('airnav_logbook_db','users','username','2025-10-07 17:45:57','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('airnav_logbook_db','users','username','2025-10-07 17:45:57','size',1,NULL,'Number of pages in the index'),('mysql','component','PRIMARY','2025-09-22 14:39:21','n_diff_pfx01',0,1,'component_id'),('mysql','component','PRIMARY','2025-09-22 14:39:21','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('mysql','component','PRIMARY','2025-09-22 14:39:21','size',1,NULL,'Number of pages in the index'),('sys','sys_config','PRIMARY','2025-09-22 14:39:22','n_diff_pfx01',6,1,'variable'),('sys','sys_config','PRIMARY','2025-09-22 14:39:22','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('sys','sys_config','PRIMARY','2025-09-22 14:39:22','size',1,NULL,'Number of pages in the index');
+INSERT  IGNORE INTO `innodb_index_stats` VALUES ('airnav_logbook_db','cache','PRIMARY','2025-10-26 20:07:41','n_diff_pfx01',0,1,'key'),('airnav_logbook_db','cache','PRIMARY','2025-10-26 20:07:41','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('airnav_logbook_db','cache','PRIMARY','2025-10-26 20:07:41','size',1,NULL,'Number of pages in the index'),('airnav_logbook_db','cache_locks','PRIMARY','2025-10-26 20:07:41','n_diff_pfx01',0,1,'key'),('airnav_logbook_db','cache_locks','PRIMARY','2025-10-26 20:07:41','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('airnav_logbook_db','cache_locks','PRIMARY','2025-10-26 20:07:41','size',1,NULL,'Number of pages in the index'),('airnav_logbook_db','cnsd_activities','PRIMARY','2025-10-26 20:08:23','n_diff_pfx01',11,1,'id'),('airnav_logbook_db','cnsd_activities','PRIMARY','2025-10-26 20:08:23','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('airnav_logbook_db','cnsd_activities','PRIMARY','2025-10-26 20:08:23','size',1,NULL,'Number of pages in the index'),('airnav_logbook_db','cnsd_equipment','PRIMARY','2025-10-26 20:09:44','n_diff_pfx01',72,1,'id'),('airnav_logbook_db','cnsd_equipment','PRIMARY','2025-10-26 20:09:44','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('airnav_logbook_db','cnsd_equipment','PRIMARY','2025-10-26 20:09:44','size',1,NULL,'Number of pages in the index'),('airnav_logbook_db','cnsd_savedata','PRIMARY','2025-10-26 20:09:04','n_diff_pfx01',3,1,'id'),('airnav_logbook_db','cnsd_savedata','PRIMARY','2025-10-26 20:09:04','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('airnav_logbook_db','cnsd_savedata','PRIMARY','2025-10-26 20:09:04','size',1,NULL,'Number of pages in the index'),('airnav_logbook_db','daily_cnsd_reports','PRIMARY','2025-10-26 20:08:03','n_diff_pfx01',11,4,'id'),('airnav_logbook_db','daily_cnsd_reports','PRIMARY','2025-10-26 20:08:03','n_leaf_pages',4,NULL,'Number of leaf pages in the index'),('airnav_logbook_db','daily_cnsd_reports','PRIMARY','2025-10-26 20:08:03','size',5,NULL,'Number of pages in the index'),('airnav_logbook_db','daily_tfp_reports','PRIMARY','2025-10-26 20:08:44','n_diff_pfx01',3,1,'id'),('airnav_logbook_db','daily_tfp_reports','PRIMARY','2025-10-26 20:08:44','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('airnav_logbook_db','daily_tfp_reports','PRIMARY','2025-10-26 20:08:44','size',1,NULL,'Number of pages in the index'),('airnav_logbook_db','failed_jobs','PRIMARY','2025-10-26 20:07:43','n_diff_pfx01',0,1,'id'),('airnav_logbook_db','failed_jobs','PRIMARY','2025-10-26 20:07:43','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('airnav_logbook_db','failed_jobs','PRIMARY','2025-10-26 20:07:43','size',1,NULL,'Number of pages in the index'),('airnav_logbook_db','failed_jobs','failed_jobs_uuid_unique','2025-10-26 20:07:43','n_diff_pfx01',0,1,'uuid'),('airnav_logbook_db','failed_jobs','failed_jobs_uuid_unique','2025-10-26 20:07:43','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('airnav_logbook_db','failed_jobs','failed_jobs_uuid_unique','2025-10-26 20:07:43','size',1,NULL,'Number of pages in the index'),('airnav_logbook_db','job_batches','PRIMARY','2025-10-26 20:07:42','n_diff_pfx01',0,1,'id'),('airnav_logbook_db','job_batches','PRIMARY','2025-10-26 20:07:42','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('airnav_logbook_db','job_batches','PRIMARY','2025-10-26 20:07:42','size',1,NULL,'Number of pages in the index'),('airnav_logbook_db','jobs','PRIMARY','2025-10-26 20:07:43','n_diff_pfx01',0,1,'id'),('airnav_logbook_db','jobs','PRIMARY','2025-10-26 20:07:43','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('airnav_logbook_db','jobs','PRIMARY','2025-10-26 20:07:43','size',1,NULL,'Number of pages in the index'),('airnav_logbook_db','jobs','jobs_queue_index','2025-10-26 20:07:43','n_diff_pfx01',0,1,'queue'),('airnav_logbook_db','jobs','jobs_queue_index','2025-10-26 20:07:43','n_diff_pfx02',0,1,'queue,id'),('airnav_logbook_db','jobs','jobs_queue_index','2025-10-26 20:07:43','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('airnav_logbook_db','jobs','jobs_queue_index','2025-10-26 20:07:43','size',1,NULL,'Number of pages in the index'),('airnav_logbook_db','migrations','PRIMARY','2025-10-26 20:09:24','n_diff_pfx01',2,1,'id'),('airnav_logbook_db','migrations','PRIMARY','2025-10-26 20:09:24','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('airnav_logbook_db','migrations','PRIMARY','2025-10-26 20:09:24','size',1,NULL,'Number of pages in the index'),('airnav_logbook_db','schedules_cnsd','PRIMARY','2025-10-26 20:07:53','n_diff_pfx01',11,1,'id'),('airnav_logbook_db','schedules_cnsd','PRIMARY','2025-10-26 20:07:53','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('airnav_logbook_db','schedules_cnsd','PRIMARY','2025-10-26 20:07:53','size',1,NULL,'Number of pages in the index'),('airnav_logbook_db','schedules_tfp','PRIMARY','2025-10-26 20:08:13','n_diff_pfx01',4,1,'id'),('airnav_logbook_db','schedules_tfp','PRIMARY','2025-10-26 20:08:13','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('airnav_logbook_db','schedules_tfp','PRIMARY','2025-10-26 20:08:13','size',1,NULL,'Number of pages in the index'),('airnav_logbook_db','tfp_activities','PRIMARY','2025-10-26 20:08:33','n_diff_pfx01',4,1,'id'),('airnav_logbook_db','tfp_activities','PRIMARY','2025-10-26 20:08:33','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('airnav_logbook_db','tfp_activities','PRIMARY','2025-10-26 20:08:33','size',1,NULL,'Number of pages in the index'),('airnav_logbook_db','tfp_equipment','PRIMARY','2025-10-26 20:08:54','n_diff_pfx01',67,1,'id'),('airnav_logbook_db','tfp_equipment','PRIMARY','2025-10-26 20:08:54','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('airnav_logbook_db','tfp_equipment','PRIMARY','2025-10-26 20:08:54','size',1,NULL,'Number of pages in the index'),('airnav_logbook_db','users','PRIMARY','2025-10-26 20:09:14','n_diff_pfx01',6,1,'id'),('airnav_logbook_db','users','PRIMARY','2025-10-26 20:09:14','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('airnav_logbook_db','users','PRIMARY','2025-10-26 20:09:14','size',1,NULL,'Number of pages in the index'),('airnav_logbook_db','users','email','2025-10-26 20:09:14','n_diff_pfx01',6,1,'email'),('airnav_logbook_db','users','email','2025-10-26 20:09:14','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('airnav_logbook_db','users','email','2025-10-26 20:09:14','size',1,NULL,'Number of pages in the index'),('airnav_logbook_db','users','username','2025-10-26 20:09:14','n_diff_pfx01',6,1,'username'),('airnav_logbook_db','users','username','2025-10-26 20:09:14','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('airnav_logbook_db','users','username','2025-10-26 20:09:14','size',1,NULL,'Number of pages in the index'),('airnav_logbook_db','workorders_cnsd','PRIMARY','2025-10-31 10:22:51','n_diff_pfx01',3,1,'id'),('airnav_logbook_db','workorders_cnsd','PRIMARY','2025-10-31 10:22:51','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('airnav_logbook_db','workorders_cnsd','PRIMARY','2025-10-31 10:22:51','size',1,NULL,'Number of pages in the index'),('airnav_logbook_db','workorders_tfp','PRIMARY','2025-10-26 20:07:43','n_diff_pfx01',0,1,'id'),('airnav_logbook_db','workorders_tfp','PRIMARY','2025-10-26 20:07:43','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('airnav_logbook_db','workorders_tfp','PRIMARY','2025-10-26 20:07:43','size',1,NULL,'Number of pages in the index'),('atlas_db','alembic_version','PRIMARY','2025-10-25 17:53:34','n_diff_pfx01',1,1,'version_num'),('atlas_db','alembic_version','PRIMARY','2025-10-25 17:53:34','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('atlas_db','alembic_version','PRIMARY','2025-10-25 17:53:34','size',1,NULL,'Number of pages in the index'),('atlas_db','user','PRIMARY','2025-10-27 18:09:21','n_diff_pfx01',2,1,'id'),('atlas_db','user','PRIMARY','2025-10-27 18:09:21','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('atlas_db','user','PRIMARY','2025-10-27 18:09:21','size',2,NULL,'Number of pages in the index'),('atlas_db','user','ix_user_email','2025-10-27 18:09:21','n_diff_pfx01',2,1,'email'),('atlas_db','user','ix_user_email','2025-10-27 18:09:21','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('atlas_db','user','ix_user_email','2025-10-27 18:09:21','size',1,NULL,'Number of pages in the index'),('atlas_db','user','ix_user_fullname','2025-10-27 18:09:21','n_diff_pfx01',2,1,'fullname'),('atlas_db','user','ix_user_fullname','2025-10-27 18:09:21','n_diff_pfx02',2,1,'fullname,id'),('atlas_db','user','ix_user_fullname','2025-10-27 18:09:21','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('atlas_db','user','ix_user_fullname','2025-10-27 18:09:21','size',1,NULL,'Number of pages in the index'),('atlas_db','user','ix_user_username','2025-10-27 18:09:21','n_diff_pfx01',2,1,'username'),('atlas_db','user','ix_user_username','2025-10-27 18:09:21','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('atlas_db','user','ix_user_username','2025-10-27 18:09:21','size',1,NULL,'Number of pages in the index'),('mysql','component','PRIMARY','2025-09-22 14:39:21','n_diff_pfx01',0,1,'component_id'),('mysql','component','PRIMARY','2025-09-22 14:39:21','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('mysql','component','PRIMARY','2025-09-22 14:39:21','size',1,NULL,'Number of pages in the index'),('sys','sys_config','PRIMARY','2025-09-22 14:39:22','n_diff_pfx01',6,1,'variable'),('sys','sys_config','PRIMARY','2025-09-22 14:39:22','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('sys','sys_config','PRIMARY','2025-09-22 14:39:22','size',1,NULL,'Number of pages in the index');
 /*!40000 ALTER TABLE `innodb_index_stats` ENABLE KEYS */;
 
 --
@@ -361,7 +361,7 @@ INSERT  IGNORE INTO `innodb_index_stats` VALUES ('airnav_logbook_db','users','PR
 --
 
 /*!40000 ALTER TABLE `innodb_table_stats` DISABLE KEYS */;
-INSERT  IGNORE INTO `innodb_table_stats` VALUES ('airnav_logbook_db','users','2025-10-07 17:45:57',6,1,2),('mysql','component','2025-09-22 14:39:21',0,1,0),('sys','sys_config','2025-09-22 14:39:22',6,1,0);
+INSERT  IGNORE INTO `innodb_table_stats` VALUES ('airnav_logbook_db','cache','2025-10-26 20:07:41',0,1,0),('airnav_logbook_db','cache_locks','2025-10-26 20:07:41',0,1,0),('airnav_logbook_db','cnsd_activities','2025-10-26 20:08:23',11,1,0),('airnav_logbook_db','cnsd_equipment','2025-10-26 20:09:44',72,1,0),('airnav_logbook_db','cnsd_savedata','2025-10-26 20:09:04',3,1,0),('airnav_logbook_db','daily_cnsd_reports','2025-10-26 20:08:03',11,5,0),('airnav_logbook_db','daily_tfp_reports','2025-10-26 20:08:44',3,1,0),('airnav_logbook_db','failed_jobs','2025-10-26 20:07:43',0,1,1),('airnav_logbook_db','job_batches','2025-10-26 20:07:42',0,1,0),('airnav_logbook_db','jobs','2025-10-26 20:07:43',0,1,1),('airnav_logbook_db','migrations','2025-10-26 20:09:24',2,1,0),('airnav_logbook_db','schedules_cnsd','2025-10-26 20:07:53',11,1,0),('airnav_logbook_db','schedules_tfp','2025-10-26 20:08:13',4,1,0),('airnav_logbook_db','tfp_activities','2025-10-26 20:08:33',4,1,0),('airnav_logbook_db','tfp_equipment','2025-10-26 20:08:54',67,1,0),('airnav_logbook_db','users','2025-10-26 20:09:14',6,1,2),('airnav_logbook_db','workorders_cnsd','2025-10-31 10:22:51',3,1,0),('airnav_logbook_db','workorders_tfp','2025-10-26 20:07:43',0,1,0),('atlas_db','alembic_version','2025-10-25 17:53:34',1,1,0),('atlas_db','user','2025-10-27 18:09:21',2,2,3),('mysql','component','2025-09-22 14:39:21',0,1,0),('sys','sys_config','2025-09-22 14:39:22',6,1,0);
 /*!40000 ALTER TABLE `innodb_table_stats` ENABLE KEYS */;
 
 --
@@ -1076,6 +1076,466 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/ `airnav_logbook_db` /*!40100 DEFAULT CH
 USE `airnav_logbook_db`;
 
 --
+-- Table structure for table `cache`
+--
+
+DROP TABLE IF EXISTS `cache`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `cache` (
+  `key` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `expiration` int NOT NULL,
+  PRIMARY KEY (`key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cache`
+--
+
+LOCK TABLES `cache` WRITE;
+/*!40000 ALTER TABLE `cache` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cache` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `cache_locks`
+--
+
+DROP TABLE IF EXISTS `cache_locks`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `cache_locks` (
+  `key` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `owner` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `expiration` int NOT NULL,
+  PRIMARY KEY (`key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cache_locks`
+--
+
+LOCK TABLES `cache_locks` WRITE;
+/*!40000 ALTER TABLE `cache_locks` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cache_locks` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `cnsd_activities`
+--
+
+DROP TABLE IF EXISTS `cnsd_activities`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `cnsd_activities` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `kode` varchar(255) DEFAULT NULL,
+  `dinas` varchar(50) DEFAULT NULL,
+  `tanggal` date DEFAULT NULL,
+  `waktu_mulai` time DEFAULT NULL,
+  `waktu_selesai` time DEFAULT NULL,
+  `alat` varchar(255) DEFAULT NULL,
+  `permasalahan` text,
+  `tindakan` text,
+  `hasil` text,
+  `status` varchar(50) DEFAULT NULL,
+  `waktu_terputus` varchar(100) DEFAULT NULL,
+  `teknisi` json DEFAULT NULL,
+  `lampiran` json DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cnsd_activities`
+--
+
+LOCK TABLES `cnsd_activities` WRITE;
+/*!40000 ALTER TABLE `cnsd_activities` DISABLE KEYS */;
+INSERT INTO `cnsd_activities` VALUES (12,'KG-CNSD-318135','Siang','2025-10-23','13:32:00','15:32:00','ADSB',' asg ag ag s','hs  shsdshs',' shshdhdfg s fsf sdff  r a wfawrf awf f','Selesai','1 jam','[\"Andi Julianto\", \"joko\", \"testttt\"]','[\"F:\\\\Project\\\\Airnav-App\\\\attachments\\\\attachment-1761208355238-kda-akali-league-of-legends-cosplay-black-background-neon-5k-1080x2400-2206.jpg\", \"F:\\\\Project\\\\Airnav-App\\\\attachments\\\\attachment-1761208355278-kda-league-of-legends-neon-smoke-black-background-cosplay-1024x768-300.jpg\", \"F:\\\\Project\\\\Airnav-App\\\\attachments\\\\attachment-1761208355283-kda-league-of-legends-neon-smoke-black-background-cosplay-1080x2400-300.jpg\", \"F:\\\\Project\\\\Airnav-App\\\\attachments\\\\attachment-1761208355293-kda-league-of-legends-neon-smoke-black-background-cosplay-1920x1080-300.jpg\"]','2025-10-23 08:32:35','2025-10-23 08:32:35'),(13,'KG-CNSD-017334','Malam','2025-10-23','23:47:00','21:47:00',' dsgsg sgs dg','s dhsdhs fsfs','f sfs dfs hs gsd','gsdgsdh sdg sdgsdg','Selesai',NULL,'[\"Andi Julianto\", \"joko\", \"joko\"]','[\"F:\\\\Project\\\\Airnav-App\\\\attachments\\\\attachment-1761220074491-wp4346716-asus-tuf-wallpapers.jpg\", \"F:\\\\Project\\\\Airnav-App\\\\attachments\\\\attachment-1761220074494-wp4346768-asus-tuf-wallpapers.jpg\", \"F:\\\\Project\\\\Airnav-App\\\\attachments\\\\attachment-1761220074499-wp4625863-asus-vivobook-wallpapers.gif\"]','2025-10-23 11:47:54','2025-10-23 11:47:54'),(14,'KG-CNSD-076503','Pagi','2025-10-24','22:48:00','08:48:00','dgsd gs','gds ggs g','sd hdfa da af','a aghafasfa fa sf ','Selesai',NULL,'[\"Andi Julianto\", \"testttt\", \"joko\"]','[\"F:\\\\Project\\\\Airnav-App\\\\attachments\\\\attachment-1761220114641-HslL1Dg.jpg\"]','2025-10-23 11:48:34','2025-10-23 11:48:34'),(16,'KG-CNSD-199764','Siang','2025-10-24','13:50:00','15:50:00',' das gag as',' safdafasf','a sfa fas fafa','f asfasfasfas f','Selesai',NULL,'[\"Andi Julianto\", \"joko\", \"joko\", \"testttt\"]','[\"F:\\\\Project\\\\Airnav-App\\\\attachments\\\\attachment-1761220230814-HslL1Dg.jpg\"]','2025-10-23 11:50:30','2025-10-23 11:50:30'),(17,'KG-CNSD-237564','Malam','2025-10-24','20:50:00','22:50:00',' asga  gfas','sa gasgasfas','hgasg asgfas','f afasfas gfazwaq','Selesai',NULL,'[\"Andi Julianto\", \"joko\", \"testttt\"]','[\"F:\\\\Project\\\\Airnav-App\\\\attachments\\\\attachment-1761220263832-GYRlMoT.png\"]','2025-10-23 11:51:03','2025-10-23 11:51:03'),(18,'KG-CNSD-282140','Pagi','2025-10-25','08:51:00','22:51:00',' fasfa fgas',' gagagas','ga gagsg','a g asg dfh fdh ddh dhdr he rerg wet w r wawq wqr aw fwra awf aw  wafwa ','Selesai',NULL,'[\"Andi Julianto\", \"joko\", \"testttt\"]','[\"F:\\\\Project\\\\Airnav-App\\\\attachments\\\\attachment-1761220313684-wallpaperflare.com_wallpaper (1).jpg\"]','2025-10-23 11:51:53','2025-10-23 11:51:53'),(19,'KG-CNSD-319691','Siang','2025-10-25','15:52:00','18:52:00',' f f fffa',' asfsfas fas f','as fas fas f ass rhg fa sf afas ','afafsasf asf r3  dwadsas ','Selesai',NULL,'[\"joko\", \"Andi Julianto\", \"testttt\"]','[\"F:\\\\Project\\\\Airnav-App\\\\attachments\\\\attachment-1761220350605-GYRlMoT.png\", \"F:\\\\Project\\\\Airnav-App\\\\attachments\\\\attachment-1761220350640-HslL1Dg.jpg\"]','2025-10-23 11:52:30','2025-10-23 11:52:30'),(20,'KG-CNSD-359166','Malam','2025-10-25','19:52:00','20:52:00','as fas fas fsa f','fa affa fa af ','fasfas  sszf r   wq rqw2','  a   hdfsg dr ds sd gds ','Selesai',NULL,'[\"Andi Julianto\", \"testttt\", \"joko\"]','[\"F:\\\\Project\\\\Airnav-App\\\\attachments\\\\attachment-1761220395566-wallpaperflare.com_wallpaper (1).jpg\"]','2025-10-23 11:53:15','2025-10-23 11:53:15'),(21,'KG-CNSD-423715','Pagi','2025-10-26','07:53:00','09:53:00','sd fh hfd dfh hdf','sdsdgdsg gsd sgd','hfdfdhhfdhfd','hfd hfd fhd ','Selesai',NULL,'[\"joko\", \"Andi Julianto\", \"testttt\"]','[\"F:\\\\Project\\\\Airnav-App\\\\attachments\\\\attachment-1761220452204-E1vvXpNVUAQkwIz.jpeg\"]','2025-10-23 11:54:12','2025-10-23 11:54:12'),(22,'KG-CNSD-453526','Siang','2025-10-26','13:54:00','15:54:00','sdg g   fsasg ','sg dgsd sdg gsdgsd','sgdsg dgsdgsd sgdgsd g','s gs gs sg dsdg gsd sdg ','Selesai',NULL,'[\"Andi Julianto\", \"joko\", \"testttt\"]','[\"F:\\\\Project\\\\Airnav-App\\\\attachments\\\\attachment-1761220489770-j9pAs2N.jpg\"]','2025-10-23 11:54:49','2025-10-23 11:54:49'),(23,'KG-CNSD-495707','Malam','2025-10-26','20:55:00','23:55:00',' afasf afs fa sf fa ','fas sfa sfafsa fas','af saf sfa saf safs asf ','f safa sfa sfasfas f as','Selesai',NULL,'[\"joko\", \"testttt\", \"joko\"]','[]','2025-10-23 11:55:19','2025-10-23 11:55:19'),(24,'KG-CNSD-481299','Malam','2025-11-02','03:35:00','04:35:00','fff','fweagaerwg','erwgwgerwG','Gewgerwg','Selesai','12','[\"joko\", \"Andi Julianto\", \"testttt\"]','[\"lampiran_cnsd/tcCo9F9OnQ62EuiBGExPyfkbSMEkoXdn6WGL5vVu.jpg\", \"lampiran_cnsd/5u8MSQ7t1vy1ZX4mU9u8stIC25SsAt0DQDHBUTiQ.jpg\"]','2025-11-01 13:36:10','2025-11-01 13:36:10');
+/*!40000 ALTER TABLE `cnsd_activities` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `cnsd_equipment`
+--
+
+DROP TABLE IF EXISTS `cnsd_equipment`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `cnsd_equipment` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cnsd_equipment`
+--
+
+LOCK TABLES `cnsd_equipment` WRITE;
+/*!40000 ALTER TABLE `cnsd_equipment` DISABLE KEYS */;
+INSERT INTO `cnsd_equipment` VALUES (1,'VHF GND Main (p) 118.9'),(2,'VHF GND Main (s) 119.15'),(3,'VHF ADC Main (p) 118.3'),(4,'VHF ADC Main (s) 118.1'),(5,'VHF APP Direc Main (p) 123.2'),(6,'VHF APP Direc Main (s) 124.5'),(7,'VHF APP West Main (p) 125.1'),(8,'VHF APP West Main (s) 123.55'),(9,'VHF APP East Main (p) 124.0'),(10,'VHF APP East Main (s) 122.85'),(11,'VHF CDU (p) 121.65'),(12,'VHF CDU (s) 121.85'),(13,'VHF-ER Makassar (p) 123.9'),(14,'VHF-ER Makassar (s) 125.9'),(15,'VHF-ER UPKN 134.1'),(16,'VHF-ER UBLI 125.7'),(17,'VHF ATIS 128.2'),(18,'VHF Emergency 121.5'),(19,'VHF GND Backup (p) 118.9'),(20,'VHF GND Backup (s) 119.15'),(21,'VHF ADC Backup (p) 118.3'),(22,'VHF ADC Backup (s) 118.1'),(23,'VHF APP Direc Backup (p) 123.2'),(24,'VHF APP West Backup (p) 125.1'),(25,'VHF APP East Main (p) 124.0'),(26,'Server Recorder A'),(27,'Server Recorder B'),(28,'PC Recorder Playback'),(29,'NTP Server & Gps'),(30,'ATIS Server A'),(31,'ATIS Server B'),(32,'PC Client Oprator'),(33,'Server AMSC A'),(34,'Server AMSC B'),(35,'Control & Spv console A'),(36,'Control & Spv console B'),(37,'Komputer ADPS'),(38,'BO 1 WARRZPZE'),(39,'BO 2 WARRYMYO'),(40,'METEO 1 WARRYMYF'),(41,'METEO 2 WARRYMYO'),(42,'INFORMASI WARRYIYX'),(43,'VCCS - GATE X2 - 01'),(44,'VCCS - GATE X2 - 02'),(45,'VCCS - GATE X2 - 03'),(46,'VCCS - GATE X2 - 04'),(47,'VCCS - GPIF 1-4'),(48,'VCCS - ERIF 1-10'),(49,'VCCS - BCA 1-5'),(50,'VCCS - BCB 1-9'),(51,'CWP1'),(52,'CWP2'),(53,'CWP3'),(54,'CWP4'),(55,'CWP5'),(56,'CWP6'),(57,'CWP7'),(58,'CWP8'),(59,'CWP9'),(60,'CWP10'),(61,'CWP11 (CDU)'),(62,'CWP12'),(63,'DVOR'),(64,'DME'),(65,'ILS - Localizer'),(66,'ILS - Glide Path'),(67,'ILS - T-DME'),(68,'MSSR - RMM 1 & 2'),(69,'MSSR - LCMS 1 & 2'),(70,'MSSR - SMP 1 & 2'),(71,'MSSR- RDP 1 & 2'),(72,'ADSB');
+/*!40000 ALTER TABLE `cnsd_equipment` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `cnsd_savedata`
+--
+
+DROP TABLE IF EXISTS `cnsd_savedata`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `cnsd_savedata` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `type` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `tanggal` date NOT NULL,
+  `dinas` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `mantek` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `nama_alat` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `sampai` date DEFAULT NULL,
+  `print` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `grup` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `file_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cnsd_savedata`
+--
+
+LOCK TABLES `cnsd_savedata` WRITE;
+/*!40000 ALTER TABLE `cnsd_savedata` DISABLE KEYS */;
+INSERT INTO `cnsd_savedata` VALUES (6,'Harian','2025-10-23','SIANG','Danang Pambodos',NULL,NULL,'YA','CNSD',NULL),(7,'Harian','2025-10-24','PAGI','Teknisi B',NULL,NULL,'YA','CNSD',NULL),(8,'Bulanan','2025-10-24',NULL,NULL,'ALL Equipment','2025-10-26','YA','CNSD',NULL),(9,'Harian','2025-10-26','SIANG','joko',NULL,NULL,'YA','CNSD',NULL),(10,'Harian','2025-11-02','MALAM','joko',NULL,NULL,'YA','CNSD',NULL);
+/*!40000 ALTER TABLE `cnsd_savedata` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `daily_cnsd_reports`
+--
+
+DROP TABLE IF EXISTS `daily_cnsd_reports`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `daily_cnsd_reports` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `report_id_custom` varchar(255) DEFAULT NULL,
+  `dinas` varchar(50) DEFAULT NULL,
+  `tanggal` date DEFAULT NULL,
+  `jam` time DEFAULT NULL,
+  `mantek` varchar(255) DEFAULT NULL,
+  `acknowledge` varchar(255) DEFAULT NULL,
+  `kode` varchar(255) DEFAULT NULL,
+  `jadwal_dinas` text,
+  `equipment_status` json DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `daily_cnsd_reports`
+--
+
+LOCK TABLES `daily_cnsd_reports` WRITE;
+/*!40000 ALTER TABLE `daily_cnsd_reports` DISABLE KEYS */;
+INSERT INTO `daily_cnsd_reports` VALUES (9,'SIANG-23/10/2025-CNSD','SIANG','2025-10-23','15:31:00','Andi Julianto','joko','SIANG23102025CNSA','1. Andi Julianto\n2. joko\n3. testttt','{\"dme\": {\"status\": \"NORMAL\"}, \"adsb\": {\"status\": \"NORMAL\"}, \"cwp1\": {\"status\": \"NORMAL\"}, \"cwp2\": {\"status\": \"NORMAL\"}, \"cwp3\": {\"status\": \"NORMAL\"}, \"cwp4\": {\"status\": \"NORMAL\"}, \"cwp5\": {\"status\": \"NORMAL\"}, \"cwp6\": {\"status\": \"NORMAL\"}, \"cwp7\": {\"status\": \"NORMAL\"}, \"cwp8\": {\"status\": \"NORMAL\"}, \"cwp9\": {\"status\": \"NORMAL\"}, \"dvor\": {\"status\": \"NORMAL\"}, \"cwp10\": {\"status\": \"NORMAL\"}, \"cwp12\": {\"status\": \"NORMAL\"}, \"ilstdme\": {\"status\": \"NORMAL\"}, \"cwp11cdu\": {\"status\": \"NORMAL\"}, \"vccsbca15\": {\"status\": \"NORMAL\"}, \"vccsbcb19\": {\"status\": \"NORMAL\"}, \"mssrrdp1&2\": {\"status\": \"NORMAL\"}, \"mssrrmm1&2\": {\"status\": \"NORMAL\"}, \"mssrsmp1&2\": {\"status\": \"NORMAL\"}, \"vccsgpif14\": {\"status\": \"NORMAL\"}, \"atisservera\": {\"status\": \"NORMAL\"}, \"atisserverb\": {\"status\": \"NORMAL\"}, \"bo1warrzpze\": {\"status\": \"NORMAL\"}, \"bo2warrymyo\": {\"status\": \"NORMAL\"}, \"mssrlcms1&2\": {\"status\": \"NORMAL\"}, \"serveramsca\": {\"status\": \"NORMAL\"}, \"serveramscb\": {\"status\": \"NORMAL\"}, \"vccserif110\": {\"status\": \"NORMAL\"}, \"vhfatis1282\": {\"status\": \"NORMAL\"}, \"ilsglidepath\": {\"status\": \"NORMAL\"}, \"ilslocalizer\": {\"status\": \"NORMAL\"}, \"komputeradps\": {\"status\": \"NORMAL\"}, \"vccsgatex201\": {\"status\": \"NORMAL\"}, \"vccsgatex202\": {\"status\": \"NORMAL\"}, \"vccsgatex203\": {\"status\": \"NORMAL\"}, \"vccsgatex204\": {\"status\": \"NORMAL\"}, \"vhfcdup12165\": {\"status\": \"NORMAL\"}, \"vhfcdus12185\": {\"status\": \"NORMAL\"}, \"ntpserver&gps\": {\"status\": \"NORMAL\"}, \"vhferubli1257\": {\"status\": \"NORMAL\"}, \"vhferupkn1341\": {\"status\": \"NORMAL\"}, \"meteo1warrymyf\": {\"status\": \"NORMAL\"}, \"meteo2warrymyo\": {\"status\": \"NORMAL\"}, \"pcclientoprator\": {\"status\": \"NORMAL\"}, \"serverrecordera\": {\"status\": \"NORMAL\"}, \"serverrecorderb\": {\"status\": \"NORMAL\"}, \"vhfadcmainp1183\": {\"status\": \"SINGLE\", \"keterangan\": \"agag asasgags\"}, \"vhfadcmains1181\": {\"status\": \"U/S\", \"keterangan\": \" hdhfd fjdj dfd ghd\"}, \"vhfgndmainp1189\": {\"status\": \"NORMAL\"}, \"vhfemergency1215\": {\"status\": \"NORMAL\"}, \"vhfgndmains11915\": {\"status\": \"GANGGUAN\", \"keterangan\": \"adouahfoa faf asg ag\"}, \"informasiwarryiyx\": {\"status\": \"NORMAL\"}, \"vhfadcbackupp1183\": {\"status\": \"NORMAL\"}, \"vhfadcbackups1181\": {\"status\": \"NORMAL\"}, \"vhfgndbackupp1189\": {\"status\": \"NORMAL\"}, \"pcrecorderplayback\": {\"status\": \"NORMAL\"}, \"vhfermakassarp1239\": {\"status\": \"NORMAL\"}, \"vhfermakassars1259\": {\"status\": \"NORMAL\"}, \"vhfgndbackups11915\": {\"status\": \"NORMAL\"}, \"control&spvconsolea\": {\"status\": \"NORMAL\"}, \"control&spvconsoleb\": {\"status\": \"NORMAL\"}, \"vhfappeastmainp1240\": {\"status\": \"NORMAL\"}, \"vhfappwestmainp1251\": {\"status\": \"NORMAL\"}, \"vhfappdirecmainp1232\": {\"status\": \"NORMAL\"}, \"vhfappdirecmains1245\": {\"status\": \"NORMAL\"}, \"vhfappeastmains12285\": {\"status\": \"NORMAL\"}, \"vhfappwestmains12355\": {\"status\": \"NORMAL\"}, \"vhfappwestbackupp1251\": {\"status\": \"NORMAL\"}, \"vhfappdirecbackupp1232\": {\"status\": \"NORMAL\"}}','2025-10-23 08:31:49','2025-10-23 08:31:49'),(10,'MALAM-23/10/2025-CNSD','MALAM','2025-10-23','21:41:00','Andi Julianto','','MALAM23102025CNSA','1. joko\n2. Andi Julianto\n3. testttt\n4. wqeqewe','{\"dme\": {\"status\": \"NORMAL\"}, \"adsb\": {\"status\": \"NORMAL\"}, \"cwp1\": {\"status\": \"NORMAL\"}, \"cwp2\": {\"status\": \"NORMAL\"}, \"cwp3\": {\"status\": \"NORMAL\"}, \"cwp4\": {\"status\": \"NORMAL\"}, \"cwp5\": {\"status\": \"NORMAL\"}, \"cwp6\": {\"status\": \"NORMAL\"}, \"cwp7\": {\"status\": \"NORMAL\"}, \"cwp8\": {\"status\": \"NORMAL\"}, \"cwp9\": {\"status\": \"NORMAL\"}, \"dvor\": {\"status\": \"NORMAL\"}, \"cwp10\": {\"status\": \"NORMAL\"}, \"cwp12\": {\"status\": \"NORMAL\"}, \"ilstdme\": {\"status\": \"NORMAL\"}, \"cwp11cdu\": {\"status\": \"NORMAL\"}, \"vccsbca15\": {\"status\": \"NORMAL\"}, \"vccsbcb19\": {\"status\": \"NORMAL\"}, \"mssrrdp1&2\": {\"status\": \"NORMAL\"}, \"mssrrmm1&2\": {\"status\": \"NORMAL\"}, \"mssrsmp1&2\": {\"status\": \"NORMAL\"}, \"vccsgpif14\": {\"status\": \"NORMAL\"}, \"atisservera\": {\"status\": \"NORMAL\"}, \"atisserverb\": {\"status\": \"NORMAL\"}, \"bo1warrzpze\": {\"status\": \"NORMAL\"}, \"bo2warrymyo\": {\"status\": \"NORMAL\"}, \"mssrlcms1&2\": {\"status\": \"NORMAL\"}, \"serveramsca\": {\"status\": \"NORMAL\"}, \"serveramscb\": {\"status\": \"NORMAL\"}, \"vccserif110\": {\"status\": \"NORMAL\"}, \"vhfatis1282\": {\"status\": \"NORMAL\"}, \"ilsglidepath\": {\"status\": \"NORMAL\"}, \"ilslocalizer\": {\"status\": \"NORMAL\"}, \"komputeradps\": {\"status\": \"NORMAL\"}, \"vccsgatex201\": {\"status\": \"NORMAL\"}, \"vccsgatex202\": {\"status\": \"NORMAL\"}, \"vccsgatex203\": {\"status\": \"NORMAL\"}, \"vccsgatex204\": {\"status\": \"NORMAL\"}, \"vhfcdup12165\": {\"status\": \"NORMAL\"}, \"vhfcdus12185\": {\"status\": \"NORMAL\"}, \"ntpserver&gps\": {\"status\": \"NORMAL\"}, \"vhferubli1257\": {\"status\": \"NORMAL\"}, \"vhferupkn1341\": {\"status\": \"NORMAL\"}, \"meteo1warrymyf\": {\"status\": \"NORMAL\"}, \"meteo2warrymyo\": {\"status\": \"NORMAL\"}, \"pcclientoprator\": {\"status\": \"NORMAL\"}, \"serverrecordera\": {\"status\": \"NORMAL\"}, \"serverrecorderb\": {\"status\": \"NORMAL\"}, \"vhfadcmainp1183\": {\"status\": \"NORMAL\"}, \"vhfadcmains1181\": {\"status\": \"GANGGUAN\", \"keterangan\": \" a asfashgaf asfg\"}, \"vhfgndmainp1189\": {\"status\": \"GANGGUAN\", \"keterangan\": \"das gag asfdas \"}, \"vhfemergency1215\": {\"status\": \"NORMAL\"}, \"vhfgndmains11915\": {\"status\": \"NORMAL\"}, \"informasiwarryiyx\": {\"status\": \"NORMAL\"}, \"vhfadcbackupp1183\": {\"status\": \"NORMAL\"}, \"vhfadcbackups1181\": {\"status\": \"NORMAL\"}, \"vhfgndbackupp1189\": {\"status\": \"NORMAL\"}, \"pcrecorderplayback\": {\"status\": \"NORMAL\"}, \"vhfermakassarp1239\": {\"status\": \"NORMAL\"}, \"vhfermakassars1259\": {\"status\": \"NORMAL\"}, \"vhfgndbackups11915\": {\"status\": \"NORMAL\"}, \"control&spvconsolea\": {\"status\": \"NORMAL\"}, \"control&spvconsoleb\": {\"status\": \"NORMAL\"}, \"vhfappeastmainp1240\": {\"status\": \"NORMAL\"}, \"vhfappwestmainp1251\": {\"status\": \"NORMAL\"}, \"vhfappdirecmainp1232\": {\"status\": \"NORMAL\"}, \"vhfappdirecmains1245\": {\"status\": \"NORMAL\"}, \"vhfappeastmains12285\": {\"status\": \"NORMAL\"}, \"vhfappwestmains12355\": {\"status\": \"NORMAL\"}, \"vhfappwestbackupp1251\": {\"status\": \"NORMAL\"}, \"vhfappdirecbackupp1232\": {\"status\": \"NORMAL\"}}','2025-10-23 11:42:17','2025-10-23 11:42:17'),(11,'PAGI-24/10/2025-CNSD','PAGI','2025-10-24','09:42:00','Andi Julianto','','PAGI24102025CNSA','1. Andi Julianto\n2. joko\n3. wqeqewe\n4. testttt','{\"dme\": {\"status\": \"NORMAL\"}, \"adsb\": {\"status\": \"NORMAL\"}, \"cwp1\": {\"status\": \"NORMAL\"}, \"cwp2\": {\"status\": \"NORMAL\"}, \"cwp3\": {\"status\": \"NORMAL\"}, \"cwp4\": {\"status\": \"NORMAL\"}, \"cwp5\": {\"status\": \"NORMAL\"}, \"cwp6\": {\"status\": \"NORMAL\"}, \"cwp7\": {\"status\": \"NORMAL\"}, \"cwp8\": {\"status\": \"NORMAL\"}, \"cwp9\": {\"status\": \"NORMAL\"}, \"dvor\": {\"status\": \"NORMAL\"}, \"cwp10\": {\"status\": \"NORMAL\"}, \"cwp12\": {\"status\": \"NORMAL\"}, \"ilstdme\": {\"status\": \"NORMAL\"}, \"cwp11cdu\": {\"status\": \"NORMAL\"}, \"vccsbca15\": {\"status\": \"NORMAL\"}, \"vccsbcb19\": {\"status\": \"NORMAL\"}, \"mssrrdp1&2\": {\"status\": \"NORMAL\"}, \"mssrrmm1&2\": {\"status\": \"NORMAL\"}, \"mssrsmp1&2\": {\"status\": \"NORMAL\"}, \"vccsgpif14\": {\"status\": \"NORMAL\"}, \"atisservera\": {\"status\": \"NORMAL\"}, \"atisserverb\": {\"status\": \"NORMAL\"}, \"bo1warrzpze\": {\"status\": \"NORMAL\"}, \"bo2warrymyo\": {\"status\": \"NORMAL\"}, \"mssrlcms1&2\": {\"status\": \"NORMAL\"}, \"serveramsca\": {\"status\": \"NORMAL\"}, \"serveramscb\": {\"status\": \"NORMAL\"}, \"vccserif110\": {\"status\": \"NORMAL\"}, \"vhfatis1282\": {\"status\": \"NORMAL\"}, \"ilsglidepath\": {\"status\": \"NORMAL\"}, \"ilslocalizer\": {\"status\": \"NORMAL\"}, \"komputeradps\": {\"status\": \"NORMAL\"}, \"vccsgatex201\": {\"status\": \"NORMAL\"}, \"vccsgatex202\": {\"status\": \"NORMAL\"}, \"vccsgatex203\": {\"status\": \"NORMAL\"}, \"vccsgatex204\": {\"status\": \"NORMAL\"}, \"vhfcdup12165\": {\"status\": \"NORMAL\"}, \"vhfcdus12185\": {\"status\": \"NORMAL\"}, \"ntpserver&gps\": {\"status\": \"NORMAL\"}, \"vhferubli1257\": {\"status\": \"NORMAL\"}, \"vhferupkn1341\": {\"status\": \"NORMAL\"}, \"meteo1warrymyf\": {\"status\": \"NORMAL\"}, \"meteo2warrymyo\": {\"status\": \"NORMAL\"}, \"pcclientoprator\": {\"status\": \"NORMAL\"}, \"serverrecordera\": {\"status\": \"NORMAL\"}, \"serverrecorderb\": {\"status\": \"NORMAL\"}, \"vhfadcmainp1183\": {\"status\": \"SINGLE\", \"keterangan\": \"sag agasgaada \"}, \"vhfadcmains1181\": {\"status\": \"NORMAL\"}, \"vhfgndmainp1189\": {\"status\": \"NORMAL\"}, \"vhfemergency1215\": {\"status\": \"NORMAL\"}, \"vhfgndmains11915\": {\"status\": \"NORMAL\"}, \"informasiwarryiyx\": {\"status\": \"NORMAL\"}, \"vhfadcbackupp1183\": {\"status\": \"NORMAL\"}, \"vhfadcbackups1181\": {\"status\": \"NORMAL\"}, \"vhfgndbackupp1189\": {\"status\": \"NORMAL\"}, \"pcrecorderplayback\": {\"status\": \"NORMAL\"}, \"vhfermakassarp1239\": {\"status\": \"NORMAL\"}, \"vhfermakassars1259\": {\"status\": \"NORMAL\"}, \"vhfgndbackups11915\": {\"status\": \"NORMAL\"}, \"control&spvconsolea\": {\"status\": \"NORMAL\"}, \"control&spvconsoleb\": {\"status\": \"NORMAL\"}, \"vhfappeastmainp1240\": {\"status\": \"NORMAL\"}, \"vhfappwestmainp1251\": {\"status\": \"NORMAL\"}, \"vhfappdirecmainp1232\": {\"status\": \"NORMAL\"}, \"vhfappdirecmains1245\": {\"status\": \"NORMAL\"}, \"vhfappeastmains12285\": {\"status\": \"NORMAL\"}, \"vhfappwestmains12355\": {\"status\": \"NORMAL\"}, \"vhfappwestbackupp1251\": {\"status\": \"NORMAL\"}, \"vhfappdirecbackupp1232\": {\"status\": \"NORMAL\"}}','2025-10-23 11:42:58','2025-10-23 11:42:58'),(12,'SIANG-24/10/2025-CNSD','SIANG','2025-10-24','15:43:00','joko','','SIANG24102025CNSA','1. joko\n2. testttt\n3. wqeqewe','{\"dme\": {\"status\": \"NORMAL\"}, \"adsb\": {\"status\": \"NORMAL\"}, \"cwp1\": {\"status\": \"NORMAL\"}, \"cwp2\": {\"status\": \"NORMAL\"}, \"cwp3\": {\"status\": \"NORMAL\"}, \"cwp4\": {\"status\": \"NORMAL\"}, \"cwp5\": {\"status\": \"NORMAL\"}, \"cwp6\": {\"status\": \"NORMAL\"}, \"cwp7\": {\"status\": \"NORMAL\"}, \"cwp8\": {\"status\": \"NORMAL\"}, \"cwp9\": {\"status\": \"NORMAL\"}, \"dvor\": {\"status\": \"NORMAL\"}, \"cwp10\": {\"status\": \"NORMAL\"}, \"cwp12\": {\"status\": \"NORMAL\"}, \"ilstdme\": {\"status\": \"NORMAL\"}, \"cwp11cdu\": {\"status\": \"NORMAL\"}, \"vccsbca15\": {\"status\": \"NORMAL\"}, \"vccsbcb19\": {\"status\": \"NORMAL\"}, \"mssrrdp1&2\": {\"status\": \"NORMAL\"}, \"mssrrmm1&2\": {\"status\": \"NORMAL\"}, \"mssrsmp1&2\": {\"status\": \"NORMAL\"}, \"vccsgpif14\": {\"status\": \"NORMAL\"}, \"atisservera\": {\"status\": \"NORMAL\"}, \"atisserverb\": {\"status\": \"NORMAL\"}, \"bo1warrzpze\": {\"status\": \"NORMAL\"}, \"bo2warrymyo\": {\"status\": \"NORMAL\"}, \"mssrlcms1&2\": {\"status\": \"NORMAL\"}, \"serveramsca\": {\"status\": \"NORMAL\"}, \"serveramscb\": {\"status\": \"NORMAL\"}, \"vccserif110\": {\"status\": \"NORMAL\"}, \"vhfatis1282\": {\"status\": \"NORMAL\"}, \"ilsglidepath\": {\"status\": \"NORMAL\"}, \"ilslocalizer\": {\"status\": \"NORMAL\"}, \"komputeradps\": {\"status\": \"NORMAL\"}, \"vccsgatex201\": {\"status\": \"NORMAL\"}, \"vccsgatex202\": {\"status\": \"NORMAL\"}, \"vccsgatex203\": {\"status\": \"NORMAL\"}, \"vccsgatex204\": {\"status\": \"NORMAL\"}, \"vhfcdup12165\": {\"status\": \"NORMAL\"}, \"vhfcdus12185\": {\"status\": \"NORMAL\"}, \"ntpserver&gps\": {\"status\": \"NORMAL\"}, \"vhferubli1257\": {\"status\": \"NORMAL\"}, \"vhferupkn1341\": {\"status\": \"NORMAL\"}, \"meteo1warrymyf\": {\"status\": \"NORMAL\"}, \"meteo2warrymyo\": {\"status\": \"NORMAL\"}, \"pcclientoprator\": {\"status\": \"NORMAL\"}, \"serverrecordera\": {\"status\": \"NORMAL\"}, \"serverrecorderb\": {\"status\": \"NORMAL\"}, \"vhfadcmainp1183\": {\"status\": \"NORMAL\"}, \"vhfadcmains1181\": {\"status\": \"NORMAL\"}, \"vhfgndmainp1189\": {\"status\": \"U/S\", \"keterangan\": \"f asfas fafa\"}, \"vhfemergency1215\": {\"status\": \"NORMAL\"}, \"vhfgndmains11915\": {\"status\": \"NORMAL\"}, \"informasiwarryiyx\": {\"status\": \"NORMAL\"}, \"vhfadcbackupp1183\": {\"status\": \"NORMAL\"}, \"vhfadcbackups1181\": {\"status\": \"NORMAL\"}, \"vhfgndbackupp1189\": {\"status\": \"NORMAL\"}, \"pcrecorderplayback\": {\"status\": \"NORMAL\"}, \"vhfermakassarp1239\": {\"status\": \"NORMAL\"}, \"vhfermakassars1259\": {\"status\": \"NORMAL\"}, \"vhfgndbackups11915\": {\"status\": \"NORMAL\"}, \"control&spvconsolea\": {\"status\": \"NORMAL\"}, \"control&spvconsoleb\": {\"status\": \"NORMAL\"}, \"vhfappeastmainp1240\": {\"status\": \"NORMAL\"}, \"vhfappwestmainp1251\": {\"status\": \"NORMAL\"}, \"vhfappdirecmainp1232\": {\"status\": \"NORMAL\"}, \"vhfappdirecmains1245\": {\"status\": \"NORMAL\"}, \"vhfappeastmains12285\": {\"status\": \"NORMAL\"}, \"vhfappwestmains12355\": {\"status\": \"NORMAL\"}, \"vhfappwestbackupp1251\": {\"status\": \"NORMAL\"}, \"vhfappdirecbackupp1232\": {\"status\": \"NORMAL\"}}','2025-10-23 11:43:52','2025-10-23 11:43:52'),(13,'MALAM-24/10/2025-CNSD','MALAM','2025-10-24','21:43:00','testttt','','MALAM24102025CNSA','1. Andi Julianto\n2. joko\n3. testttt','{\"dme\": {\"status\": \"NORMAL\"}, \"adsb\": {\"status\": \"NORMAL\"}, \"cwp1\": {\"status\": \"NORMAL\"}, \"cwp2\": {\"status\": \"NORMAL\"}, \"cwp3\": {\"status\": \"NORMAL\"}, \"cwp4\": {\"status\": \"NORMAL\"}, \"cwp5\": {\"status\": \"NORMAL\"}, \"cwp6\": {\"status\": \"NORMAL\"}, \"cwp7\": {\"status\": \"NORMAL\"}, \"cwp8\": {\"status\": \"NORMAL\"}, \"cwp9\": {\"status\": \"NORMAL\"}, \"dvor\": {\"status\": \"NORMAL\"}, \"cwp10\": {\"status\": \"NORMAL\"}, \"cwp12\": {\"status\": \"NORMAL\"}, \"ilstdme\": {\"status\": \"NORMAL\"}, \"cwp11cdu\": {\"status\": \"NORMAL\"}, \"vccsbca15\": {\"status\": \"NORMAL\"}, \"vccsbcb19\": {\"status\": \"NORMAL\"}, \"mssrrdp1&2\": {\"status\": \"NORMAL\"}, \"mssrrmm1&2\": {\"status\": \"NORMAL\"}, \"mssrsmp1&2\": {\"status\": \"NORMAL\"}, \"vccsgpif14\": {\"status\": \"NORMAL\"}, \"atisservera\": {\"status\": \"NORMAL\"}, \"atisserverb\": {\"status\": \"NORMAL\"}, \"bo1warrzpze\": {\"status\": \"NORMAL\"}, \"bo2warrymyo\": {\"status\": \"NORMAL\"}, \"mssrlcms1&2\": {\"status\": \"NORMAL\"}, \"serveramsca\": {\"status\": \"NORMAL\"}, \"serveramscb\": {\"status\": \"NORMAL\"}, \"vccserif110\": {\"status\": \"NORMAL\"}, \"vhfatis1282\": {\"status\": \"NORMAL\"}, \"ilsglidepath\": {\"status\": \"NORMAL\"}, \"ilslocalizer\": {\"status\": \"NORMAL\"}, \"komputeradps\": {\"status\": \"NORMAL\"}, \"vccsgatex201\": {\"status\": \"NORMAL\"}, \"vccsgatex202\": {\"status\": \"NORMAL\"}, \"vccsgatex203\": {\"status\": \"NORMAL\"}, \"vccsgatex204\": {\"status\": \"NORMAL\"}, \"vhfcdup12165\": {\"status\": \"NORMAL\"}, \"vhfcdus12185\": {\"status\": \"NORMAL\"}, \"ntpserver&gps\": {\"status\": \"NORMAL\"}, \"vhferubli1257\": {\"status\": \"NORMAL\"}, \"vhferupkn1341\": {\"status\": \"NORMAL\"}, \"meteo1warrymyf\": {\"status\": \"NORMAL\"}, \"meteo2warrymyo\": {\"status\": \"NORMAL\"}, \"pcclientoprator\": {\"status\": \"NORMAL\"}, \"serverrecordera\": {\"status\": \"NORMAL\"}, \"serverrecorderb\": {\"status\": \"NORMAL\"}, \"vhfadcmainp1183\": {\"status\": \"NORMAL\"}, \"vhfadcmains1181\": {\"status\": \"GANGGUAN\", \"keterangan\": \"a sgfasg asga fas fasfd\"}, \"vhfgndmainp1189\": {\"status\": \"NORMAL\"}, \"vhfemergency1215\": {\"status\": \"NORMAL\"}, \"vhfgndmains11915\": {\"status\": \"NORMAL\"}, \"informasiwarryiyx\": {\"status\": \"NORMAL\"}, \"vhfadcbackupp1183\": {\"status\": \"NORMAL\"}, \"vhfadcbackups1181\": {\"status\": \"NORMAL\"}, \"vhfgndbackupp1189\": {\"status\": \"NORMAL\"}, \"pcrecorderplayback\": {\"status\": \"NORMAL\"}, \"vhfermakassarp1239\": {\"status\": \"NORMAL\"}, \"vhfermakassars1259\": {\"status\": \"NORMAL\"}, \"vhfgndbackups11915\": {\"status\": \"NORMAL\"}, \"control&spvconsolea\": {\"status\": \"NORMAL\"}, \"control&spvconsoleb\": {\"status\": \"NORMAL\"}, \"vhfappeastmainp1240\": {\"status\": \"NORMAL\"}, \"vhfappwestmainp1251\": {\"status\": \"NORMAL\"}, \"vhfappdirecmainp1232\": {\"status\": \"NORMAL\"}, \"vhfappdirecmains1245\": {\"status\": \"NORMAL\"}, \"vhfappeastmains12285\": {\"status\": \"NORMAL\"}, \"vhfappwestmains12355\": {\"status\": \"NORMAL\"}, \"vhfappwestbackupp1251\": {\"status\": \"NORMAL\"}, \"vhfappdirecbackupp1232\": {\"status\": \"NORMAL\"}}','2025-10-23 11:44:16','2025-10-23 11:44:16'),(14,'PAGI-25/10/2025-CNSD','PAGI','2025-10-25','08:44:00','Andi Julianto','','PAGI25102025CNSA','1. Andi Julianto\n2. joko\n3. wqeqewe','{\"dme\": {\"status\": \"NORMAL\"}, \"adsb\": {\"status\": \"NORMAL\"}, \"cwp1\": {\"status\": \"NORMAL\"}, \"cwp2\": {\"status\": \"NORMAL\"}, \"cwp3\": {\"status\": \"NORMAL\"}, \"cwp4\": {\"status\": \"NORMAL\"}, \"cwp5\": {\"status\": \"NORMAL\"}, \"cwp6\": {\"status\": \"NORMAL\"}, \"cwp7\": {\"status\": \"NORMAL\"}, \"cwp8\": {\"status\": \"NORMAL\"}, \"cwp9\": {\"status\": \"NORMAL\"}, \"dvor\": {\"status\": \"NORMAL\"}, \"cwp10\": {\"status\": \"NORMAL\"}, \"cwp12\": {\"status\": \"NORMAL\"}, \"ilstdme\": {\"status\": \"NORMAL\"}, \"cwp11cdu\": {\"status\": \"NORMAL\"}, \"vccsbca15\": {\"status\": \"NORMAL\"}, \"vccsbcb19\": {\"status\": \"NORMAL\"}, \"mssrrdp1&2\": {\"status\": \"NORMAL\"}, \"mssrrmm1&2\": {\"status\": \"NORMAL\"}, \"mssrsmp1&2\": {\"status\": \"NORMAL\"}, \"vccsgpif14\": {\"status\": \"NORMAL\"}, \"atisservera\": {\"status\": \"NORMAL\"}, \"atisserverb\": {\"status\": \"NORMAL\"}, \"bo1warrzpze\": {\"status\": \"NORMAL\"}, \"bo2warrymyo\": {\"status\": \"NORMAL\"}, \"mssrlcms1&2\": {\"status\": \"NORMAL\"}, \"serveramsca\": {\"status\": \"NORMAL\"}, \"serveramscb\": {\"status\": \"NORMAL\"}, \"vccserif110\": {\"status\": \"NORMAL\"}, \"vhfatis1282\": {\"status\": \"NORMAL\"}, \"ilsglidepath\": {\"status\": \"NORMAL\"}, \"ilslocalizer\": {\"status\": \"NORMAL\"}, \"komputeradps\": {\"status\": \"NORMAL\"}, \"vccsgatex201\": {\"status\": \"NORMAL\"}, \"vccsgatex202\": {\"status\": \"NORMAL\"}, \"vccsgatex203\": {\"status\": \"NORMAL\"}, \"vccsgatex204\": {\"status\": \"NORMAL\"}, \"vhfcdup12165\": {\"status\": \"NORMAL\"}, \"vhfcdus12185\": {\"status\": \"NORMAL\"}, \"ntpserver&gps\": {\"status\": \"NORMAL\"}, \"vhferubli1257\": {\"status\": \"NORMAL\"}, \"vhferupkn1341\": {\"status\": \"NORMAL\"}, \"meteo1warrymyf\": {\"status\": \"NORMAL\"}, \"meteo2warrymyo\": {\"status\": \"NORMAL\"}, \"pcclientoprator\": {\"status\": \"NORMAL\"}, \"serverrecordera\": {\"status\": \"NORMAL\"}, \"serverrecorderb\": {\"status\": \"NORMAL\"}, \"vhfadcmainp1183\": {\"status\": \"NORMAL\"}, \"vhfadcmains1181\": {\"status\": \"NORMAL\"}, \"vhfgndmainp1189\": {\"status\": \"NORMAL\"}, \"vhfemergency1215\": {\"status\": \"NORMAL\"}, \"vhfgndmains11915\": {\"status\": \"NORMAL\"}, \"informasiwarryiyx\": {\"status\": \"NORMAL\"}, \"vhfadcbackupp1183\": {\"status\": \"NORMAL\"}, \"vhfadcbackups1181\": {\"status\": \"NORMAL\"}, \"vhfgndbackupp1189\": {\"status\": \"NORMAL\"}, \"pcrecorderplayback\": {\"status\": \"NORMAL\"}, \"vhfermakassarp1239\": {\"status\": \"NORMAL\"}, \"vhfermakassars1259\": {\"status\": \"NORMAL\"}, \"vhfgndbackups11915\": {\"status\": \"NORMAL\"}, \"control&spvconsolea\": {\"status\": \"NORMAL\"}, \"control&spvconsoleb\": {\"status\": \"NORMAL\"}, \"vhfappeastmainp1240\": {\"status\": \"NORMAL\"}, \"vhfappwestmainp1251\": {\"status\": \"NORMAL\"}, \"vhfappdirecmainp1232\": {\"status\": \"SINGLE\", \"keterangan\": \"asgasga gagssa\"}, \"vhfappdirecmains1245\": {\"status\": \"NORMAL\"}, \"vhfappeastmains12285\": {\"status\": \"NORMAL\"}, \"vhfappwestmains12355\": {\"status\": \"NORMAL\"}, \"vhfappwestbackupp1251\": {\"status\": \"NORMAL\"}, \"vhfappdirecbackupp1232\": {\"status\": \"NORMAL\"}}','2025-10-23 11:44:42','2025-10-23 11:44:42'),(15,'SIANG-25/10/2025-CNSD','SIANG','2025-10-25','14:44:00','joko','','SIANG25102025CNSA','1. joko\n2. joko\n3. joko\n4. testttt','{\"dme\": {\"status\": \"NORMAL\"}, \"adsb\": {\"status\": \"NORMAL\"}, \"cwp1\": {\"status\": \"NORMAL\"}, \"cwp2\": {\"status\": \"NORMAL\"}, \"cwp3\": {\"status\": \"NORMAL\"}, \"cwp4\": {\"status\": \"NORMAL\"}, \"cwp5\": {\"status\": \"NORMAL\"}, \"cwp6\": {\"status\": \"NORMAL\"}, \"cwp7\": {\"status\": \"NORMAL\"}, \"cwp8\": {\"status\": \"NORMAL\"}, \"cwp9\": {\"status\": \"NORMAL\"}, \"dvor\": {\"status\": \"NORMAL\"}, \"cwp10\": {\"status\": \"NORMAL\"}, \"cwp12\": {\"status\": \"NORMAL\"}, \"ilstdme\": {\"status\": \"NORMAL\"}, \"cwp11cdu\": {\"status\": \"NORMAL\"}, \"vccsbca15\": {\"status\": \"NORMAL\"}, \"vccsbcb19\": {\"status\": \"NORMAL\"}, \"mssrrdp1&2\": {\"status\": \"NORMAL\"}, \"mssrrmm1&2\": {\"status\": \"NORMAL\"}, \"mssrsmp1&2\": {\"status\": \"NORMAL\"}, \"vccsgpif14\": {\"status\": \"NORMAL\"}, \"atisservera\": {\"status\": \"NORMAL\"}, \"atisserverb\": {\"status\": \"NORMAL\"}, \"bo1warrzpze\": {\"status\": \"NORMAL\"}, \"bo2warrymyo\": {\"status\": \"NORMAL\"}, \"mssrlcms1&2\": {\"status\": \"NORMAL\"}, \"serveramsca\": {\"status\": \"NORMAL\"}, \"serveramscb\": {\"status\": \"NORMAL\"}, \"vccserif110\": {\"status\": \"NORMAL\"}, \"vhfatis1282\": {\"status\": \"NORMAL\"}, \"ilsglidepath\": {\"status\": \"NORMAL\"}, \"ilslocalizer\": {\"status\": \"NORMAL\"}, \"komputeradps\": {\"status\": \"NORMAL\"}, \"vccsgatex201\": {\"status\": \"NORMAL\"}, \"vccsgatex202\": {\"status\": \"NORMAL\"}, \"vccsgatex203\": {\"status\": \"NORMAL\"}, \"vccsgatex204\": {\"status\": \"NORMAL\"}, \"vhfcdup12165\": {\"status\": \"NORMAL\"}, \"vhfcdus12185\": {\"status\": \"NORMAL\"}, \"ntpserver&gps\": {\"status\": \"NORMAL\"}, \"vhferubli1257\": {\"status\": \"NORMAL\"}, \"vhferupkn1341\": {\"status\": \"NORMAL\"}, \"meteo1warrymyf\": {\"status\": \"NORMAL\"}, \"meteo2warrymyo\": {\"status\": \"NORMAL\"}, \"pcclientoprator\": {\"status\": \"NORMAL\"}, \"serverrecordera\": {\"status\": \"NORMAL\"}, \"serverrecorderb\": {\"status\": \"NORMAL\"}, \"vhfadcmainp1183\": {\"status\": \"NORMAL\"}, \"vhfadcmains1181\": {\"status\": \"NORMAL\"}, \"vhfgndmainp1189\": {\"status\": \"NORMAL\"}, \"vhfemergency1215\": {\"status\": \"NORMAL\"}, \"vhfgndmains11915\": {\"status\": \"NORMAL\"}, \"informasiwarryiyx\": {\"status\": \"NORMAL\"}, \"vhfadcbackupp1183\": {\"status\": \"NORMAL\"}, \"vhfadcbackups1181\": {\"status\": \"NORMAL\"}, \"vhfgndbackupp1189\": {\"status\": \"NORMAL\"}, \"pcrecorderplayback\": {\"status\": \"NORMAL\"}, \"vhfermakassarp1239\": {\"status\": \"NORMAL\"}, \"vhfermakassars1259\": {\"status\": \"NORMAL\"}, \"vhfgndbackups11915\": {\"status\": \"NORMAL\"}, \"control&spvconsolea\": {\"status\": \"NORMAL\"}, \"control&spvconsoleb\": {\"status\": \"NORMAL\"}, \"vhfappeastmainp1240\": {\"status\": \"NORMAL\"}, \"vhfappwestmainp1251\": {\"status\": \"SINGLE\", \"keterangan\": \"kjabfka jfsba faklf amfna lfma\"}, \"vhfappdirecmainp1232\": {\"status\": \"NORMAL\"}, \"vhfappdirecmains1245\": {\"status\": \"NORMAL\"}, \"vhfappeastmains12285\": {\"status\": \"NORMAL\"}, \"vhfappwestmains12355\": {\"status\": \"NORMAL\"}, \"vhfappwestbackupp1251\": {\"status\": \"NORMAL\"}, \"vhfappdirecbackupp1232\": {\"status\": \"NORMAL\"}}','2025-10-23 11:45:19','2025-10-23 11:45:19'),(16,'MALAM-25/10/2025-CNSD','MALAM','2025-10-25','18:45:00','testttt','','MALAM25102025CNSA','1. testttt\n2. joko\n3. Andi Julianto','{\"dme\": {\"status\": \"NORMAL\"}, \"adsb\": {\"status\": \"NORMAL\"}, \"cwp1\": {\"status\": \"NORMAL\"}, \"cwp2\": {\"status\": \"NORMAL\"}, \"cwp3\": {\"status\": \"NORMAL\"}, \"cwp4\": {\"status\": \"NORMAL\"}, \"cwp5\": {\"status\": \"NORMAL\"}, \"cwp6\": {\"status\": \"NORMAL\"}, \"cwp7\": {\"status\": \"NORMAL\"}, \"cwp8\": {\"status\": \"NORMAL\"}, \"cwp9\": {\"status\": \"NORMAL\"}, \"dvor\": {\"status\": \"NORMAL\"}, \"cwp10\": {\"status\": \"NORMAL\"}, \"cwp12\": {\"status\": \"NORMAL\"}, \"ilstdme\": {\"status\": \"NORMAL\"}, \"cwp11cdu\": {\"status\": \"NORMAL\"}, \"vccsbca15\": {\"status\": \"NORMAL\"}, \"vccsbcb19\": {\"status\": \"NORMAL\"}, \"mssrrdp1&2\": {\"status\": \"NORMAL\"}, \"mssrrmm1&2\": {\"status\": \"NORMAL\"}, \"mssrsmp1&2\": {\"status\": \"NORMAL\"}, \"vccsgpif14\": {\"status\": \"NORMAL\"}, \"atisservera\": {\"status\": \"NORMAL\"}, \"atisserverb\": {\"status\": \"NORMAL\"}, \"bo1warrzpze\": {\"status\": \"NORMAL\"}, \"bo2warrymyo\": {\"status\": \"NORMAL\"}, \"mssrlcms1&2\": {\"status\": \"NORMAL\"}, \"serveramsca\": {\"status\": \"NORMAL\"}, \"serveramscb\": {\"status\": \"NORMAL\"}, \"vccserif110\": {\"status\": \"NORMAL\"}, \"vhfatis1282\": {\"status\": \"NORMAL\"}, \"ilsglidepath\": {\"status\": \"NORMAL\"}, \"ilslocalizer\": {\"status\": \"NORMAL\"}, \"komputeradps\": {\"status\": \"NORMAL\"}, \"vccsgatex201\": {\"status\": \"NORMAL\"}, \"vccsgatex202\": {\"status\": \"NORMAL\"}, \"vccsgatex203\": {\"status\": \"NORMAL\"}, \"vccsgatex204\": {\"status\": \"NORMAL\"}, \"vhfcdup12165\": {\"status\": \"NORMAL\"}, \"vhfcdus12185\": {\"status\": \"NORMAL\"}, \"ntpserver&gps\": {\"status\": \"NORMAL\"}, \"vhferubli1257\": {\"status\": \"NORMAL\"}, \"vhferupkn1341\": {\"status\": \"NORMAL\"}, \"meteo1warrymyf\": {\"status\": \"NORMAL\"}, \"meteo2warrymyo\": {\"status\": \"NORMAL\"}, \"pcclientoprator\": {\"status\": \"NORMAL\"}, \"serverrecordera\": {\"status\": \"NORMAL\"}, \"serverrecorderb\": {\"status\": \"NORMAL\"}, \"vhfadcmainp1183\": {\"status\": \"NORMAL\"}, \"vhfadcmains1181\": {\"status\": \"NORMAL\"}, \"vhfgndmainp1189\": {\"status\": \"SINGLE\", \"keterangan\": \" afsfa gasg ag asgasf sgf\"}, \"vhfemergency1215\": {\"status\": \"NORMAL\"}, \"vhfgndmains11915\": {\"status\": \"NORMAL\"}, \"informasiwarryiyx\": {\"status\": \"NORMAL\"}, \"vhfadcbackupp1183\": {\"status\": \"NORMAL\"}, \"vhfadcbackups1181\": {\"status\": \"NORMAL\"}, \"vhfgndbackupp1189\": {\"status\": \"NORMAL\"}, \"pcrecorderplayback\": {\"status\": \"NORMAL\"}, \"vhfermakassarp1239\": {\"status\": \"NORMAL\"}, \"vhfermakassars1259\": {\"status\": \"NORMAL\"}, \"vhfgndbackups11915\": {\"status\": \"NORMAL\"}, \"control&spvconsolea\": {\"status\": \"NORMAL\"}, \"control&spvconsoleb\": {\"status\": \"NORMAL\"}, \"vhfappeastmainp1240\": {\"status\": \"NORMAL\"}, \"vhfappwestmainp1251\": {\"status\": \"NORMAL\"}, \"vhfappdirecmainp1232\": {\"status\": \"NORMAL\"}, \"vhfappdirecmains1245\": {\"status\": \"NORMAL\"}, \"vhfappeastmains12285\": {\"status\": \"NORMAL\"}, \"vhfappwestmains12355\": {\"status\": \"NORMAL\"}, \"vhfappwestbackupp1251\": {\"status\": \"NORMAL\"}, \"vhfappdirecbackupp1232\": {\"status\": \"NORMAL\"}}','2025-10-23 11:45:39','2025-10-23 11:45:39'),(17,'PAGI-26/10/2025-CNSD','PAGI','2025-10-26','08:45:00','Andi Julianto','','PAGI26102025CNSA','1. joko\n2. testttt\n3. wqeqewe\n4. joko','{\"dme\": {\"status\": \"NORMAL\"}, \"adsb\": {\"status\": \"NORMAL\"}, \"cwp1\": {\"status\": \"NORMAL\"}, \"cwp2\": {\"status\": \"NORMAL\"}, \"cwp3\": {\"status\": \"NORMAL\"}, \"cwp4\": {\"status\": \"NORMAL\"}, \"cwp5\": {\"status\": \"NORMAL\"}, \"cwp6\": {\"status\": \"NORMAL\"}, \"cwp7\": {\"status\": \"NORMAL\"}, \"cwp8\": {\"status\": \"NORMAL\"}, \"cwp9\": {\"status\": \"NORMAL\"}, \"dvor\": {\"status\": \"NORMAL\"}, \"cwp10\": {\"status\": \"NORMAL\"}, \"cwp12\": {\"status\": \"NORMAL\"}, \"ilstdme\": {\"status\": \"NORMAL\"}, \"cwp11cdu\": {\"status\": \"NORMAL\"}, \"vccsbca15\": {\"status\": \"NORMAL\"}, \"vccsbcb19\": {\"status\": \"NORMAL\"}, \"mssrrdp1&2\": {\"status\": \"NORMAL\"}, \"mssrrmm1&2\": {\"status\": \"NORMAL\"}, \"mssrsmp1&2\": {\"status\": \"NORMAL\"}, \"vccsgpif14\": {\"status\": \"NORMAL\"}, \"atisservera\": {\"status\": \"NORMAL\"}, \"atisserverb\": {\"status\": \"NORMAL\"}, \"bo1warrzpze\": {\"status\": \"NORMAL\"}, \"bo2warrymyo\": {\"status\": \"NORMAL\"}, \"mssrlcms1&2\": {\"status\": \"NORMAL\"}, \"serveramsca\": {\"status\": \"NORMAL\"}, \"serveramscb\": {\"status\": \"NORMAL\"}, \"vccserif110\": {\"status\": \"NORMAL\"}, \"vhfatis1282\": {\"status\": \"NORMAL\"}, \"ilsglidepath\": {\"status\": \"NORMAL\"}, \"ilslocalizer\": {\"status\": \"NORMAL\"}, \"komputeradps\": {\"status\": \"NORMAL\"}, \"vccsgatex201\": {\"status\": \"NORMAL\"}, \"vccsgatex202\": {\"status\": \"NORMAL\"}, \"vccsgatex203\": {\"status\": \"NORMAL\"}, \"vccsgatex204\": {\"status\": \"NORMAL\"}, \"vhfcdup12165\": {\"status\": \"NORMAL\"}, \"vhfcdus12185\": {\"status\": \"NORMAL\"}, \"ntpserver&gps\": {\"status\": \"NORMAL\"}, \"vhferubli1257\": {\"status\": \"NORMAL\"}, \"vhferupkn1341\": {\"status\": \"NORMAL\"}, \"meteo1warrymyf\": {\"status\": \"NORMAL\"}, \"meteo2warrymyo\": {\"status\": \"NORMAL\"}, \"pcclientoprator\": {\"status\": \"NORMAL\"}, \"serverrecordera\": {\"status\": \"NORMAL\"}, \"serverrecorderb\": {\"status\": \"NORMAL\"}, \"vhfadcmainp1183\": {\"status\": \"NORMAL\"}, \"vhfadcmains1181\": {\"status\": \"NORMAL\"}, \"vhfgndmainp1189\": {\"status\": \"NORMAL\"}, \"vhfemergency1215\": {\"status\": \"NORMAL\"}, \"vhfgndmains11915\": {\"status\": \"NORMAL\"}, \"informasiwarryiyx\": {\"status\": \"NORMAL\"}, \"vhfadcbackupp1183\": {\"status\": \"NORMAL\"}, \"vhfadcbackups1181\": {\"status\": \"NORMAL\"}, \"vhfgndbackupp1189\": {\"status\": \"NORMAL\"}, \"pcrecorderplayback\": {\"status\": \"NORMAL\"}, \"vhfermakassarp1239\": {\"status\": \"NORMAL\"}, \"vhfermakassars1259\": {\"status\": \"NORMAL\"}, \"vhfgndbackups11915\": {\"status\": \"NORMAL\"}, \"control&spvconsolea\": {\"status\": \"NORMAL\"}, \"control&spvconsoleb\": {\"status\": \"NORMAL\"}, \"vhfappeastmainp1240\": {\"status\": \"NORMAL\"}, \"vhfappwestmainp1251\": {\"status\": \"NORMAL\"}, \"vhfappdirecmainp1232\": {\"status\": \"U/S\", \"keterangan\": \".a ,mmnsflamfg nal;s gmkagas\"}, \"vhfappdirecmains1245\": {\"status\": \"NORMAL\"}, \"vhfappeastmains12285\": {\"status\": \"NORMAL\"}, \"vhfappwestmains12355\": {\"status\": \"NORMAL\"}, \"vhfappwestbackupp1251\": {\"status\": \"NORMAL\"}, \"vhfappdirecbackupp1232\": {\"status\": \"NORMAL\"}}','2025-10-23 11:46:05','2025-10-23 11:46:05'),(18,'SIANG-26/10/2025-CNSD','SIANG','2025-10-26','09:46:00','Andi Julianto','testttt','SIANG26102025CNSA','1. Andi Julianto\n2. Andi Julianto\n3. joko\n4. testttt','{\"dme\": {\"status\": \"NORMAL\"}, \"adsb\": {\"status\": \"NORMAL\"}, \"cwp1\": {\"status\": \"NORMAL\"}, \"cwp2\": {\"status\": \"NORMAL\"}, \"cwp3\": {\"status\": \"NORMAL\"}, \"cwp4\": {\"status\": \"NORMAL\"}, \"cwp5\": {\"status\": \"NORMAL\"}, \"cwp6\": {\"status\": \"NORMAL\"}, \"cwp7\": {\"status\": \"NORMAL\"}, \"cwp8\": {\"status\": \"NORMAL\"}, \"cwp9\": {\"status\": \"NORMAL\"}, \"dvor\": {\"status\": \"NORMAL\"}, \"cwp10\": {\"status\": \"NORMAL\"}, \"cwp12\": {\"status\": \"NORMAL\"}, \"ilstdme\": {\"status\": \"NORMAL\"}, \"cwp11cdu\": {\"status\": \"NORMAL\"}, \"vccsbca15\": {\"status\": \"NORMAL\"}, \"vccsbcb19\": {\"status\": \"NORMAL\"}, \"mssrrdp1&2\": {\"status\": \"NORMAL\"}, \"mssrrmm1&2\": {\"status\": \"NORMAL\"}, \"mssrsmp1&2\": {\"status\": \"NORMAL\"}, \"vccsgpif14\": {\"status\": \"NORMAL\"}, \"atisservera\": {\"status\": \"NORMAL\"}, \"atisserverb\": {\"status\": \"NORMAL\"}, \"bo1warrzpze\": {\"status\": \"NORMAL\"}, \"bo2warrymyo\": {\"status\": \"NORMAL\"}, \"mssrlcms1&2\": {\"status\": \"NORMAL\"}, \"serveramsca\": {\"status\": \"NORMAL\"}, \"serveramscb\": {\"status\": \"NORMAL\"}, \"vccserif110\": {\"status\": \"NORMAL\"}, \"vhfatis1282\": {\"status\": \"NORMAL\"}, \"ilsglidepath\": {\"status\": \"NORMAL\"}, \"ilslocalizer\": {\"status\": \"NORMAL\"}, \"komputeradps\": {\"status\": \"NORMAL\"}, \"vccsgatex201\": {\"status\": \"NORMAL\"}, \"vccsgatex202\": {\"status\": \"NORMAL\"}, \"vccsgatex203\": {\"status\": \"NORMAL\"}, \"vccsgatex204\": {\"status\": \"NORMAL\"}, \"vhfcdup12165\": {\"status\": \"NORMAL\"}, \"vhfcdus12185\": {\"status\": \"NORMAL\"}, \"ntpserver&gps\": {\"status\": \"NORMAL\"}, \"vhferubli1257\": {\"status\": \"NORMAL\"}, \"vhferupkn1341\": {\"status\": \"NORMAL\"}, \"meteo1warrymyf\": {\"status\": \"NORMAL\"}, \"meteo2warrymyo\": {\"status\": \"NORMAL\"}, \"pcclientoprator\": {\"status\": \"NORMAL\"}, \"serverrecordera\": {\"status\": \"NORMAL\"}, \"serverrecorderb\": {\"status\": \"NORMAL\"}, \"vhfadcmainp1183\": {\"status\": \"SINGLE\", \"keterangan\": \"k amnfal fkaf ;as,fasfas\"}, \"vhfadcmains1181\": {\"status\": \"NORMAL\"}, \"vhfgndmainp1189\": {\"status\": \"NORMAL\"}, \"vhfemergency1215\": {\"status\": \"NORMAL\"}, \"vhfgndmains11915\": {\"status\": \"NORMAL\"}, \"informasiwarryiyx\": {\"status\": \"NORMAL\"}, \"vhfadcbackupp1183\": {\"status\": \"NORMAL\"}, \"vhfadcbackups1181\": {\"status\": \"NORMAL\"}, \"vhfgndbackupp1189\": {\"status\": \"NORMAL\"}, \"pcrecorderplayback\": {\"status\": \"NORMAL\"}, \"vhfermakassarp1239\": {\"status\": \"NORMAL\"}, \"vhfermakassars1259\": {\"status\": \"NORMAL\"}, \"vhfgndbackups11915\": {\"status\": \"NORMAL\"}, \"control&spvconsolea\": {\"status\": \"NORMAL\"}, \"control&spvconsoleb\": {\"status\": \"NORMAL\"}, \"vhfappeastmainp1240\": {\"status\": \"NORMAL\"}, \"vhfappwestmainp1251\": {\"status\": \"NORMAL\"}, \"vhfappdirecmainp1232\": {\"status\": \"NORMAL\"}, \"vhfappdirecmains1245\": {\"status\": \"NORMAL\"}, \"vhfappeastmains12285\": {\"status\": \"NORMAL\"}, \"vhfappwestmains12355\": {\"status\": \"NORMAL\"}, \"vhfappwestbackupp1251\": {\"status\": \"NORMAL\"}, \"vhfappdirecbackupp1232\": {\"status\": \"NORMAL\"}}','2025-10-23 11:46:28','2025-10-23 11:46:28'),(19,'MALAM-26/10/2025-CNSD','MALAM','2025-10-26','21:46:00','Andi Julianto','','MALAM26102025CNSA','1. wqeqewe\n2. Andi Julianto\n3. joko\n4. joko','{\"dme\": {\"status\": \"NORMAL\"}, \"adsb\": {\"status\": \"NORMAL\"}, \"cwp1\": {\"status\": \"NORMAL\"}, \"cwp2\": {\"status\": \"NORMAL\"}, \"cwp3\": {\"status\": \"NORMAL\"}, \"cwp4\": {\"status\": \"NORMAL\"}, \"cwp5\": {\"status\": \"NORMAL\"}, \"cwp6\": {\"status\": \"NORMAL\"}, \"cwp7\": {\"status\": \"NORMAL\"}, \"cwp8\": {\"status\": \"NORMAL\"}, \"cwp9\": {\"status\": \"NORMAL\"}, \"dvor\": {\"status\": \"NORMAL\"}, \"cwp10\": {\"status\": \"NORMAL\"}, \"cwp12\": {\"status\": \"NORMAL\"}, \"ilstdme\": {\"status\": \"NORMAL\"}, \"cwp11cdu\": {\"status\": \"NORMAL\"}, \"vccsbca15\": {\"status\": \"NORMAL\"}, \"vccsbcb19\": {\"status\": \"NORMAL\"}, \"mssrrdp1&2\": {\"status\": \"NORMAL\"}, \"mssrrmm1&2\": {\"status\": \"NORMAL\"}, \"mssrsmp1&2\": {\"status\": \"NORMAL\"}, \"vccsgpif14\": {\"status\": \"NORMAL\"}, \"atisservera\": {\"status\": \"NORMAL\"}, \"atisserverb\": {\"status\": \"NORMAL\"}, \"bo1warrzpze\": {\"status\": \"NORMAL\"}, \"bo2warrymyo\": {\"status\": \"NORMAL\"}, \"mssrlcms1&2\": {\"status\": \"NORMAL\"}, \"serveramsca\": {\"status\": \"NORMAL\"}, \"serveramscb\": {\"status\": \"NORMAL\"}, \"vccserif110\": {\"status\": \"NORMAL\"}, \"vhfatis1282\": {\"status\": \"NORMAL\"}, \"ilsglidepath\": {\"status\": \"NORMAL\"}, \"ilslocalizer\": {\"status\": \"NORMAL\"}, \"komputeradps\": {\"status\": \"NORMAL\"}, \"vccsgatex201\": {\"status\": \"NORMAL\"}, \"vccsgatex202\": {\"status\": \"NORMAL\"}, \"vccsgatex203\": {\"status\": \"NORMAL\"}, \"vccsgatex204\": {\"status\": \"NORMAL\"}, \"vhfcdup12165\": {\"status\": \"NORMAL\"}, \"vhfcdus12185\": {\"status\": \"NORMAL\"}, \"ntpserver&gps\": {\"status\": \"NORMAL\"}, \"vhferubli1257\": {\"status\": \"NORMAL\"}, \"vhferupkn1341\": {\"status\": \"NORMAL\"}, \"meteo1warrymyf\": {\"status\": \"NORMAL\"}, \"meteo2warrymyo\": {\"status\": \"NORMAL\"}, \"pcclientoprator\": {\"status\": \"NORMAL\"}, \"serverrecordera\": {\"status\": \"NORMAL\"}, \"serverrecorderb\": {\"status\": \"NORMAL\"}, \"vhfadcmainp1183\": {\"status\": \"NORMAL\"}, \"vhfadcmains1181\": {\"status\": \"SINGLE\", \"keterangan\": \".,a snmfdal.,s gfa.fd as;dad.am,a amd \"}, \"vhfgndmainp1189\": {\"status\": \"NORMAL\"}, \"vhfemergency1215\": {\"status\": \"NORMAL\"}, \"vhfgndmains11915\": {\"status\": \"NORMAL\"}, \"informasiwarryiyx\": {\"status\": \"NORMAL\"}, \"vhfadcbackupp1183\": {\"status\": \"NORMAL\"}, \"vhfadcbackups1181\": {\"status\": \"NORMAL\"}, \"vhfgndbackupp1189\": {\"status\": \"NORMAL\"}, \"pcrecorderplayback\": {\"status\": \"NORMAL\"}, \"vhfermakassarp1239\": {\"status\": \"NORMAL\"}, \"vhfermakassars1259\": {\"status\": \"NORMAL\"}, \"vhfgndbackups11915\": {\"status\": \"NORMAL\"}, \"control&spvconsolea\": {\"status\": \"NORMAL\"}, \"control&spvconsoleb\": {\"status\": \"NORMAL\"}, \"vhfappeastmainp1240\": {\"status\": \"NORMAL\"}, \"vhfappwestmainp1251\": {\"status\": \"NORMAL\"}, \"vhfappdirecmainp1232\": {\"status\": \"NORMAL\"}, \"vhfappdirecmains1245\": {\"status\": \"NORMAL\"}, \"vhfappeastmains12285\": {\"status\": \"NORMAL\"}, \"vhfappwestmains12355\": {\"status\": \"NORMAL\"}, \"vhfappwestbackupp1251\": {\"status\": \"NORMAL\"}, \"vhfappdirecbackupp1232\": {\"status\": \"NORMAL\"}}','2025-10-23 11:46:49','2025-10-23 11:46:49'),(20,'MALAM-02/11/2025-CNSD','Malam','2025-11-02','03:35:00','joko',NULL,'MALAM02112025CNSA','1. joko\r\n2. Andi Julianto\r\n3. testttt','{\"dme\": {\"status\": \"NORMAL\"}, \"adsb\": {\"status\": \"NORMAL\"}, \"cwp1\": {\"status\": \"NORMAL\"}, \"cwp2\": {\"status\": \"NORMAL\"}, \"cwp3\": {\"status\": \"NORMAL\"}, \"cwp4\": {\"status\": \"NORMAL\"}, \"cwp5\": {\"status\": \"NORMAL\"}, \"cwp6\": {\"status\": \"NORMAL\"}, \"cwp7\": {\"status\": \"NORMAL\"}, \"cwp8\": {\"status\": \"NORMAL\"}, \"cwp9\": {\"status\": \"NORMAL\"}, \"dvor\": {\"status\": \"NORMAL\"}, \"cwp10\": {\"status\": \"NORMAL\"}, \"cwp12\": {\"status\": \"NORMAL\"}, \"cwp11_cdu\": {\"status\": \"NORMAL\"}, \"ils_t_dme\": {\"status\": \"NORMAL\"}, \"mssr_rdp_1_2\": {\"status\": \"NORMAL\"}, \"mssr_rmm_1_2\": {\"status\": \"NORMAL\"}, \"mssr_smp_1_2\": {\"status\": \"NORMAL\"}, \"vccs_bca_1_5\": {\"status\": \"NORMAL\"}, \"vccs_bcb_1_9\": {\"status\": \"NORMAL\"}, \"atis_server_a\": {\"status\": \"NORMAL\"}, \"atis_server_b\": {\"status\": \"NORMAL\"}, \"bo_1_warrzpze\": {\"status\": \"NORMAL\"}, \"bo_2_warrymyo\": {\"status\": \"NORMAL\"}, \"ils_localizer\": {\"status\": \"NORMAL\"}, \"komputer_adps\": {\"status\": \"GANGGUAN\", \"keterangan\": \"hjtioewOGEARBLK\\r\\nWEG\'We;g[w\\r\\ngergpkwEP]\\r\\nWhgekrwHGKW[p\"}, \"mssr_lcms_1_2\": {\"status\": \"NORMAL\"}, \"server_amsc_a\": {\"status\": \"NORMAL\"}, \"server_amsc_b\": {\"status\": \"NORMAL\"}, \"vccs_gpif_1_4\": {\"status\": \"NORMAL\"}, \"vhf_atis_1282\": {\"status\": \"NORMAL\"}, \"ils_glide_path\": {\"status\": \"NORMAL\"}, \"ntp_server_gps\": {\"status\": \"NORMAL\"}, \"vccs_erif_1_10\": {\"status\": \"NORMAL\"}, \"vccs_gate_x2_01\": {\"status\": \"NORMAL\"}, \"vccs_gate_x2_02\": {\"status\": \"NORMAL\"}, \"vccs_gate_x2_03\": {\"status\": \"NORMAL\"}, \"vccs_gate_x2_04\": {\"status\": \"NORMAL\"}, \"vhf_cdu_p_12165\": {\"status\": \"NORMAL\"}, \"vhf_cdu_s_12185\": {\"status\": \"NORMAL\"}, \"meteo_1_warrymyf\": {\"status\": \"NORMAL\"}, \"meteo_2_warrymyo\": {\"status\": \"NORMAL\"}, \"vhf_er_ubli_1257\": {\"status\": \"NORMAL\"}, \"vhf_er_upkn_1341\": {\"status\": \"NORMAL\"}, \"pc_client_oprator\": {\"status\": \"NORMAL\"}, \"server_recorder_a\": {\"status\": \"NORMAL\"}, \"server_recorder_b\": {\"status\": \"NORMAL\"}, \"informasi_warryiyx\": {\"status\": \"NORMAL\"}, \"vhf_emergency_1215\": {\"status\": \"NORMAL\"}, \"vhf_adc_main_p_1183\": {\"status\": \"NORMAL\"}, \"vhf_adc_main_s_1181\": {\"status\": \"NORMAL\"}, \"vhf_gnd_main_p_1189\": {\"status\": \"NORMAL\"}, \"pc_recorder_playback\": {\"status\": \"NORMAL\"}, \"vhf_gnd_main_s_11915\": {\"status\": \"NORMAL\"}, \"control_spv_console_a\": {\"status\": \"NORMAL\"}, \"control_spv_console_b\": {\"status\": \"NORMAL\"}, \"vhf_adc_backup_p_1183\": {\"status\": \"NORMAL\"}, \"vhf_adc_backup_s_1181\": {\"status\": \"NORMAL\"}, \"vhf_gnd_backup_p_1189\": {\"status\": \"SINGLE\", \"keterangan\": \"fadsfdsvdcveher ergaeg\\r\\nageawgwagaerw\\r\\ng\\r\\ngewgwe\"}, \"vhf_er_makassar_p_1239\": {\"status\": \"NORMAL\"}, \"vhf_er_makassar_s_1259\": {\"status\": \"U/S\", \"keterangan\": \"afafdsvxss\"}, \"vhf_gnd_backup_s_11915\": {\"status\": \"NORMAL\"}, \"vhf_app_east_main_p_1240\": {\"status\": \"NORMAL\"}, \"vhf_app_west_main_p_1251\": {\"status\": \"NORMAL\"}, \"vhf_app_direc_main_p_1232\": {\"status\": \"GANGGUAN\", \"keterangan\": \"dasadgagrgb\"}, \"vhf_app_direc_main_s_1245\": {\"status\": \"NORMAL\"}, \"vhf_app_east_main_s_12285\": {\"status\": \"NORMAL\"}, \"vhf_app_west_main_s_12355\": {\"status\": \"NORMAL\"}, \"vhf_app_west_backup_p_1251\": {\"status\": \"NORMAL\"}, \"vhf_app_direc_backup_p_1232\": {\"status\": \"NORMAL\"}}','2025-11-01 20:35:37','2025-11-01 20:35:37');
+/*!40000 ALTER TABLE `daily_cnsd_reports` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `daily_tfp_reports`
+--
+
+DROP TABLE IF EXISTS `daily_tfp_reports`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `daily_tfp_reports` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `report_id_custom` varchar(255) DEFAULT NULL,
+  `dinas` varchar(50) DEFAULT NULL,
+  `tanggal` date DEFAULT NULL,
+  `jam` time DEFAULT NULL,
+  `mantek` varchar(255) DEFAULT NULL,
+  `acknowledge` varchar(255) DEFAULT NULL,
+  `kode` varchar(255) DEFAULT NULL,
+  `jadwal_dinas` text,
+  `equipment_status` json DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `daily_tfp_reports`
+--
+
+LOCK TABLES `daily_tfp_reports` WRITE;
+/*!40000 ALTER TABLE `daily_tfp_reports` DISABLE KEYS */;
+INSERT INTO `daily_tfp_reports` VALUES (1,NULL,'PAGI','2025-10-09','11:28:00','','','PAGI09102025TFPA','johan\nrosana\najul','{\"cctv\": {\"status\": \"NORMAL\"}, \"powergp\": {\"status\": \"NORMAL\"}, \"powermm\": {\"status\": \"NORMAL\"}, \"powerrx\": {\"status\": \"NORMAL\"}, \"powertx\": {\"status\": \"NORMAL\"}, \"ruangrx\": {\"status\": \"NORMAL\"}, \"telepon\": {\"status\": \"NORMAL\"}, \"doorlock\": {\"status\": \"NORMAL\"}, \"gedungtx\": {\"status\": \"NORMAL\"}, \"poweraro\": {\"status\": \"NORMAL\"}, \"powerpia\": {\"status\": \"NORMAL\"}, \"ruangaro\": {\"status\": \"NORMAL\"}, \"ruangcbt\": {\"status\": \"NORMAL\"}, \"ruangk2s\": {\"status\": \"NORMAL\"}, \"ruangpia\": {\"status\": \"NORMAL\"}, \"acpackage\": {\"status\": \"NORMAL\"}, \"lifttower\": {\"status\": \"NORMAL\"}, \"poweramsc\": {\"status\": \"NORMAL\"}, \"powerdvor\": {\"status\": \"NORMAL\"}, \"powermssr\": {\"status\": \"NORMAL\"}, \"powervccs\": {\"status\": \"NORMAL\"}, \"powervsat\": {\"status\": \"NORMAL\"}, \"ruangamsc\": {\"status\": \"NORMAL\"}, \"sheltergp\": {\"status\": \"NORMAL\"}, \"sheltermm\": {\"status\": \"NORMAL\"}, \"exhaustfan\": {\"status\": \"NORMAL\"}, \"ups&genset\": {\"status\": \"NORMAL\"}, \"acsplitduct\": {\"status\": \"NORMAL\"}, \"acsplitwall\": {\"status\": \"NORMAL\"}, \"gedungradar\": {\"status\": \"NORMAL\"}, \"powerasmgcs\": {\"status\": \"NORMAL\"}, \"shelterdvor\": {\"status\": \"NORMAL\"}, \"obstaclelight\": {\"status\": \"NORMAL\"}, \"radiotrunking\": {\"status\": \"NORMAL\"}, \"ruanggm&sekgm\": {\"status\": \"NORMAL\"}, \"toiletltg,1,2\": {\"status\": \"NORMAL\"}, \"koridorltg,1,2\": {\"status\": \"NORMAL\"}, \"poweratcsystem\": {\"status\": \"NORMAL\"}, \"powerlocalizer\": {\"status\": \"NORMAL\"}, \"powerrecording\": {\"status\": \"NORMAL\"}, \"rotatingbeacon\": {\"status\": \"NORMAL\"}, \"acstandingfloor\": {\"status\": \"NORMAL\"}, \"ruangkontrolapp\": {\"status\": \"NORMAL\"}, \"gensetgedungdvor\": {\"status\": \"NORMAL\"}, \"ruangistrahatapp\": {\"status\": \"NORMAL\"}, \"ruangrapatoprasi\": {\"status\": \"NORMAL\"}, \"ruangrapatteknik\": {\"status\": \"NORMAL\"}, \"shelterlocalizer\": {\"status\": \"NORMAL\"}, \"gensetgedungradar\": {\"status\": \"NORMAL\"}, \"ruangequipmentaob\": {\"status\": \"NORMAL\"}, \"ruangistrahattower\": {\"status\": \"NORMAL\"}, \"ruangmanagerteknik\": {\"status\": \"NORMAL\"}, \"upsu1topazgedungtx\": {\"status\": \"NORMAL\"}, \"lampupjugedungradar\": {\"status\": \"NORMAL\"}, \"lampusorotpapannama\": {\"status\": \"NORMAL\"}, \"ruangstandbyteknisi\": {\"status\": \"NORMAL\"}, \"upsu2pillergedungtx\": {\"status\": \"NORMAL\"}, \"ruangkontrolatctower\": {\"status\": \"NORMAL\"}, \"ruangrapatmanagerial\": {\"status\": \"NORMAL\"}, \"ruangmanagerialoprasi\": {\"status\": \"NORMAL\"}, \"ruangmanagerialteknik\": {\"status\": \"NORMAL\"}, \"upsu3pillergedungradar\": {\"status\": \"NORMAL\"}, \"upsu6daleequipmentroom\": {\"status\": \"NORMAL\"}, \"upsu7daleequipmentroom\": {\"status\": \"NORMAL\"}, \"upsu8gamaequipmentroom\": {\"status\": \"NORMAL\"}, \"ruangadministrasi&keuangan\": {\"status\": \"NORMAL\"}, \"upsu9protectaequipmentroom\": {\"status\": \"NORMAL\"}}','2025-10-09 04:29:15','2025-10-09 04:29:15'),(2,'PAGI-09/10/2025-TFP','PAGI','2025-10-09','11:45:00','joko','Andi Julianto','PAGI09102025TFPA','ajul\nnopi','{\"cctv\": {\"status\": \"NORMAL\"}, \"powergp\": {\"status\": \"NORMAL\"}, \"powermm\": {\"status\": \"NORMAL\"}, \"powerrx\": {\"status\": \"NORMAL\"}, \"powertx\": {\"status\": \"GANGGUAN\", \"keterangan\": \"meledak\"}, \"ruangrx\": {\"status\": \"NORMAL\"}, \"telepon\": {\"status\": \"NORMAL\"}, \"doorlock\": {\"status\": \"NORMAL\"}, \"gedungtx\": {\"status\": \"NORMAL\"}, \"poweraro\": {\"status\": \"NORMAL\"}, \"powerpia\": {\"status\": \"NORMAL\"}, \"ruangaro\": {\"status\": \"NORMAL\"}, \"ruangcbt\": {\"status\": \"NORMAL\"}, \"ruangk2s\": {\"status\": \"NORMAL\"}, \"ruangpia\": {\"status\": \"NORMAL\"}, \"acpackage\": {\"status\": \"NORMAL\"}, \"lifttower\": {\"status\": \"NORMAL\"}, \"poweramsc\": {\"status\": \"NORMAL\"}, \"powerdvor\": {\"status\": \"NORMAL\"}, \"powermssr\": {\"status\": \"NORMAL\"}, \"powervccs\": {\"status\": \"NORMAL\"}, \"powervsat\": {\"status\": \"NORMAL\"}, \"ruangamsc\": {\"status\": \"NORMAL\"}, \"sheltergp\": {\"status\": \"NORMAL\"}, \"sheltermm\": {\"status\": \"NORMAL\"}, \"exhaustfan\": {\"status\": \"NORMAL\"}, \"ups&genset\": {\"status\": \"NORMAL\"}, \"acsplitduct\": {\"status\": \"NORMAL\"}, \"acsplitwall\": {\"status\": \"NORMAL\"}, \"gedungradar\": {\"status\": \"NORMAL\"}, \"powerasmgcs\": {\"status\": \"NORMAL\"}, \"shelterdvor\": {\"status\": \"NORMAL\"}, \"obstaclelight\": {\"status\": \"NORMAL\"}, \"radiotrunking\": {\"status\": \"NORMAL\"}, \"ruanggm&sekgm\": {\"status\": \"NORMAL\"}, \"toiletltg,1,2\": {\"status\": \"NORMAL\"}, \"koridorltg,1,2\": {\"status\": \"NORMAL\"}, \"poweratcsystem\": {\"status\": \"NORMAL\"}, \"powerlocalizer\": {\"status\": \"NORMAL\"}, \"powerrecording\": {\"status\": \"NORMAL\"}, \"rotatingbeacon\": {\"status\": \"NORMAL\"}, \"acstandingfloor\": {\"status\": \"NORMAL\"}, \"ruangkontrolapp\": {\"status\": \"NORMAL\"}, \"gensetgedungdvor\": {\"status\": \"NORMAL\"}, \"ruangistrahatapp\": {\"status\": \"NORMAL\"}, \"ruangrapatoprasi\": {\"status\": \"NORMAL\"}, \"ruangrapatteknik\": {\"status\": \"NORMAL\"}, \"shelterlocalizer\": {\"status\": \"NORMAL\"}, \"gensetgedungradar\": {\"status\": \"NORMAL\"}, \"ruangequipmentaob\": {\"status\": \"NORMAL\"}, \"ruangistrahattower\": {\"status\": \"NORMAL\"}, \"ruangmanagerteknik\": {\"status\": \"NORMAL\"}, \"upsu1topazgedungtx\": {\"status\": \"NORMAL\"}, \"lampupjugedungradar\": {\"status\": \"NORMAL\"}, \"lampusorotpapannama\": {\"status\": \"NORMAL\"}, \"ruangstandbyteknisi\": {\"status\": \"NORMAL\"}, \"upsu2pillergedungtx\": {\"status\": \"NORMAL\"}, \"ruangkontrolatctower\": {\"status\": \"NORMAL\"}, \"ruangrapatmanagerial\": {\"status\": \"NORMAL\"}, \"ruangmanagerialoprasi\": {\"status\": \"NORMAL\"}, \"ruangmanagerialteknik\": {\"status\": \"NORMAL\"}, \"upsu3pillergedungradar\": {\"status\": \"NORMAL\"}, \"upsu6daleequipmentroom\": {\"status\": \"NORMAL\"}, \"upsu7daleequipmentroom\": {\"status\": \"NORMAL\"}, \"upsu8gamaequipmentroom\": {\"status\": \"NORMAL\"}, \"ruangadministrasi&keuangan\": {\"status\": \"NORMAL\"}, \"upsu9protectaequipmentroom\": {\"status\": \"NORMAL\"}}','2025-10-09 04:45:49','2025-10-09 04:45:49'),(3,'SIANG-21/10/2025-TFP','SIANG','2025-10-21','15:49:00','Andi Julianto','','SIANG21102025TFPA','1. joko\n2. Andi Julianto\n3. testttt','{\"cctv\": {\"status\": \"NORMAL\"}, \"powergp\": {\"status\": \"NORMAL\"}, \"powermm\": {\"status\": \"NORMAL\"}, \"powerrx\": {\"status\": \"NORMAL\"}, \"powertx\": {\"status\": \"GANGGUAN\", \"keterangan\": \"dasfa asf afas f\"}, \"ruangrx\": {\"status\": \"NORMAL\"}, \"telepon\": {\"status\": \"NORMAL\"}, \"doorlock\": {\"status\": \"NORMAL\"}, \"gedungtx\": {\"status\": \"NORMAL\"}, \"poweraro\": {\"status\": \"NORMAL\"}, \"powerpia\": {\"status\": \"NORMAL\"}, \"ruangaro\": {\"status\": \"NORMAL\"}, \"ruangcbt\": {\"status\": \"NORMAL\"}, \"ruangk2s\": {\"status\": \"NORMAL\"}, \"ruangpia\": {\"status\": \"NORMAL\"}, \"acpackage\": {\"status\": \"NORMAL\"}, \"lifttower\": {\"status\": \"NORMAL\"}, \"poweramsc\": {\"status\": \"NORMAL\"}, \"powerdvor\": {\"status\": \"NORMAL\"}, \"powermssr\": {\"status\": \"NORMAL\"}, \"powervccs\": {\"status\": \"NORMAL\"}, \"powervsat\": {\"status\": \"NORMAL\"}, \"ruangamsc\": {\"status\": \"NORMAL\"}, \"sheltergp\": {\"status\": \"NORMAL\"}, \"sheltermm\": {\"status\": \"NORMAL\"}, \"exhaustfan\": {\"status\": \"NORMAL\"}, \"ups&genset\": {\"status\": \"NORMAL\"}, \"acsplitduct\": {\"status\": \"NORMAL\"}, \"acsplitwall\": {\"status\": \"NORMAL\"}, \"gedungradar\": {\"status\": \"NORMAL\"}, \"powerasmgcs\": {\"status\": \"NORMAL\"}, \"shelterdvor\": {\"status\": \"NORMAL\"}, \"obstaclelight\": {\"status\": \"NORMAL\"}, \"radiotrunking\": {\"status\": \"NORMAL\"}, \"ruanggm&sekgm\": {\"status\": \"NORMAL\"}, \"toiletltg,1,2\": {\"status\": \"NORMAL\"}, \"koridorltg,1,2\": {\"status\": \"NORMAL\"}, \"poweratcsystem\": {\"status\": \"NORMAL\"}, \"powerlocalizer\": {\"status\": \"NORMAL\"}, \"powerrecording\": {\"status\": \"GANGGUAN\", \"keterangan\": \"dasgfas adsd as\"}, \"rotatingbeacon\": {\"status\": \"NORMAL\"}, \"acstandingfloor\": {\"status\": \"NORMAL\"}, \"ruangkontrolapp\": {\"status\": \"NORMAL\"}, \"gensetgedungdvor\": {\"status\": \"NORMAL\"}, \"ruangistrahatapp\": {\"status\": \"NORMAL\"}, \"ruangrapatoprasi\": {\"status\": \"NORMAL\"}, \"ruangrapatteknik\": {\"status\": \"NORMAL\"}, \"shelterlocalizer\": {\"status\": \"NORMAL\"}, \"gensetgedungradar\": {\"status\": \"NORMAL\"}, \"ruangequipmentaob\": {\"status\": \"NORMAL\"}, \"ruangistrahattower\": {\"status\": \"NORMAL\"}, \"ruangmanagerteknik\": {\"status\": \"NORMAL\"}, \"upsu1topazgedungtx\": {\"status\": \"NORMAL\"}, \"lampupjugedungradar\": {\"status\": \"NORMAL\"}, \"lampusorotpapannama\": {\"status\": \"NORMAL\"}, \"ruangstandbyteknisi\": {\"status\": \"NORMAL\"}, \"upsu2pillergedungtx\": {\"status\": \"NORMAL\"}, \"ruangkontrolatctower\": {\"status\": \"NORMAL\"}, \"ruangrapatmanagerial\": {\"status\": \"NORMAL\"}, \"ruangmanagerialoprasi\": {\"status\": \"NORMAL\"}, \"ruangmanagerialteknik\": {\"status\": \"NORMAL\"}, \"upsu3pillergedungradar\": {\"status\": \"NORMAL\"}, \"upsu6daleequipmentroom\": {\"status\": \"NORMAL\"}, \"upsu7daleequipmentroom\": {\"status\": \"NORMAL\"}, \"upsu8gamaequipmentroom\": {\"status\": \"NORMAL\"}, \"ruangadministrasi&keuangan\": {\"status\": \"NORMAL\"}, \"upsu9protectaequipmentroom\": {\"status\": \"NORMAL\"}}','2025-10-21 08:49:56','2025-10-21 10:17:32');
+/*!40000 ALTER TABLE `daily_tfp_reports` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `failed_jobs`
+--
+
+DROP TABLE IF EXISTS `failed_jobs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `failed_jobs` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `uuid` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `failed_jobs`
+--
+
+LOCK TABLES `failed_jobs` WRITE;
+/*!40000 ALTER TABLE `failed_jobs` DISABLE KEYS */;
+/*!40000 ALTER TABLE `failed_jobs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `job_batches`
+--
+
+DROP TABLE IF EXISTS `job_batches`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `job_batches` (
+  `id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `total_jobs` int NOT NULL,
+  `pending_jobs` int NOT NULL,
+  `failed_jobs` int NOT NULL,
+  `failed_job_ids` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `options` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `cancelled_at` int DEFAULT NULL,
+  `created_at` int NOT NULL,
+  `finished_at` int DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `job_batches`
+--
+
+LOCK TABLES `job_batches` WRITE;
+/*!40000 ALTER TABLE `job_batches` DISABLE KEYS */;
+/*!40000 ALTER TABLE `job_batches` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `jobs`
+--
+
+DROP TABLE IF EXISTS `jobs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `jobs` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `queue` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `attempts` tinyint unsigned NOT NULL,
+  `reserved_at` int unsigned DEFAULT NULL,
+  `available_at` int unsigned NOT NULL,
+  `created_at` int unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `jobs_queue_index` (`queue`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `jobs`
+--
+
+LOCK TABLES `jobs` WRITE;
+/*!40000 ALTER TABLE `jobs` DISABLE KEYS */;
+/*!40000 ALTER TABLE `jobs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `migrations`
+--
+
+DROP TABLE IF EXISTS `migrations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `migrations` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `migrations`
+--
+
+LOCK TABLES `migrations` WRITE;
+/*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
+INSERT INTO `migrations` VALUES (1,'0001_01_01_000001_create_cache_table',1),(2,'0001_01_01_000002_create_jobs_table',1);
+/*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `schedules_cnsd`
+--
+
+DROP TABLE IF EXISTS `schedules_cnsd`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `schedules_cnsd` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `schedule_id_custom` varchar(255) DEFAULT NULL,
+  `tanggal` date DEFAULT NULL,
+  `hari` varchar(50) DEFAULT NULL,
+  `dinas` varchar(50) DEFAULT NULL,
+  `teknisi_1` varchar(255) DEFAULT NULL,
+  `teknisi_2` varchar(255) DEFAULT NULL,
+  `teknisi_3` varchar(255) DEFAULT NULL,
+  `teknisi_4` varchar(255) DEFAULT NULL,
+  `teknisi_5` varchar(255) DEFAULT NULL,
+  `teknisi_6` varchar(255) DEFAULT NULL,
+  `kode` varchar(100) DEFAULT NULL,
+  `grup` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT 'CNSD',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `schedules_cnsd`
+--
+
+LOCK TABLES `schedules_cnsd` WRITE;
+/*!40000 ALTER TABLE `schedules_cnsd` DISABLE KEYS */;
+INSERT INTO `schedules_cnsd` VALUES (10,'SIANG-23/10/2025-CNSD','2025-10-23','Rabu','Siang','Andi Julianto','joko','testttt','Andi Julianto','joko','wqeqewe','SIANG-23/10/2025-CNSD','CNSD','2025-10-23 08:31:11','2025-10-23 10:50:55'),(11,'MALAM-23/10/2025-CNSD','2025-10-23','Rabu','Malam','joko','Andi Julianto','testttt','wqeqewe',NULL,NULL,'MALAM-23/10/2025-CNSD','CNSD','2025-10-23 11:35:49','2025-10-23 11:35:49'),(12,'PAGI-24/10/2025-CNSD','2025-10-24','Kamis','Pagi','Andi Julianto','joko','wqeqewe','testttt',NULL,NULL,'PAGI-24/10/2025-CNSD','CNSD','2025-10-23 11:36:14','2025-10-23 11:36:14'),(13,'SIANG-24/10/2025-CNSD','2025-10-24','Kamis','Siang','joko','testttt','wqeqewe',NULL,NULL,NULL,'SIANG-24/10/2025-CNSD','CNSD','2025-10-23 11:36:45','2025-10-23 11:36:45'),(15,'MALAM-24/10/2025-CNSD','2025-10-24','Kamis','Malam','Andi Julianto','joko','testttt',NULL,NULL,NULL,'MALAM-24/10/2025-CNSD','CNSD','2025-10-23 11:38:38','2025-10-23 11:38:38'),(16,'PAGI-25/10/2025-CNSD','2025-10-25','Jumat','Pagi','Andi Julianto','joko','wqeqewe',NULL,NULL,NULL,'PAGI-25/10/2025-CNSD','CNSD','2025-10-23 11:39:06','2025-10-23 11:39:06'),(17,'SIANG-25/10/2025-CNSD','2025-10-25','Jumat','Siang','joko','joko','joko','testttt',NULL,NULL,'SIANG-25/10/2025-CNSD','CNSD','2025-10-23 11:39:18','2025-10-23 11:39:18'),(18,'MALAM-25/10/2025-CNSD','2025-10-25','Jumat','Malam','testttt','joko','Andi Julianto',NULL,NULL,NULL,'MALAM-25/10/2025-CNSD','CNSD','2025-10-23 11:39:28','2025-10-23 11:39:28'),(19,'SIANG-26/10/2025-CNSD','2025-10-26','Sunday','Siang','Andi Julianto','Andi Julianto','joko','testttt','wqeqewe',NULL,'SIANG-26/10/2025-CNSD','CNSD','2025-10-23 11:39:44','2025-10-28 20:18:54'),(20,'PAGI-26/10/2025-CNSD','2025-10-26','Sabtu','Pagi','joko','testttt','wqeqewe','joko',NULL,NULL,'PAGI-26/10/2025-CNSD','CNSD','2025-10-23 11:40:15','2025-10-23 11:40:15'),(21,'MALAM-26/10/2025-CNSD','2025-10-26','Sabtu','Malam','wqeqewe','Andi Julianto','joko',NULL,'joko',NULL,'MALAM-26/10/2025-CNSD','CNSD','2025-10-23 11:40:31','2025-10-23 11:40:31'),(22,'MALAM-02/11/2025-CNSD','2025-11-02','Sunday','Malam','joko','Andi Julianto','testttt',NULL,NULL,NULL,'MALAM-02/11/2025-CNSD','CNSD','2025-11-01 20:34:52','2025-11-01 20:34:52');
+/*!40000 ALTER TABLE `schedules_cnsd` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `schedules_tfp`
+--
+
+DROP TABLE IF EXISTS `schedules_tfp`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `schedules_tfp` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `schedule_id_custom` varchar(255) DEFAULT NULL,
+  `tanggal` date DEFAULT NULL,
+  `hari` varchar(50) DEFAULT NULL,
+  `dinas` varchar(50) DEFAULT NULL,
+  `teknisi_1` varchar(255) DEFAULT NULL,
+  `teknisi_2` varchar(255) DEFAULT NULL,
+  `teknisi_3` varchar(255) DEFAULT NULL,
+  `teknisi_4` varchar(255) DEFAULT NULL,
+  `teknisi_5` varchar(255) DEFAULT NULL,
+  `teknisi_6` varchar(255) DEFAULT NULL,
+  `kode` varchar(100) DEFAULT NULL,
+  `grup` varchar(100) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `schedules_tfp`
+--
+
+LOCK TABLES `schedules_tfp` WRITE;
+/*!40000 ALTER TABLE `schedules_tfp` DISABLE KEYS */;
+INSERT INTO `schedules_tfp` VALUES (1,'MALAM-08/10/2025-TFP','2025-10-08','Rabu','Malam','wqeqewe',NULL,NULL,NULL,NULL,NULL,'MALAM-08/10/2025-TFP','TFP','2025-10-08 19:49:20','2025-10-08 19:49:20'),(2,'MALAM-20/10/2025-TFP','2025-10-19','Minggu','Malam','Andi Julianto','joko','testttt',NULL,NULL,NULL,'MALAM-20/10/2025-TFP','TFP','2025-10-20 16:50:36','2025-10-21 10:32:12'),(3,'SIANG-21/10/2025-TFP','2025-10-21','Senin','Siang','joko','Andi Julianto','testttt',NULL,NULL,NULL,'SIANG-21/10/2025-TFP','TFP','2025-10-21 07:49:24','2025-10-21 10:36:49'),(4,'MALAM-23/10/2025-TFP','2025-10-23','Rabu','Malam','Andi Julianto','joko','testttt',NULL,NULL,NULL,'MALAM-23/10/2025-TFP','TFP','2025-10-23 18:50:35','2025-10-23 18:50:35');
+/*!40000 ALTER TABLE `schedules_tfp` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tfp_activities`
+--
+
+DROP TABLE IF EXISTS `tfp_activities`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `tfp_activities` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `kode` varchar(255) DEFAULT NULL,
+  `dinas` varchar(50) DEFAULT NULL,
+  `tanggal` date DEFAULT NULL,
+  `waktu_mulai` time DEFAULT NULL,
+  `waktu_selesai` time DEFAULT NULL,
+  `alat` varchar(255) DEFAULT NULL,
+  `permasalahan` text,
+  `tindakan` text,
+  `hasil` text,
+  `status` varchar(50) DEFAULT NULL,
+  `waktu_terputus` varchar(100) DEFAULT NULL,
+  `teknisi` json DEFAULT NULL,
+  `lampiran` json DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tfp_activities`
+--
+
+LOCK TABLES `tfp_activities` WRITE;
+/*!40000 ALTER TABLE `tfp_activities` DISABLE KEYS */;
+INSERT INTO `tfp_activities` VALUES (1,'KG-TFP-743401','Malam','2025-10-08','19:46:00','21:45:00','Antena','aagwhgdhdhdh','hdfhdhdfkjd','dfhdfjdfjd','Selesai','2 jam','[\"Andi Julianto\", \"joko\"]','[\"F:\\\\Project\\\\Airnav-App\\\\attachments\\\\attachment-tfp-1760894702088-89437506_p0.jpg\"]','2025-10-09 15:47:43','2025-10-19 17:25:02'),(2,'KG-TFP-703853','Malam','2025-10-17','10:25:00','00:25:00','fsaf asfa sf',' afas fasfs','f sfafasf asfas f','asf asfa  asfasf','Selesai','1 jam 30 mnt','[\"joko\", \"Andi Julianto\"]','[\"F:\\\\Project\\\\Airnav-App\\\\attachments\\\\attachment-tfp-1760894736274-Dark Queen.png\", \"F:\\\\Project\\\\Airnav-App\\\\attachments\\\\attachment-tfp-1760894757594-uhdpaper.com-download-hd-wallpaper-1920x1080-658.0_a.jpg\", \"F:\\\\Project\\\\Airnav-App\\\\attachments\\\\attachment-tfp-1760894757598-wallpaperflare.com_wallpaper (1).jpg\", \"F:\\\\Project\\\\Airnav-App\\\\attachments\\\\attachment-tfp-1760894757644-wallpaperflare.com_wallpaper2.jpg\", \"F:\\\\Project\\\\Airnav-App\\\\attachments\\\\attachment-tfp-1761037183186-wp4346768-asus-tuf-wallpapers.jpg\", \"F:\\\\Project\\\\Airnav-App\\\\attachments\\\\attachment-tfp-1761040140728-89437506_p0.jpg\"]','2025-10-19 17:25:36','2025-10-21 09:49:00'),(3,'KG-TFP-166126','Siang','2025-10-21','15:49:00','16:49:00',' fa sfas fas fas fa',' gas adasd a',' agsas gag dsdg','sdgsdg sdhgs hsdh sdh s','Selesai','1 jam','[\"joko\"]','[\"F:\\\\Project\\\\Airnav-App\\\\attachments\\\\attachment-tfp-1761040201899-kda-league-of-legends-neon-smoke-black-background-cosplay-1024x768-300.jpg\", \"F:\\\\Project\\\\Airnav-App\\\\attachments\\\\attachment-tfp-1761040201902-kda-league-of-legends-neon-smoke-black-background-cosplay-1080x2400-300.jpg\", \"F:\\\\Project\\\\Airnav-App\\\\attachments\\\\attachment-tfp-1761040201905-kda-league-of-legends-neon-smoke-black-background-cosplay-1920x1080-300.jpg\"]','2025-10-21 09:50:01','2025-10-21 09:50:01'),(4,'KG-TFP-927198','Siang','2025-10-21','16:52:00','17:52:00','lkna lkaslkfa',' ,mlksf ,asl lnas','las djaklsgfoia ra ','laks rlaosf k rl','Selesai','1 jam','[\"Andi Julianto\"]','[\"F:\\\\Project\\\\Airnav-App\\\\attachments\\\\attachment-tfp-1761043956743-89437506_p0.jpg\"]','2025-10-21 10:52:36','2025-10-21 10:52:36');
+/*!40000 ALTER TABLE `tfp_activities` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tfp_equipment`
+--
+
+DROP TABLE IF EXISTS `tfp_equipment`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `tfp_equipment` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tfp_equipment`
+--
+
+LOCK TABLES `tfp_equipment` WRITE;
+/*!40000 ALTER TABLE `tfp_equipment` DISABLE KEYS */;
+INSERT INTO `tfp_equipment` VALUES (1,'Power Tx'),(2,'Power Rx'),(3,'Power Recording'),(4,'Power VCCS'),(5,'Power AMSC'),(6,'Power VSAT'),(7,'Power DVOR'),(8,'Power Localizer'),(9,'Power GP'),(10,'Power MM'),(11,'Power ARO'),(12,'Power MSSR'),(13,'Power ASMGCS'),(14,'Power ATC System'),(15,'Power PIA'),(16,'UPS & GENSET'),(17,'UPS.U1(TOPAZ): Gedung TX'),(18,'UPS.U3(PILLER): Gedung Radar'),(19,'UPS U6(DALE): Equipment Room'),(20,'UPS U7(DALE): Equipment Room'),(21,'UPS U8(GAMA): Equipment Room'),(22,'UPS U9(PROTECTA): Equipment Room'),(23,'UPS U2(PILLER): Gedung TX'),(24,'GENSET: Gedung Radar'),(25,'GENSET: Gedung DVOR'),(26,'AC Split Duct'),(27,'AC Standing Floor'),(28,'AC Package'),(29,'AC Split Wall'),(30,'Exhaust Fan'),(31,'Lift Tower'),(32,'Telepon'),(33,'Door lock'),(34,'CCTV'),(35,'Radio Trunking'),(36,'Ruang Kontrol ATC Tower'),(37,'Ruang Kontrol APP'),(38,'Ruang Equipment AOB'),(39,'Ruang Manager Teknik'),(40,'Ruang Managerial Teknik'),(41,'Ruang Standby Teknisi'),(42,'Ruang Istrahat APP'),(43,'Ruang Istrahat Tower'),(44,'Ruang PIA'),(45,'Ruang ARO'),(46,'Ruang AMSC'),(47,'Ruang CBT'),(48,'Ruang K2S'),(49,'Ruang Administrasi & Keuangan'),(50,'Ruang Managerial Oprasi'),(51,'Ruang GM & Sek GM'),(52,'Ruang Rapat Managerial'),(53,'Ruang Rapat Oprasi'),(54,'Ruang Rapat Teknik'),(55,'Koridor Lt.G,1,2'),(56,'Toilet Lt.G,1,2'),(57,'Obstacle Light'),(58,'Rotating Beacon'),(59,'Gedung Radar'),(60,'Gedung TX'),(61,'Ruang RX'),(62,'Shelter DVOR'),(63,'Shelter GP'),(64,'Shelter MM'),(65,'Shelter Localizer'),(66,'Lampu Sorot Papan Nama'),(67,'Lampu PJU Gedung Radar');
+/*!40000 ALTER TABLE `tfp_equipment` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `users`
 --
 
@@ -1091,11 +1551,11 @@ CREATE TABLE `users` (
   `signature_url` text,
   `avatar_url` text,
   `phone_number` varchar(25) DEFAULT NULL,
-  `role` varchar(50) NOT NULL DEFAULT 'teknisi',
+  `role` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1104,8 +1564,88 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'andiharper','Andi Julianto','andiharper@gmail.com','$2b$10$u.XE6XPY9TTaW5WQiHm5xeb4qgBlcAqhsR8G5hLfYxF9JLjRaA0Pm','F:\\Project\\Airnav-App\\signatures\\signature-andiharper-1758555281061.png','F:\\Project\\Airnav-App\\avatars\\avatar-1-1758566739287.png','08515680132323','teknisi'),(2,'joko','joko','joko@gmail.com','$2b$10$vqPsDmeZvP94h.PCX5fZAehPRdvA6p0AzYBaVe3ODk5EZkBYUPa/i','F:\\Project\\Airnav-App\\signatures\\signature-joko-1758555426365.png',NULL,NULL,'teknisi'),(3,'testt','testttt','test@gmail.com','$2b$10$VqcebjA50knin02NbjrcOOWVUthgf1D3Z7DO5puHb1sJRQHXPjPTe','F:\\Project\\Airnav-App\\signatures\\signature-testt-1758559721603.png',NULL,NULL,'teknisi'),(4,'qweqwe','wqeqewe','eqweqwe@adawd.com','$2b$10$PVOBK5FyYP0w003KjwFyuu9vS9.Nl5PeO8r62VoFFIv8TYICJ/EB.','F:\\Project\\Airnav-App\\signatures\\signature-qweqwe-1758561928129.png',NULL,NULL,'teknisi'),(5,'Joko F.','Joko Febrianto','joko28282@gmail.com','$2b$10$lUv0iGPmbfvVcng.VWslDedSrFpIJ.OQnbCahGHv9eJFDTea8Pwji','D:\\Airnav App\\signatures\\signature-Joko F.-1758569150294.png','D:\\Airnav App\\avatars\\avatar-5-1758821635593.png','082266891860','teknisi'),(7,'admin','ADMIN','admin123@gmail.com','$2b$10$7YGsw.TuKOIh1lzYa7RxsOX0gcint/Snv.uFfpti00NGQXikyqTuK','D:\\Airnav App\\signatures\\signature-admin-1759859157172.png',NULL,NULL,'Manager');
+INSERT INTO `users` VALUES (1,'andiharper','Andi Julianto','andiharper@gmail.com','$2b$10$u.XE6XPY9TTaW5WQiHm5xeb4qgBlcAqhsR8G5hLfYxF9JLjRaA0Pm','F:\\Project\\Airnav-App\\signatures\\signature-1-1761216725158.png','F:\\Project\\Airnav-App\\avatars\\avatar-1-1759424130061.png','12512341241241','teknisi'),(2,'joko','joko','joko@gmail.com','$2b$10$vqPsDmeZvP94h.PCX5fZAehPRdvA6p0AzYBaVe3ODk5EZkBYUPa/i','F:\\Project\\Airnav-App\\signatures\\signature-joko-1758555426365.png',NULL,NULL,'teknisi'),(3,'testt','testttt','test@gmail.com','$2b$10$VqcebjA50knin02NbjrcOOWVUthgf1D3Z7DO5puHb1sJRQHXPjPTe','F:\\Project\\Airnav-App\\signatures\\signature-testt-1758559721603.png',NULL,NULL,'teknisi'),(4,'qweqwe','wqeqewe','eqweqwe@adawd.com','$2b$10$PVOBK5FyYP0w003KjwFyuu9vS9.Nl5PeO8r62VoFFIv8TYICJ/EB.','F:\\Project\\Airnav-App\\signatures\\signature-qweqwe-1758561928129.png',NULL,NULL,'teknisi'),(6,'harper','andijulian','andijuliant@gmail.com','$2b$10$RrhsAEvMfSNTYBZPniQrb.TFrIofEHd3hDGRez3snxd/8xc3Y2bNa','F:\\Project\\Airnav-App\\signatures\\signature-harper-1759420227538.png',NULL,NULL,'Supervisor'),(7,'andiwibowo','Andi WIbowo','andiwibowo@airnav.id','$2b$10$F79Q0djEj/Wi7K/gvKyXeeXAS2X3iMEo4/73yUETOOrLxCDQbMxUi','F:\\Project\\Airnav-App\\signatures\\signature-andiwibowo-1759420342195.png',NULL,NULL,'Manager'),(8,'admin','admin','admin@gmail.com','$2y$10$zhQu0Bd7GMm6u.eQRrqYpeBN2dCtWN4JgMkc4XceuJL8RxTqjsuOO','signatures/admin-229d8b4e-6160-4b77-adaa-a9e7223359a2.png',NULL,NULL,'Manager');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `workorders_cnsd`
+--
+
+DROP TABLE IF EXISTS `workorders_cnsd`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `workorders_cnsd` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `wo_id_custom` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `tertuju` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `shift` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `shift_dinas_nama` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `tanggal` date DEFAULT NULL,
+  `jam_display` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `deskripsi` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `output` json DEFAULT NULL,
+  `output_lainnya` varchar(225) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `jam_mulai` time DEFAULT NULL,
+  `jam_selesai` time DEFAULT NULL,
+  `status_pelaksanaan` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `catatan_kendala` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `usulan` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `catatan_pemberi_tugas` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `verify_manager` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `verify_supervisor` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `verify_pelaksana` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `workorders_cnsd`
+--
+
+LOCK TABLES `workorders_cnsd` WRITE;
+/*!40000 ALTER TABLE `workorders_cnsd` DISABLE KEYS */;
+INSERT INTO `workorders_cnsd` VALUES (3,'WO-CNSD-0003','CNSD',NULL,'1. Khoirul M.A.\r\n2. Andi Julianto','2025-10-30',NULL,'ddqdawdaqefg','[\"Lembar Meter Reading\", \"Status Peralatan\", \"Pencatatan Logbook\"]',NULL,'14:22:00','14:22:00','selesai','dsfadsfesd','fadsfdsaf','fsdfads',NULL,NULL,NULL),(4,'WO-CNSD-0004','CNSD',NULL,'1. Joko Febrianto\r\n2. Nur Hukim','2025-10-30',NULL,'wrewefwa','[\"Lembar Meter Reading\", \"Status Peralatan\"]',NULL,'19:00:00','07:00:00','selesai','aegreag','erggrea','erghraegera',NULL,NULL,NULL),(5,'WO-CNSD-0005','CNSD','MALAM','1. Joko Febrianto\r\n2. john','2025-10-31',NULL,'dfggsdgfdsfsdf','[\"Lembar Meter Reading\", \"Status Peralatan\", \"Pencatatan Logbook\"]',NULL,'00:46:00','12:46:00','selesai','fdssdfsgs','dfsfgdfd','hfgshhsd',NULL,NULL,NULL);
+/*!40000 ALTER TABLE `workorders_cnsd` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `workorders_tfp`
+--
+
+DROP TABLE IF EXISTS `workorders_tfp`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `workorders_tfp` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `wo_id_custom` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `tertuju` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `shift` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `shift_dinas_nama` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `tanggal` date DEFAULT NULL,
+  `jam_display` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `deskripsi` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `output` json DEFAULT NULL,
+  `jam_mulai` time DEFAULT NULL,
+  `jam_selesai` time DEFAULT NULL,
+  `status_pelaksanaan` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `catatan_kendala` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `usulan` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `catatan_pemberi_tugas` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `verify_manager` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `verify_supervisor` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `verify_pelaksana` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `workorders_tfp`
+--
+
+LOCK TABLES `workorders_tfp` WRITE;
+/*!40000 ALTER TABLE `workorders_tfp` DISABLE KEYS */;
+/*!40000 ALTER TABLE `workorders_tfp` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1114,6 +1654,78 @@ UNLOCK TABLES;
 
 --
 -- Dumping routines for database 'airnav_logbook_db'
+--
+
+--
+-- Current Database: `atlas_db`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `atlas_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+
+USE `atlas_db`;
+
+--
+-- Table structure for table `alembic_version`
+--
+
+DROP TABLE IF EXISTS `alembic_version`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `alembic_version` (
+  `version_num` varchar(32) NOT NULL,
+  PRIMARY KEY (`version_num`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `alembic_version`
+--
+
+LOCK TABLES `alembic_version` WRITE;
+/*!40000 ALTER TABLE `alembic_version` DISABLE KEYS */;
+INSERT INTO `alembic_version` VALUES ('092f59fff2e5');
+/*!40000 ALTER TABLE `alembic_version` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `user` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(64) DEFAULT NULL,
+  `fullname` varchar(120) DEFAULT NULL,
+  `email` varchar(120) DEFAULT NULL,
+  `jabatan` varchar(64) DEFAULT NULL,
+  `password_hash` varchar(256) DEFAULT NULL,
+  `signature` text,
+  `ap` int NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `ix_user_email` (`email`),
+  UNIQUE KEY `ix_user_username` (`username`),
+  KEY `ix_user_fullname` (`fullname`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user`
+--
+
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (2,'admin','admin','admin@gmail.com','Admin','scrypt:32768:8:1$OUnTfsjBM1LQoXbw$b485f3d02963db3aa37ec247f963d29e89295f09739917a741d474112efcc28da772c15354c240be4f00144ec1a8706456a4b1357b78c2004485053498a18c60','data:image/png;base64,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',0),(3,'Joko','Joko Febrianto','jokofebrianto228@gmail.com','Teknisi','scrypt:32768:8:1$IzMkiLtFez7hirv6$594b0bfb1c6aea0400a2f0e3fe3f0e9f4f74bc818d5c75bac550e3c3075deb44de621b85b3d4677a8400decb11d054f500f654c2d5b61b8fd00cb217c131834f','data:image/png;base64,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',0);
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping events for database 'atlas_db'
+--
+
+--
+-- Dumping routines for database 'atlas_db'
 --
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 /*!50606 SET GLOBAL INNODB_STATS_AUTO_RECALC=@OLD_INNODB_STATS_AUTO_RECALC */;
@@ -1126,4 +1738,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-10-20 21:23:25
+-- Dump completed on 2025-11-02 23:29:12

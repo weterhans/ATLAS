@@ -5,7 +5,7 @@
     {{-- Header Halaman --}}
     <div class="flex items-center justify-between mb-6">
         <div class="flex items-center">
-            <a href="{{ route('dashboard') }}" class="p-2 rounded-md hover:bg-gray-200" aria-label="Kembali">
+            <a href="{{ route('cnsd.index') }}" class="p-2 rounded-md hover:bg-gray-200" aria-label="Kembali">
                 <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
                 </svg>
@@ -60,7 +60,8 @@
                             print: '{{ $item->print }}', grup: '{{ $item->grup }}',
                             nama_alat: '{{ $item->nama_alat ?? '' }}',
                             sampai: '{{ $item->sampai ? $item->sampai->format('d/m/Y') : '' }}',
-                            sampai_db: '{{ $item->sampai ? $item->sampai->format('Y-m-d') : '' }}'
+                            sampai_db: '{{ $item->sampai ? $item->sampai->format('Y-m-d') : '' }}',
+                            file_path: '{{ $item->file_path ?? '' }}' {{-- <--- [PERUBAHAN 1] TAMBAHKAN INI --}}
                         }
                     })">
 
@@ -366,7 +367,7 @@
 
 {{-- >>> AWAL MODAL DETAIL SUMMARY (LAPORAN HARIAN / KEGIATAN BULANAN) <<< --}}
 {{-- ... (Modal Summary tidak berubah signifikan, hanya logika panggilannya) ... --}}
-<div id="detail-summary-modal" x-data="{ showModal: false, report: { type: '', tanggal: '', tanggal_formatted: '', dinas: '', mantek: '', print: '', grup: '', nama_alat: '', sampai: '', sampai_db: '' }, activity: null, groupedActivities: null, loadingActivity: false, activityError: '' }" x-show="showModal" x-on:open-summary-modal.window=" showModal = true; report = $event.detail.report; activity = null; groupedActivities = null; activityError = ''; loadingActivity = true; if (report.type === 'Harian' && report.tanggal && report.dinas) { if(typeof window.fetchSummaryActivityDetails === 'function') { window.fetchSummaryActivityDetails($data, report.tanggal, report.dinas); } else { console.error('Fungsi fetchSummaryActivityDetails tidak ditemukan.'); activityError = 'Error: Fungsi internal Harian tidak siap.'; loadingActivity = false; } } else if (report.type === 'Bulanan' && report.tanggal && report.sampai_db) { if(typeof window.fetchMonthlyActivityDetails === 'function') { window.fetchMonthlyActivityDetails($data, report.tanggal, report.sampai_db); } else { console.error('Fungsi fetchMonthlyActivityDetails tidak ditemukan.'); activityError = 'Error: Fungsi internal Bulanan tidak siap.'; loadingActivity = false; } } else { loadingActivity = false; } " x-on:keydown.escape.window="showModal = false" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full flex items-center justify-center z-50 px-4" style="display: none;" aria-labelledby="modal-title-cnsd-summary" role="dialog" aria-modal="true">
+<div id="detail-summary-modal" x-data="{ showModal: false, report: { type: '', tanggal: '', tanggal_formatted: '', dinas: '', mantek: '', print: '', grup: '', nama_alat: '', sampai: '', sampai_db: '', file_path: '' }, activity: null, groupedActivities: null, loadingActivity: false, activityError: '' }" x-show="showModal" x-on:open-summary-modal.window=" showModal = true; report = $event.detail.report; activity = null; groupedActivities = null; activityError = ''; loadingActivity = true; if (report.type === 'Harian' && report.tanggal && report.dinas) { if(typeof window.fetchSummaryActivityDetails === 'function') { window.fetchSummaryActivityDetails($data, report.tanggal, report.dinas); } else { console.error('Fungsi fetchSummaryActivityDetails tidak ditemukan.'); activityError = 'Error: Fungsi internal Harian tidak siap.'; loadingActivity = false; } } else if (report.type === 'Bulanan' && report.tanggal && report.sampai_db) { if(typeof window.fetchMonthlyActivityDetails === 'function') { window.fetchMonthlyActivityDetails($data, report.tanggal, report.sampai_db); } else { console.error('Fungsi fetchMonthlyActivityDetails tidak ditemukan.'); activityError = 'Error: Fungsi internal Bulanan tidak siap.'; loadingActivity = false; } } else { loadingActivity = false; } " x-on:keydown.escape.window="showModal = false" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full flex items-center justify-center z-50 px-4" style="display: none;" aria-labelledby="modal-title-cnsd-summary" role="dialog" aria-modal="true">
     <div class="relative mx-auto p-6 border w-full max-w-xl shadow-lg rounded-xl bg-white" @click.outside="showModal = false">
         <div class="flex justify-between items-center border-b pb-3 mb-4">
             <h3 id="modal-title-cnsd-summary" class="text-xl font-semibold text-gray-900" x-text="report.type === 'Harian' ? 'Detail Laporan' : 'Detail Kegiatan Bulanan'"></h3>
@@ -429,19 +430,29 @@
                 </div>
             </div>
 
-            {{-- Tombol Download PDF (Hanya jika Print=YA) --}}
-            <div x-show="report.print === 'YA'" class="border-t pt-4">
-                {{-- [PERUBAHAN] Ganti button jadi a (link) --}}
-                <a x-bind:href="'{{ url('cnsd/save-data') }}/' + report.id + '/pdf'"
-                    target="_blank" {{-- Buka di tab baru --}}
-                    class="inline-flex items-center text-indigo-600 hover:text-indigo-800 text-base font-medium"
-                    {{-- Hapus x-bind:disabled dan onclick alert --}}>
-                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
-                    </svg>
-                    Download PDF
-                </a>
-            </div>
+            {{-- Tombol Download PDF, hanya tampil jika file_path ada --}}
+            <template x-if="report.file_path">
+                <div class="flex items-center pt-3"> {{-- Diberi padding top sedikit --}}
+                    <span class="w-32 text-gray-500 font-medium flex-shrink-0">File PDF:</span>
+                    <span class="text-gray-800">
+                        {{--
+                              - 'x-bind:href' akan membuat URL dinamis
+                              - '/storage/' adalah prefix default untuk public disk
+                              - 'download' adalah atribut HTML5 agar file di-download
+                            --}}
+                        <a x-bind:href="`{{ url('cnsd/save-data/download') }}/${report.id}`"
+                            class="inline-flex items-center px-3 py-1 bg-green-600 text-white text-sm font-medium rounded-lg shadow-sm hover:bg-green-700 transition-colors">
+
+                            {{-- Icon Download --}}
+                            <svg class="w-4 h-4 mr-2 -ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                            </svg>
+
+                            Download PDF
+                        </a>
+                    </span>
+                </div>
+            </template>
 
             {{-- Detail Kegiatan (Harian) --}}
             {{-- Bagian ini TIDAK BERUBAH --}}
@@ -908,6 +919,7 @@
                 alpineData.loadingSchedule = false;
             }
         };
+
 
     });
 </script>

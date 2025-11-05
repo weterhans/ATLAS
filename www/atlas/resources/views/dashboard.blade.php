@@ -11,7 +11,7 @@
         {{-- Kartu Data Personal --}}
         <div class="quick-link-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
             {{-- PERUBAHAN LINK: href="personal.html" -> route('profile.edit') --}}
-            <a href="{{ route('profile.edit') }}" class="quick-link flex flex-col justify-between h-full" aria-label="Buka Data Personal">
+            <a href="{{ route('personal.index') }}" class="quick-link flex flex-col justify-between h-full" aria-label="Buka Data Personal">
                 <div>
                     <div class="flex items-center justify-between mb-4">
                         <div class="p-3 bg-indigo-100 rounded-full"><svg class="w-6 h-6 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -95,16 +95,16 @@
 
         {{-- Kartu Metereding --}}
         <div class="quick-link-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
-            {{-- PERUBAHAN LINK: data-target="..." -> href="#" --}}
-            <a href="#" class="quick-link flex flex-col justify-between h-full" aria-label="Buka Metereding">
+            {{-- PERUBAHAN LINK: Ganti href="#" dengan route('meter_reading.index') --}}
+            <a href="{{ route('meter_reading.index') }}" class="quick-link flex flex-col justify-between h-full" aria-label="Buka Meter Reading">
                 <div>
                     <div class="flex items-center justify-between mb-4">
                         <div class="p-3 bg-red-100 rounded-full"><svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"></path>
                             </svg></div>
                     </div>
-                    <h4 class="text-lg font-semibold text-gray-800">Metereding</h4>
-                    <p class="text-sm text-gray-500 mt-1">Lihat dan kelola metereding</p>
+                    <h4 class="text-lg font-semibold text-gray-800">Meter Raeding</h4>
+                    <p class="text-sm text-gray-500 mt-1">Lihat dan kelola meter reading</p>
                 </div>
                 <span class="mt-4 text-sm font-semibold text-indigo-600 hover:text-indigo-800">Masuk &rarr;</span>
             </a>

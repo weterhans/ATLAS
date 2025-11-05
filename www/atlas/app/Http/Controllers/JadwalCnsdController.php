@@ -77,9 +77,9 @@ class JadwalCnsdController extends Controller
     {
         // Ambil lagi daftar teknisi (sama seperti di index)
         $teknisiList = User::where('role', 'Teknisi')
-                         ->orderBy('fullname')
-                         ->pluck('fullname')
-                         ->all();
+            ->orderBy('fullname')
+            ->pluck('fullname')
+            ->all();
 
         // Kirim data jadwal spesifik & list teknisi ke view 'cnsd.edit'
         return view('cnsd.edit', [
@@ -107,7 +107,7 @@ class JadwalCnsdController extends Controller
         try {
             $validatedData['hari'] = Carbon::parse($validatedData['tanggal'])->isoFormat('dddd');
         } catch (\Exception $e) {
-             $validatedData['hari'] = $schedule->hari; // Pakai hari yg lama jika tanggal error
+            $validatedData['hari'] = $schedule->hari; // Pakai hari yg lama jika tanggal error
         }
         // ID Jadwal & Kode bisa di-update juga jika perlu (contoh: regenerate ID)
         // $validatedData['schedule_id_custom'] = ...

@@ -69,7 +69,7 @@ atlas
 |d atlas
 |hp artisan serve
 |hp artisan serve
-php artisan make:model WorkOrderCnsd -m
+|hp artisan make:model WorkOrderCnsd -m
 |hp artisan migrate
 php artisan migrate:fresh
 |hp artisan migrate
@@ -88,7 +88,7 @@ php artisan make:model WorkOrderCnsd
 |hp artisan serve
 php artisan make:migration add_output_lainnya_to_workorders_cnsd_table --table=workorders_cnsd
 |hp artisan migrate
-php artisan migrate
+|hp artisan migrate
 |hp artisan serve
 php artisan config:clear
 |hp artisan serve
@@ -96,6 +96,49 @@ php artisan config:clear
 |hp artisan serve
 |hp artisan serve
 |hp artisan serve
+|hp artisan serve
+|d atlas
+|hp artisan serve
+|d atlas
+|hp artisan serve
+|hp artisan serve
+|d atlas
+|hp artisan serve
+php artisan make:controller WorkOrderCnsdController
+php artisan make:model WorkOrderCnsd -m
+php artisan migrate
+|hp artisan serve
+|hp artisan serve
+|d atlas
+|hp artisan serve
+|d atlas
+|hp artisan serve
+|d atlas
+|hp artisan serve
+cd atlasa
+|hp artisan serve
+|d atlas
+|hp artisan serve
+|d atlas
+|hp composer.phar update 'niklasravnsborg/laravel-pdf'
+|d atlas
+|hp artisan serve
+|hp composer.phar update 'niklasravnsborg/laravel-pdf'
+|omposer remove barryvdh/laravel-dompdf
+|d atlas
+composer remove barryvdh/laravel-dompdf
+php composer.phar update 'niklasravnsborg/laravel-pdf'
+composer require niklasravnsborg/laravel-pdf
+|hp artisan vendor:publish --provider="NiklasRavnsborg\LaravelPdf\PdfServiceProvider"
+php artisan vendor:publish --provider="NiklasRavnsborg\LaravelPdf\PdfServiceProvider"
+|hp artisan serve
+|d atlas
+|hp artisan serve
+|d atlas
+|hp artisan serve
+|d atlas
+|hp artisan serve
+php artisan make:controller MeterReadingController
 |hp artisan serve
 cd atlas
 php artisan serve

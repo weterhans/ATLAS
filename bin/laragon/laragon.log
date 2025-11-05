@@ -1,2 +1,4 @@
 2025-09-22 21:39:18: Init DataDir at: D:\laragon\data\mysql-8.4
 2025-10-26 23:08:26: Error while activating license (02): {"error":"Failed to activate license: 400","details":{"activated":false,"error":"license_key not found."}} ----- Key:https://app.lemonsqueezy.com/my-orders|UUID:58822BF3-07CB-11ED-8C90-E4A8DFE35372
+2025-11-06 00:17:23: Graceful shutdown failed!!! Did you change the root's password? - trying to force it shutdown...
+ERROR: 
