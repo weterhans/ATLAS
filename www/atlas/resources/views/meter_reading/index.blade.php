@@ -22,14 +22,14 @@
         {{-- Kartu METER READING CNSD --}}
         <a href="{{ route('meter_reading.cnsd') }}" class="card bg-white p-4 rounded-xl shadow-md text-center transition-transform duration-300 ease-in-out hover:transform hover:-translate-y-1 hover:shadow-lg">
             {{-- Ganti 'img/meter_cnsd.jpg' dengan path gambar Anda dari image_5e48cd.jpg --}}
-            <img src="{{ asset('img/meter_cnsd.jpg') }}" alt="Meter Reading CNSD" class="rounded-lg mb-4 w-full h-48 object-cover">
+            <img src="{{ asset('img/meter_cnsd.png') }}" alt="Meter Reading CNSD" class="rounded-lg mb-4 w-full h-48 object-cover">
             <h3 class="font-semibold text-gray-800">METER READING CNSD</h3>
         </a>
 
         {{-- Kartu METER READING TFP --}}
         <a href="{{ route('meter_reading.tfp') }}" class="card bg-white p-4 rounded-xl shadow-md text-center transition-transform duration-300 ease-in-out hover:transform hover:-translate-y-1 hover:shadow-lg">
             {{-- Ganti 'img/meter_tfp.jpg' dengan path gambar Anda dari image_5e48cd.jpg --}}
-            <img src="{{ asset('img/meter_tfp.jpg') }}" alt="Meter Reading TFP" class="rounded-lg mb-4 w-full h-48 object-cover">
+            <img src="{{ asset('img/meter_tfp.png') }}" alt="Meter Reading TFP" class="rounded-lg mb-4 w-full h-48 object-cover">
             <h3 class="font-semibold text-gray-800">METER READING TFP</h3>
         </a>
 

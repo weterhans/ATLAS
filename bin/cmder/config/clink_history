@@ -106,7 +106,7 @@ php artisan config:clear
 |hp artisan serve
 php artisan make:controller WorkOrderCnsdController
 php artisan make:model WorkOrderCnsd -m
-php artisan migrate
+|hp artisan migrate
 |hp artisan serve
 |hp artisan serve
 |d atlas
@@ -140,5 +140,13 @@ php artisan vendor:publish --provider="NiklasRavnsborg\LaravelPdf\PdfServiceProv
 |hp artisan serve
 php artisan make:controller MeterReadingController
 |hp artisan serve
+|d atlas
+|hp artisan serve
 cd atlas
+|hp artisan serve
+|hp artisan serve
+php artisan make:model Personal -m
+php artisan make:model WorkOrder -m
+php artisan migrate
+php artisan make:controller PersonalController
 php artisan serve

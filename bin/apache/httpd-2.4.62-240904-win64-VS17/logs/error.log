@@ -257,3 +257,8 @@ Apache server interrupted...
 Apache server interrupted...
 [Thu Nov 06 00:17:29.041744 2025] [mpm_winnt:notice] [pid 20908:tid 456] AH00364: Child: All worker threads have exited.
 [Thu Nov 06 00:17:29.118168 2025] [mpm_winnt:notice] [pid 22472:tid 464] AH00430: Parent: Child process 20908 exited successfully.
+[Thu Nov 06 22:39:34.459417 2025] [mpm_winnt:notice] [pid 22296:tid 468] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.16 configured -- resuming normal operations
+[Thu Nov 06 22:39:34.459417 2025] [mpm_winnt:notice] [pid 22296:tid 468] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Thu Nov 06 22:39:34.459417 2025] [core:notice] [pid 22296:tid 468] AH00094: Command line: 'D:\\laragon\\bin\\apache\\httpd-2.4.62-240904-win64-VS17\\bin\\httpd -d D:/laragon/bin/apache/httpd-2.4.62-240904-win64-VS17'
+[Thu Nov 06 22:39:34.467995 2025] [mpm_winnt:notice] [pid 22296:tid 468] AH00418: Parent: Created child process 21592
+[Thu Nov 06 22:39:35.254754 2025] [mpm_winnt:notice] [pid 21592:tid 460] AH00354: Child: Starting 64 worker threads.

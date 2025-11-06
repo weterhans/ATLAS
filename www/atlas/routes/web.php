@@ -13,8 +13,7 @@ use App\Http\Controllers\DailyTfpController;
 use App\Http\Controllers\KegiatanTfpController;
 use App\Http\Controllers\SaveDataTfpController;
 use App\Http\Controllers\MeterReadingController;
-
-
+use App\Http\Controllers\PersonalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -108,14 +107,31 @@ Route::middleware('auth')->group(function () {
     Route::get('/meter-reading/tfp', [MeterReadingController::class, 'tfp'])->name('meter_reading.tfp');
 
     Route::get('/meter-reading/cnsd/kesiapan-peralatan', [MeterReadingController::class, 'cnsdKesiapan'])->name('meter_reading.cnsd.kesiapan');
+    Route::get('/meter-reading/cnsd/atis', [MeterReadingController::class, 'cnsdatis'])->name('meter_reading.cnsd.atis');
 });
 
 
-Route::get('/personal', function () {
-    return view('personal');
-})->name('personal.index'); // Kita beri nama 'personal.index'
+Route::controller(PersonalController::class)->group(function () {
+    // MENAMPILKAN halaman dan data
+    Route::get('/personal', 'index')->name('personal.index');
 
-// Asumsi Anda sudah punya rute untuk dashboard
+    // MENAMBAH staf baru
+    Route::post('/personal', 'store')->name('personal.store');
+
+    // MENGHAPUS staf
+    Route::delete('/personal/{personal}', 'destroy')->name('personal.destroy');
+
+    // MENGAMBIL data Work Order untuk satu staf (API)
+    Route::get('/personal/{personal}/workorders', 'getWorkOrders')->name('personal.workorders.get');
+
+    // MENAMBAH Work Order untuk satu staf
+    Route::post('/personal/{personal}/workorders', 'storeWorkOrder')->name('personal.workorders.store');
+});
+
+// Rute terpisah untuk menghapus Work Order
+Route::delete('/workorders/{workOrder}', [PersonalController::class, 'destroyWorkOrder'])->name('workorders.destroy');
+
+// Asumsi rute dashboard Anda
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

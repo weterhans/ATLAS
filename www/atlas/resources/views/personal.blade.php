@@ -6,17 +6,13 @@
   CSS Kustom untuk halaman Data Personal.
 --}}
 <style>
+    /* ... (SEMUA CSS DARI SEBELUMNYA MASIH SAMA, TIDAK PERLU DISALIN ULANG) ... */
     /* Reset dasar */
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
-
-    /* Konten dari .content-panel di dashboard Anda mungkin sudah memiliki padding.
-      Jika terjadi padding ganda, Anda bisa menghapus 'padding: 2rem' dari body ini.
-      Saya akan menggantinya agar menargetkan .main-container saja.
-    */
     .main-container {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: #333;
@@ -35,13 +31,11 @@
         align-items: center;
         border: 1px solid #e5e7eb;
     }
-
     .header-title-container {
         display: flex;
         align-items: center;
         gap: 1rem;
     }
-
     .back-button {
         display: inline-flex;
         align-items: center;
@@ -53,16 +47,13 @@
         border-radius: 50%;
         transition: background-color 0.2s;
     }
-
     .back-button:hover {
         background-color: #f3f4f6;
     }
-
     .header h1 {
         font-size: 24px;
         font-weight: 600;
     }
-
     .btn {
         padding: 0.6rem 1.2rem;
         border: none;
@@ -77,15 +68,32 @@
         justify-content: center;
         gap: 0.5rem; /* Jarak antara ikon dan teks */
     }
-
     .btn-primary {
         background: #1daa1d;
         color: white;
     }
-
     .btn-primary:hover {
         background: #059669;
         box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+    }
+    .btn-info {
+        background-color: #3498db;
+        color: white;
+    }
+    .btn-info:hover {
+        background-color: #2980b9;
+    }
+    .btn-danger {
+        background-color: #e74c3c;
+        color: white;
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+        line-height: 1;
+        padding: 0; /* Pastikan padding tidak merusak ukuran */
+    }
+    .btn-danger:hover {
+        background-color: #c0392b;
     }
 
     /* Data Table */
@@ -95,35 +103,25 @@
         padding: 1.5rem;
         border: 1px solid #e5e7eb;
     }
-
     .table-controls {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 1.5rem;
     }
-
     .search-box {
         padding: 0.5rem 1rem;
         border: 1px solid #ddd;
         border-radius: 5px;
         width: 250px;
     }
-
-    /* MODIFIKASI:
-      CSS untuk #entriesSelect dihapus.
-      Kita akan menggunakan class Tailwind langsung di HTML.
-    */
-
     table {
         width: 100%;
         border-collapse: collapse;
     }
-
     thead {
         background: #f8f9fa;
     }
-
     th {
         padding: 1rem;
         text-align: left;
@@ -132,21 +130,21 @@
         border-bottom: 2px solid #ddd;
         font-size: 13px;
     }
-
     td {
         padding: 1rem;
         border-bottom: 1px solid #eee;
         font-size: 13px;
     }
-
+    td.actions-cell {
+        display: flex;
+        gap: 8px; /* Jarak antar tombol */
+    }
     tbody tr:last-child td {
         border-bottom: none;
     }
-
     tbody tr:hover {
         background: #f8f9fa;
     }
-
     .action-btn {
         background: #3498db;
         color: white;
@@ -160,12 +158,11 @@
         align-items: center;
         justify-content: center;
         line-height: 1;
+        padding: 0;
     }
-
     .action-btn:hover {
         background: #2980b9;
     }
-
     .table-footer {
         display: flex;
         justify-content: space-between;
@@ -174,13 +171,11 @@
         padding-top: 1.5rem;
         border-top: 1px solid #eee;
     }
-
     .pagination {
         display: flex;
         align-items: center;
         gap: 0.5rem;
     }
-
     .page-btn {
         padding: 0.4rem 0.8rem;
         border: 1px solid #ddd;
@@ -189,17 +184,14 @@
         border-radius: 5px;
         transition: all 0.2s;
     }
-
     .page-btn.active {
         background: #667eea;
         color: white;
         border-color: #667eea;
     }
-
     .page-btn:hover:not(.active) {
         background: #f0f0f0;
     }
-
     .entry-info {
         font-size: 13px;
         color: #666;
@@ -220,11 +212,9 @@
         padding-top: 5vh; /* Margin from top */
         overflow-y: auto;
     }
-
     .modal.active {
         display: flex;
     }
-
     .modal-content {
         background: white;
         border-radius: 10px;
@@ -234,7 +224,9 @@
         position: relative;
         box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     }
-
+    .modal-content.modal-sm {
+        max-width: 600px;
+    }
     .modal-header {
         display: flex;
         justify-content: space-between;
@@ -243,12 +235,10 @@
         padding-bottom: 1rem;
         border-bottom: 1px solid #eee;
     }
-
-    .modal-header h2 {
+    .modal-header h2, .modal-header h3 {
         font-size: 20px;
         color: #333;
     }
-
     .close-btn {
         background: #e74c3c;
         color: white;
@@ -259,24 +249,20 @@
         font-size: 14px;
         font-weight: 500;
     }
-
     .close-btn:hover {
         background: #c0392b;
     }
-
     .work-order-sections {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
         gap: 2rem;
     }
-
     .section {
         background: #f8f9fa;
         padding: 1.5rem;
         border-radius: 8px;
         border: 1px solid #e5e7eb;
     }
-
     .section h3 {
         font-size: 16px;
         color: #555;
@@ -284,7 +270,6 @@
         padding-bottom: 0.75rem;
         border-bottom: 1px solid #ddd;
     }
-
     .info-row {
         display: grid;
         grid-template-columns: 120px 1fr;
@@ -292,13 +277,15 @@
         margin-bottom: 1rem;
         align-items: center;
     }
-
+    .info-row.align-start {
+        align-items: start;
+    }
     .info-label {
         font-weight: 600;
         color: #555;
         font-size: 13px;
+        padding-top: 0.5rem; /* Menambahkan padding agar sejajar */
     }
-
     .info-value {
         color: #333;
         font-size: 13px;
@@ -307,31 +294,90 @@
         border-radius: 5px;
         border: 1px solid #ddd;
     }
-
-    .info-value select, .info-value input {
+    .info-value select, .info-value input, .info-value textarea {
         width: 100%;
         padding: 0.5rem;
         border: 1px solid #ddd;
         border-radius: 3px;
         background: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-
+    .info-value.no-padding {
+        padding: 0;
+        border: none;
+        background: none;
+    }
     .info-value .btn { font-size: 12px; padding: 5px 15px; }
-
     .work-order-table-section {
         grid-column: 1 / -1;
     }
-
     .simpan-btn {
         float: right;
     }
+
+    /* Style untuk Modal Detail */
+    .modal-detail {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.75); /* Lebih gelap */
+        z-index: 1050; /* Di atas modal pertama */
+        align-items: center;
+        justify-content: center;
+    }
+    .modal-detail-content {
+        background: white;
+        border-radius: 10px;
+        padding: 2rem;
+        max-width: 600px;
+        width: 90%;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    .modal-detail-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    .modal-detail-header h3 {
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .modal-detail-body .detail-item {
+        margin-bottom: 1rem;
+    }
+    .modal-detail-body .detail-label {
+        font-size: 12px;
+        color: #666;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+        text-transform: uppercase;
+    }
+    .modal-detail-body .detail-value {
+        font-size: 16px;
+        color: #333;
+        background: #f8f9fa;
+        padding: 0.75rem;
+        border-radius: 5px;
+        border: 1px solid #e5e7eb;
+        white-space: pre-wrap; /* Agar deskripsi panjang bisa wrap */
+        word-wrap: break-word;
+    }
 </style>
+
+{{-- MODIFIKASI: Menambahkan meta tag CSRF token --}}
+<meta name="csrf-token" content="{{ csrf_token() }}">
 
 {{-- Konten HTML dari personal.html --}}
 <div class="p-6 md:p-8">
 
-    <div class="flex justify-between items-center mb-6">
-         <div class="flex items-center"> {{-- mb-6 dihapus dari sini --}}
+    <div class="flex items-center mb-6 justify-between items-center">
+         <div class="flex items-center">
             {{-- Tombol Kembali ke Dashboard --}}
             <a href="{{ route('dashboard') }}" class="p-2 rounded-md hover:bg-gray-200" aria-label="Kembali ke Dashboard">
                 <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -340,19 +386,25 @@
             </a>
             <h1 class="text-2xl font-bold text-gray-800 ml-4">Data Personal</h1>
         </div>
-         <a href="#" class="btn btn-primary">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M2 7.5C2 10.5376 4.46243 13 7.5 13C9.07394 13 10.51 12.3524 11.553 11.3093L11.9999 11.7563V10H10.2436L10.6906 10.447C9.88335 11.2543 8.75139 11.75 7.5 11.75C5.13629 11.75 3.25 9.86371 3.25 7.5C3.25 5.13629 5.13629 3.25 7.5 3.25C8.56586 3.25 9.54131 3.63321 10.2854 4.28542L9.20703 5.36377L12.0355 5.64219L12.3139 2.81377L11.2355 3.89219C10.2816 3.04285 9.00122 2.5 7.5 2.5C4.46243 2.5 2 4.96243 2 7.5ZM13.1862 9.68615L10.3578 9.40773L9.27942 10.4861C8.53533 9.83391 7.55987 9.45071 6.5 9.45071C5.24861 9.45071 4.11665 9.94563 3.30938 10.753L3.75635 10.306V12H5.5127L5.06573 11.553C6.01957 12.4024 7.29994 12.9507 8.81377 12.9507C8.95319 12.9507 9.09131 12.9436 9.22784 12.9301L8.91421 13.2437L10.0253 14.3548L11.1364 13.2437L10.0253 12.1326L8.53552 10.6429L9.64663 9.53176L10.7577 10.6429L11.8688 9.53176L13.1862 9.68615Z"/>
-            </svg>
-            <span>Sinkronisasi Data</span>
-        </a>
+         <div class="flex items-center gap-4">
+            <a href="#" class="btn btn-primary">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2 7.5C2 10.5376 4.46243 13 7.5 13C9.07394 13 10.51 12.3524 11.553 11.3093L11.9999 11.7563V10H10.2436L10.6906 10.447C9.88335 11.2543 8.75139 11.75 7.5 11.75C5.13629 11.75 3.25 9.86371 3.25 7.5C3.25 5.13629 5.13629 3.25 7.5 3.25C8.56586 3.25 9.54131 3.63321 10.2854 4.28542L9.20703 5.36377L12.0355 5.64219L12.3139 2.81377L11.2355 3.89219C10.2816 3.04285 9.00122 2.5 7.5 2.5C4.46243 2.5 2 4.96243 2 7.5ZM13.1862 9.68615L10.3578 9.40773L9.27942 10.4861C8.53533 9.83391 7.55987 9.45071 6.5 9.45071C5.24861 9.45071 4.11665 9.94563 3.30938 10.753L3.75635 10.306V12H5.5127L5.06573 11.553C6.01957 12.4024 7.29994 12.9507 8.81377 12.9507C8.95319 12.9507 9.09131 12.9436 9.22784 12.9301L8.91421 13.2437L10.0253 14.3548L11.1364 13.2437L10.0253 12.1326L8.53552 10.6429L9.64663 9.53176L10.7577 10.6429L11.8688 9.53176L13.1862 9.68615Z"/>
+                </svg>
+                <span>Sinkronisasi Data</span>
+            </a>
+            <button class="btn btn-info" id="openAddStaffBtn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path></svg>
+                <span>Tambah Staf</span>
+            </button>
+         </div>
     </div>
 
     <div class="data-section">
         <div class="table-controls">
             <div>
                 <label class="text-sm text-gray-700">Show
-                    <select id="entriesSelect" class="mx-1 pl-2 pr-8 py-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                    <select id="entriesSelect" class="mx-1 pl-2 pr-8 py-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity:50">
                         <option value="10">10</option>
                         <option value="25">25</option>
                         <option value="50">50</option>
@@ -375,7 +427,7 @@
                     <th>Level Jabatan</th>
                     <th>Lokasi</th>
                     <th>Lokasi Induk</th>
-                    <th>Work Order</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody id="tableBody">
@@ -383,8 +435,8 @@
         </table>
 
         <div class="table-footer">
-             <div class="entry-info">Menampilkan 1 dari 10 dari total 53 entri</div>
-             <div class="pagination">
+             <div class="entry-info" id="mainEntryInfo"></div>
+             <div class="pagination" id="mainPagination">
                 </div>
         </div>
     </div>
@@ -394,7 +446,9 @@
     <div class="modal-content">
         <div class="modal-header">
             <h2>Data Work Order Personil : <span id="modalPersonName">Nama Personil</span></h2>
-            <button class="close-btn" onclick="closeModal()">✕ Kembali</button>
+            <button class="close-btn" onclick="closeModal()"><- Kembali</button>
+            {{-- MODIFIKASI: Menambahkan input tersembunyi untuk menyimpan ID personal --}}
+            <input type="hidden" id="modalPersonalId">
         </div>
 
         <div class="work-order-sections">
@@ -425,7 +479,7 @@
                     <div class="info-value" id="modalLokasiInduk"></div>
                 </div>
                 <div class="info-row">
-                    <div class="info-label">Kating</div>
+                    <div class="info-label">Rating</div>
                     <div class="info-value">
                         <button class="btn btn-primary">List Rating >></button>
                     </div>
@@ -435,177 +489,273 @@
             <div class="section">
                 <h3>Tambah Work Order</h3>
                  <div class="info-row">
-                    <div class="info-label">Bulan dari tahun</div>
-                    <div class="info-value">
-                        <div style="display: flex; gap: 0.5rem;">
-                            <select>
-                                <option>Januari</option>
-                                <option>Februari</option>
-                                <option>Maret</option>
-                                <option>April</option>
-                                <option>Mei</option>
-                                <option>Juni</option>
-                                <option>Juli</option>
-                                <option>Agustus</option>
-                                <option>September</option>
-                                <option>Oktober</option>
-                                <option>November</option>
-                                <option>Desember</option>
-                            </select>
-                            <select>
-                                <option>2024</option>
-                                <option>2025</option>
-                                <option>2026</option>
-                            </select>
-                        </div>
+                    <div class="info-label">Tgl. Work Order</div>
+                    <div class="info-value no-padding">
+                        <input type="date" id="woTanggal">
                     </div>
                 </div>
                 <div class="info-row">
                     <div class="info-label">Kategori</div>
-                    <div class="info-value">
-                        <select>
-                            <option>--- Kosongkan ---</option>
-                            <option>Communication</option>
-                            <option>Navigation</option>
-                            <option>Surveillance</option>
-                            <option>Data Processing</option>
+                    <div class="info-value no-padding">
+                        <select id="woKategori">
+                            <option value="">--- Kosongkan ---</option>
+                            <option value="Communication">Communication</option>
+                            <option value="Navigation">Navigation</option>
+                            <option value="Surveillance">Surveillance</option>
+                            <option value="Automation">Automation</option>
+                            <option value="Data Processing">Data Processing</option>
                         </select>
                     </div>
                 </div>
                 <div class="info-row">
                     <div class="info-label">Jenis Peralatan</div>
-                    <div class="info-value">
-                        <input type="text" placeholder="Pilih Jenis Peralatan">
+                    <div class="info-value no-padding">
+                        <input type="text" placeholder="Jenis Peralatan" id="woJenis">
                     </div>
                 </div>
-                <button class="btn btn-primary simpan-btn">📥 Simpan</button>
+                <div class="info-row align-start">
+                    <div class="info-label">Deskripsi</div>
+                    <div class="info-value no-padding">
+                        <textarea id="woDeskripsi" rows="3" placeholder="Deskripsi"></textarea>
+                    </div>
+                </div>
+                <button class="btn btn-primary simpan-btn" id="simpanWoBtn">Simpan</button>
             </div>
 
             <div class="section work-order-table-section">
                 <h3>Daftar Work Order [Existing]</h3>
+                <div class="table-controls">
+                    <div>
+                        <label class="text-sm text-gray-700">Show
+                            <select id="woEntriesSelect" class="mx-1 pl-2 pr-8 py-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity:50">
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                            </select>
+                            entries
+                        </label>
+                    </div>
+                    <input type="text" class="search-box" placeholder="Search..." id="woSearchInput">
                 </div>
+                <table id="woDataTable" style="margin-top: 1rem;">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Tanggal</th>
+                            <th>Fasilitas</th>
+                            <th>Jenis</th>
+                            <th>Deskripsi</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="woTableBody">
+                    </tbody>
+                </table>
+                <div class="table-footer">
+                    <div class="entry-info" id="woEntryInfo"></div>
+                    <div class="pagination" id="woPagination">
+                    </div>
+               </div>
+            </div>
         </div>
     </div>
 </div>
 
+<div id="workOrderDetailModal" class="modal-detail">
+    <div class="modal-detail-content">
+        <div class="modal-detail-header">
+            <h3>Detail Work Order</h3>
+            <button class="close-btn" onclick="closeDetailModal()">✕</button>
+        </div>
+        <div class="modal-detail-body">
+            <div class="detail-item">
+                <div class="detail-label">Tanggal</div>
+                <div class="detail-value" id="detailTanggal"></div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Fasilitas / Kategori</div>
+                <div class="detail-value" id="detailKategori"></div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Jenis Peralatan</div>
+                <div class="detail-value" id="detailJenis"></div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Deskripsi Lengkap</div>
+                <div class="detail-value" id="detailDeskripsi"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="addStaffModal" class="modal">
+    <div class="modal-content modal-sm">
+        <div class="modal-header">
+            <h3>Tambah Staf Personal Baru</h3>
+            <button class="close-btn" onclick="closeAddStaffModal()">✕</button>
+        </div>
+
+        <div class="section" style="background: white; border: none; padding: 0;">
+            <div class="info-row">
+                <div class="info-label">NIK</div>
+                <div class="info-value no-padding">
+                    <input type="text" id="staffNik" placeholder="Nomor Induk Karyawan">
+                </div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Nama</div>
+                <div class="info-value no-padding">
+                    <input type="text" id="staffNama" placeholder="Nama Lengkap">
+                </div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Kelamin</div>
+                <div class="info-value no-padding">
+                    <select id="staffKelamin">
+                        <option value="L">Laki-laki (L)</option>
+                        <option value="P">Perempuan (P)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Jabatan</div>
+                <div class="info-value no-padding">
+                    <input type="text" id="staffJabatan" placeholder="Nama Jabatan">
+                </div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Level Jabatan</div>
+                <div class="info-value no-padding">
+                    <input type="text" id="staffLevel" placeholder="15">
+                </div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Lokasi</div>
+                <div class="info-value no-padding">
+                    <input type="text" id="staffLokasi" value="Cabang Surabaya">
+                </div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Lokasi Induk</div>
+                <div class="info-value no-padding">
+                    <input type="text" id="staffLokasiInduk" value="Surabaya">
+                </div>
+            </div>
+            <button class="btn btn-primary simpan-btn" id="simpanStafBtn">Simpan</button>
+        </div>
+    </div>
+</div>
+
+
 {{--
   JavaScript Kustom untuk halaman Data Personal.
-  (Diambil dari renderer_personal.js)
 --}}
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    // Data lengkap karyawan
-    // CATATAN: Idealnya, data ini diambil dari database melalui Controller,
-    // bukan di-hardcode di JavaScript.
-    const allData = [
-        {no: 1, nik: '10010069', nama: 'AN NAUFAL', kelamin: 'L', jabatan: 'MANAGER FASILITAS TEKNIK', level: '16', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 2, nik: '10083259', nama: 'AGUS DERMAWAN MUCHSIN', kelamin: 'L', jabatan: 'MANAGER TEKNIK 1', level: '15', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 3, nik: '10083380', nama: 'EFRIED NARA PERKASA', kelamin: 'L', jabatan: 'MANAGER TEKNIK 3', level: '15', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 4, nik: '10083435', nama: 'ANDI WIBOWO', kelamin: 'L', jabatan: 'MANAGER TEKNIK 2', level: '15', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 5, nik: 'ASN83713', nama: 'NETTY SEPTA CRISILA', kelamin: 'P', jabatan: 'MANAGER TEKNIK 5', level: '15', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 6, nik: 'ASN83472', nama: 'MOCH. ICHSAN', kelamin: 'L', jabatan: 'SUPERVISOR TEKNIK TELEKOMUNIKASI', level: '14', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 7, nik: 'ASN83883', nama: 'WIDI HANDOKO', kelamin: 'L', jabatan: 'JUNIOR MANAGER FASILITAS PENUNJANG', level: '14', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 8, nik: '10010419', nama: 'NUR HUKIM', kelamin: 'L', jabatan: 'SUPERVISOR TEKNIK TELEKOMUNIKASI', level: '13', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 9, nik: '10010503', nama: 'PRIYOKO', kelamin: 'L', jabatan: 'SUPERVISOR TEKNIK PENUNJANG', level: '13', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 10, nik: '10010842', nama: 'FAJAR KUSUMA WARDANA', kelamin: 'L', jabatan: 'SUPERVISOR TEKNIK PENUNJANG', level: '13', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 11, nik: '10011057', nama: 'ADITYA HUZAIRI PUTRA', kelamin: 'L', jabatan: 'TEKNIK TELEKOMUNIKASI', level: '13', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 12, nik: '10010987', nama: 'KHOIRUL M. A.', kelamin: 'L', jabatan: 'TEKNIK PENUNJANG', level: '12', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 13, nik: '10011234', nama: 'ARGO PRAGOLO', kelamin: 'L', jabatan: 'STAFF ADMINISTRASI', level: '12', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 14, nik: '10011456', nama: 'FEBRI DWI C.', kelamin: 'L', jabatan: 'TEKNISI SENIOR', level: '12', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 15, nik: '10011678', nama: 'M. YUSUF TRIONO', kelamin: 'L', jabatan: 'STAFF TEKNIK', level: '12', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 16, nik: '10011890', nama: 'RIYAN FAUZI', kelamin: 'L', jabatan: 'TEKNISI LAPANGAN', level: '12', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 17, nik: '10012123', nama: 'TEGUH MURDIYANTO', kelamin: 'L', jabatan: 'OPERATOR SISTEM', level: '12', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 18, nik: '10012345', nama: 'YUSRI HANDOKO', kelamin: 'L', jabatan: 'TEKNISI JARINGAN', level: '12', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 19, nik: '10012567', nama: 'MOH. SYAMSUDIN', kelamin: 'L', jabatan: 'STAFF DOKUMENTASI', level: '12', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 20, nik: '10012789', nama: 'ADAM BUKHORI', kelamin: 'L', jabatan: 'HELPER TEKNIK', level: '12', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 21, nik: '10013001', nama: 'AMIRZAN RIDHO W.', kelamin: 'L', jabatan: 'STAFF ADMINISTRASI', level: '11', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 22, nik: '10013223', nama: 'SILVY RETNO ANDRIANI', kelamin: 'P', jabatan: 'TEKNISI LISTRIK', level: '11', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 23, nik: '10013445', nama: 'TRIA SABDA UTAMA', kelamin: 'L', jabatan: 'OPERATOR', level: '11', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 24, nik: '10013667', nama: 'DANI RIDZAL', kelamin: 'L', jabatan: 'TEKNISI AC', level: '11', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 25, nik: '10013889', nama: 'NUR SHELLA FIRDAUS ', kelamin: 'P', jabatan: 'STAFF SUPPORT', level: '11', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 26, nik: '10013889', nama: 'YORDAN C.P ', kelamin: 'L', jabatan: 'STAFF SUPPORT', level: '11', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 27, nik: '10013889', nama: 'ROHMADONI SURYA KAHFI DEWANATA ', kelamin: 'L', jabatan: 'STAFF SUPPORT', level: '11', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 28, nik: '10013889', nama: 'SAFIRA SARASWATI ', kelamin: 'P', jabatan: 'STAFF SUPPORT', level: '11', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 29, nik: '10013889', nama: 'ALDHI DESKA P. ', kelamin: 'L', jabatan: 'STAFF SUPPORT', level: '11', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 30, nik: '10013889', nama: 'ELVITA AGUSTINA ', kelamin: 'P', jabatan: 'STAFF SUPPORT', level: '11', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 31, nik: '10013889', nama: 'RENDY PANCA A.P. ', kelamin: 'L', jabatan: 'STAFF SUPPORT', level: '11', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 32, nik: '10013889', nama: 'I KADEK DWIJA S. ', kelamin: 'L', jabatan: 'STAFF SUPPORT', level: '11', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 33, nik: '10013889', nama: 'DWIKI SETYO W. ', kelamin: 'L', jabatan: 'STAFF SUPPORT', level: '11', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 34, nik: '10013889', nama: 'WINDI TRI SETYAWATI ', kelamin: 'P', jabatan: 'STAFF SUPPORT', level: '11', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 35, nik: '10013889', nama: 'IQBAL MUSTIKA ', kelamin: 'L', jabatan: 'STAFF SUPPORT', level: '11', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 36, nik: '10013889', nama: 'SOFI DWI HIDAYATI ', kelamin: 'P', jabatan: 'STAFF SUPPORT', level: '11', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 37, nik: '10013889', nama: 'YOGA ARIFAL P. ', kelamin: 'L', jabatan: 'STAFF SUPPORT', level: '11', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 38, nik: '10013889', nama: 'M. FEIZAR NOOR ', kelamin: 'L', jabatan: 'STAFF SUPPORT', level: '11', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 39, nik: '10013889', nama: 'DWI PRASETYO ADI ', kelamin: 'L', jabatan: 'STAFF SUPPORT', level: '11', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 40, nik: '10013889', nama: 'ANDHIKA BHASKARA J. ', kelamin: 'L', jabatan: 'STAFF SUPPORT', level: '11', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 41, nik: '10013889', nama: 'AGUSTINA ANGGREINI ', kelamin: 'P', jabatan: 'STAFF SUPPORT', level: '11', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 42, nik: '10013889', nama: 'DWI PUJI RAHAYU ', kelamin: 'P', jabatan: 'STAFF SUPPORT', level: '11', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 43, nik: '10013889', nama: 'FRISZA VRADANA ', kelamin: 'L', jabatan: 'STAFF SUPPORT', level: '11', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 44, nik: '10013889', nama: 'M. AIDIN EFFENDI ', kelamin: 'L', jabatan: 'STAFF SUPPORT', level: '11', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 45, nik: '10013889', nama: 'PANDU INDRAJA ', kelamin: 'L', jabatan: 'STAFF SUPPORT', level: '10', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 46, nik: '10013889', nama: 'SEPTI RAHMAN SARI ', kelamin: 'P', jabatan: 'STAFF SUPPORT', level: '10', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 47, nik: '10013889', nama: 'FAJAR NUGROHO ', kelamin: 'L', jabatan: 'STAFF SUPPORT', level: '10', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 48, nik: '10013889', nama: 'SAIFUL BAHRIS ', kelamin: 'L', jabatan: 'STAFF SUPPORT', level: '9', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 49, nik: '10013889', nama: 'KARANG SAMUDRA ', kelamin: 'L', jabatan: 'STAFF SUPPORT', level: '9', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 50, nik: '10013889', nama: 'ILMIN SYARIF H. ', kelamin: 'L', jabatan: 'STAFF SUPPORT', level: '9', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 51, nik: '10013889', nama: 'ERAZUARDI ZULFAHMI ', kelamin: 'L', jabatan: 'STAFF SUPPORT', level: '9', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 52, nik: '10013889', nama: 'BIAN PRASETIA H ', kelamin: 'L', jabatan: 'STAFF SUPPORT', level: '8', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-        {no: 53, nik: '10013889', nama: 'AHMAD MUJI YASIN ', kelamin: 'L', jabatan: 'STAFF SUPPORT', level: '8', lokasi: 'Cabang Surabaya', lokasiInduk: 'Surabaya'},
-    ];
 
+    // =========================================================================
+    // SCRIPT UTAMA (DATA PERSONAL)
+    // =========================================================================
+
+    // MODIFIKASI: Ambil data 'personals' yang dikirim dari Controller
+    let allData = @json($personals);
     let currentPage = 1;
     let entriesPerPage = 10;
     let filteredData = [...allData];
 
-    // Fungsi untuk membuka modal
-    window.openModal = (nama, pernium, jabatan, level) => {
+    // Ambil token CSRF dari meta tag
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+    // Fungsi untuk membuka modal WO
+    window.openModal = async (personalId, nik, nama, jabatan, level) => {
         const modal = document.getElementById('workOrderModal');
+
+        // Isi data personal di modal
         document.getElementById('modalPersonName').textContent = nama;
-        document.getElementById('modalPernium').textContent = pernium;
+        document.getElementById('modalPernium').textContent = nik;
         document.getElementById('modalNama').textContent = nama;
         document.getElementById('modalJabatan').textContent = jabatan;
         document.getElementById('modalLevel').textContent = level;
         document.getElementById('modalLokasi').textContent = 'Cabang Surabaya';
         document.getElementById('modalLokasiInduk').textContent = 'Surabaya';
+
+        // Simpan ID personal untuk tambah WO baru
+        document.getElementById('modalPersonalId').value = personalId;
+
         modal.classList.add('active');
+
+        // MODIFIKASI: Ambil data WO dari server
+        try {
+            const response = await fetch(`/personal/${personalId}/workorders`);
+            const data = await response.json();
+            workOrderData = data; // Set data global
+            filteredWoData = data; // Set data filter
+            currentWoPage = 1; // Reset ke halaman 1
+            renderWorkOrderTable(); // Render tabel WO
+        } catch (error) {
+            console.error('Gagal mengambil data Work Order:', error);
+            document.getElementById('woTableBody').innerHTML = `<tr><td colspan="6" class="text-center text-red-500">Gagal memuat data</td></tr>`;
+        }
     }
 
-    // Fungsi untuk menutup modal
+    // Fungsi untuk menutup modal WO
     window.closeModal = () => {
-        const modal = document.getElementById('workOrderModal');
-        modal.classList.remove('active');
+        document.getElementById('workOrderModal').classList.remove('active');
+        // Reset data WO
+        workOrderData = [];
+        filteredWoData = [];
+        currentWoPage = 1;
+        document.getElementById('woSearchInput').value = '';
     }
 
     // Menutup modal saat mengklik di luar area konten modal
     window.onclick = function(event) {
         const modal = document.getElementById('workOrderModal');
-        if (event.target === modal) {
-            closeModal();
-        }
+        const detailModal = document.getElementById('workOrderDetailModal');
+        const addStaffModal = document.getElementById('addStaffModal');
+
+        if (event.target === modal) closeModal();
+        if (event.target === detailModal) closeDetailModal();
+        if (event.target === addStaffModal) closeAddStaffModal();
     }
 
-    // Fungsi untuk merender ulang tabel
+    // Fungsi untuk merender ulang tabel UTAMA
     const renderTable = () => {
         const tableBody = document.getElementById('tableBody');
         if (!tableBody) return;
+
+        // Urutkan data berdasarkan Level (tertinggi ke terendah)
+        filteredData.sort((a, b) => b.level_jabatan - a.level_jabatan);
 
         const start = (currentPage - 1) * entriesPerPage;
         const end = start + entriesPerPage;
         const pageData = filteredData.slice(start, end);
 
         tableBody.innerHTML = '';
-        pageData.forEach(row => {
+        pageData.forEach((row, index) => {
             const tr = document.createElement('tr');
+
+            // Escape tanda kutip pada nama dan jabatan
+            const safeNama = row.nama.replace(/'/g, "\\'");
+            const safeJabatan = row.jabatan.replace(/'/g, "\\'");
+
             tr.innerHTML = `
-                <td>${row.no}</td>
+                <td>${start + index + 1}</td>
                 <td>${row.nik}</td>
                 <td>${row.nama}</td>
                 <td>${row.kelamin}</td>
                 <td>${row.jabatan}</td>
-                <td>${row.level}</td>
+                <td>${row.level_jabatan}</td>
                 <td>${row.lokasi}</td>
-                <td>${row.lokasiInduk}</td>
-                <td><button class="action-btn" onclick="openModal('${row.nama}', '${row.nik}', '${row.jabatan}', '${row.level}')">👁</button></td>
+                <td>${row.lokasi_induk}</td>
+                <td class="actions-cell">
+                    <button class="action-btn" onclick="openModal(${row.id}, '${row.nik}', '${safeNama}', '${safeJabatan}', '${row.level_jabatan}')" title="Lihat Work Order">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
+                    </button>
+                    <button class="btn btn-danger" onclick="deleteStaff(${row.id})" title="Hapus Staf">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"></path></svg>
+                    </button>
+                </td>
             `;
             tableBody.appendChild(tr);
         });
@@ -614,37 +764,32 @@ document.addEventListener('DOMContentLoaded', () => {
         updateEntryInfo();
     }
 
-    // Fungsi untuk memperbarui kontrol paginasi
+    // Paginasi UTAMA
     const updatePagination = () => {
-        const paginationDiv = document.querySelector('.pagination');
+        const paginationDiv = document.getElementById('mainPagination');
         if (!paginationDiv) return;
-
         const totalPages = Math.ceil(filteredData.length / entriesPerPage);
 
         let paginationHTML = `<button class="page-btn" onclick="changePage('prev')">Previous</button>`;
-
         for (let i = 1; i <= totalPages; i++) {
             paginationHTML += `<button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="changePage(${i})">${i}</button>`;
         }
-
         paginationHTML += `<button class="page-btn" onclick="changePage('next')">Next</button>`;
         paginationDiv.innerHTML = paginationHTML;
     }
 
-    // Fungsi untuk memperbarui info jumlah entri
+    // Info Entri UTAMA
     const updateEntryInfo = () => {
-        const entryInfo = document.querySelector('.entry-info');
+        const entryInfo = document.getElementById('mainEntryInfo');
         if (!entryInfo) return;
-
         const start = filteredData.length > 0 ? (currentPage - 1) * entriesPerPage + 1 : 0;
         const end = Math.min(start + entriesPerPage - 1, filteredData.length);
         entryInfo.textContent = `Showing ${start} to ${end} of ${filteredData.length} entries`;
     }
 
-    // Fungsi untuk mengubah halaman
+    // Ganti Halaman UTAMA
     window.changePage = (page) => {
         const totalPages = Math.ceil(filteredData.length / entriesPerPage);
-
         if (page === 'prev') {
             if (currentPage > 1) currentPage--;
         } else if (page === 'next') {
@@ -652,11 +797,10 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             currentPage = page;
         }
-
         renderTable();
     }
 
-    // Event listener untuk pilihan jumlah entri per halaman
+    // Event listener 'Show entries' UTAMA
     const entriesSelect = document.getElementById('entriesSelect');
     if (entriesSelect) {
         entriesSelect.addEventListener('change', function() {
@@ -666,34 +810,346 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Fungsionalitas pencarian
+    // Fungsionalitas pencarian UTAMA
     const searchInput = document.getElementById('searchInput');
     if (searchInput) {
         searchInput.addEventListener('input', function(e) {
             const searchTerm = e.target.value.toLowerCase();
-
             filteredData = allData.filter(row => {
-                return Object.values(row).some(val =>
-                    String(val).toLowerCase().includes(searchTerm)
-                );
-            });
+                // Pastikan semua nilai adalah string
+                const nik = String(row.nik).toLowerCase();
+                const nama = String(row.nama).toLowerCase();
+                const jabatan = String(row.jabatan).toLowerCase();
+                const level = String(row.level_jabatan).toLowerCase();
 
+                return nik.includes(searchTerm) ||
+                       nama.includes(searchTerm) ||
+                       jabatan.includes(searchTerm) ||
+                       level.includes(searchTerm);
+            });
             currentPage = 1;
             renderTable();
         });
     }
 
-    // Event listener untuk klik item menu (jika ada)
-    const menuItems = document.querySelectorAll('.menu-item');
-    menuItems.forEach(item => {
-        item.addEventListener('click', function() {
-            menuItems.forEach(mi => mi.classList.remove('active'));
-            this.classList.add('active');
-        });
+    // Render tabel utama saat pertama kali halaman dimuat
+    renderTable();
+
+    // =========================================================================
+    // SCRIPT BARU UNTUK TAMBAH/HAPUS STAF (AJAX)
+    // =========================================================================
+
+    // Fungsi untuk membuka modal Tambah Staf
+    window.openAddStaffModal = () => {
+        document.getElementById('addStaffModal').classList.add('active');
+    }
+
+    // Fungsi untuk menutup modal Tambah Staf
+    window.closeAddStaffModal = () => {
+        document.getElementById('addStaffModal').classList.remove('active');
+        document.getElementById('staffNik').value = '';
+        document.getElementById('staffNama').value = '';
+        document.getElementById('staffKelamin').value = 'L';
+        document.getElementById('staffJabatan').value = '';
+        document.getElementById('staffLevel').value = '';
+    }
+
+    document.getElementById('openAddStaffBtn').addEventListener('click', openAddStaffModal);
+
+    // Event listener untuk "Simpan Staf" (AJAX)
+    document.getElementById('simpanStafBtn').addEventListener('click', async () => {
+        const newData = {
+            nik: document.getElementById('staffNik').value,
+            nama: document.getElementById('staffNama').value,
+            kelamin: document.getElementById('staffKelamin').value,
+            jabatan: document.getElementById('staffJabatan').value,
+            level_jabatan: document.getElementById('staffLevel').value,
+            lokasi: document.getElementById('staffLokasi').value,
+            lokasi_induk: document.getElementById('staffLokasiInduk').value,
+        };
+
+        if (!newData.nik || !newData.nama || !newData.jabatan || !newData.level_jabatan) {
+            alert('NIK, Nama, Jabatan, dan Level Jabatan tidak boleh kosong!');
+            return;
+        }
+
+        try {
+            const response = await fetch('{{ route("personal.store") }}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': csrfToken
+                },
+                body: JSON.stringify(newData)
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                // Tampilkan error validasi (misal NIK sudah ada)
+                const errorMessages = Object.values(errorData.errors).join('\n');
+                throw new Error(errorMessages);
+            }
+
+            const addedStaff = await response.json();
+
+            // Tambahkan ke data global dan data terfilter
+            allData.push(addedStaff);
+            filteredData.push(addedStaff);
+
+            renderTable(); // Render ulang tabel
+            closeAddStaffModal(); // Tutup modal
+
+        } catch (error) {
+            console.error('Gagal menambah staf:', error);
+            alert('Gagal menambah staf:\n' + error.message);
+        }
     });
 
-    // Render tabel saat pertama kali halaman dimuat
-    renderTable();
+    // Fungsi untuk menghapus staf (AJAX)
+    window.deleteStaff = async (id) => {
+        if (confirm('Apakah Anda yakin ingin menghapus staf ini?')) {
+            try {
+                const response = await fetch(`/personal/${id}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'X-CSRF-TOKEN': csrfToken
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Gagal menghapus data.');
+                }
+
+                // Hapus dari data global
+                allData = allData.filter(staff => staff.id !== id);
+                filteredData = filteredData.filter(staff => staff.id !== id);
+
+                if (filteredData.length <= (currentPage - 1) * entriesPerPage && currentPage > 1) {
+                    currentPage--;
+                }
+
+                renderTable(); // Render ulang tabel
+
+            } catch (error) {
+                console.error('Gagal menghapus staf:', error);
+                alert('Gagal menghapus staf.');
+            }
+        }
+    }
+
+
+    // =========================================================================
+    // SCRIPT UNTUK TABEL MODAL (WORK ORDER) (AJAX)
+    // =========================================================================
+
+    // Data ini sekarang dikontrol per-modal
+    let workOrderData = [];
+    let filteredWoData = [];
+    let currentWoPage = 1;
+    let entriesPerWoPage = 5;
+
+    // Fungsi untuk merender tabel Work Order (Data dari variabel global)
+    window.renderWorkOrderTable = () => {
+        const tableBody = document.getElementById('woTableBody');
+        if (!tableBody) return;
+
+        let dataToRender = [...filteredWoData];
+        // Urutkan (seharusnya sudah terurut dari controller, tapi double check)
+        dataToRender.sort((a, b) => new Date(b.tanggal) - new Date(a.tanggal));
+
+        const start = (currentWoPage - 1) * entriesPerWoPage;
+        const end = start + entriesPerWoPage;
+        const pageData = dataToRender.slice(start, end);
+
+        tableBody.innerHTML = '';
+        pageData.forEach((row, index) => {
+            const tr = document.createElement('tr');
+            const deskripsiSingkat = (row.deskripsi && row.deskripsi.length > 30) ? row.deskripsi.substring(0, 30) + '...' : (row.deskripsi || '');
+
+            tr.innerHTML = `
+                <td>${start + index + 1}</td>
+                <td>${row.tanggal}</td>
+                <td>${row.fasilitas}</td>
+                <td>${row.jenis}</td>
+                <td title="${row.deskripsi || ''}">${deskripsiSingkat}</td>
+                <td class="actions-cell">
+                    <button class="btn action-btn" onclick="openDetailModal(${row.id})" title="Lihat Detail">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
+                    </button>
+                    <button class="btn btn-danger" onclick="deleteWorkOrder(${row.id})" title="Hapus">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"></path></svg>
+                    </button>
+                </td>
+            `;
+            tableBody.appendChild(tr);
+        });
+
+        updateWoPagination(dataToRender.length);
+        updateWoEntryInfo(dataToRender.length);
+    }
+
+    // Fungsi Hapus WO (AJAX)
+    window.deleteWorkOrder = async (id) => {
+        if (confirm('Apakah Anda yakin ingin menghapus data ini?')) {
+            try {
+                const response = await fetch(`/workorders/${id}`, {
+                    method: 'DELETE',
+                    headers: { 'X-CSRF-TOKEN': csrfToken }
+                });
+
+                if (!response.ok) throw new Error('Gagal menghapus WO.');
+
+                // Hapus dari data global
+                workOrderData = workOrderData.filter(item => item.id !== id);
+                filteredWoData = filteredWoData.filter(item => item.id !== id);
+
+                if (filteredWoData.length <= (currentWoPage - 1) * entriesPerWoPage && currentWoPage > 1) {
+                    currentWoPage--;
+                }
+                renderWorkOrderTable();
+
+            } catch (error) {
+                console.error('Gagal menghapus WO:', error);
+                alert('Gagal menghapus WO.');
+            }
+        }
+    }
+
+    // Paginasi WO
+    const updateWoPagination = (totalFilteredItems) => {
+        const paginationDiv = document.getElementById('woPagination');
+        if (!paginationDiv) return;
+        const totalPages = Math.ceil(totalFilteredItems / entriesPerWoPage);
+
+        paginationDiv.innerHTML = '';
+        if (totalPages <= 1) return;
+
+        let paginationHTML = `<button class="page-btn" onclick="changeWoPage('prev')">Previous</button>`;
+        for (let i = 1; i <= totalPages; i++) {
+            paginationHTML += `<button class="page-btn ${i === currentWoPage ? 'active' : ''}" onclick="changeWoPage(${i})">${i}</button>`;
+        }
+        paginationHTML += `<button class="page-btn" onclick="changeWoPage('next')">Next</button>`;
+        paginationDiv.innerHTML = paginationHTML;
+    }
+
+    // Info Entri WO
+    const updateWoEntryInfo = (totalFilteredItems) => {
+        const entryInfo = document.getElementById('woEntryInfo');
+        if (!entryInfo) return;
+        const start = totalFilteredItems > 0 ? (currentWoPage - 1) * entriesPerWoPage + 1 : 0;
+        const end = Math.min(start + entriesPerWoPage - 1, totalFilteredItems);
+        entryInfo.textContent = `Showing ${start} to ${end} of ${totalFilteredItems} entries`;
+    }
+
+    // Ganti Halaman WO
+    window.changeWoPage = (page) => {
+        const totalPages = Math.ceil(filteredWoData.length / entriesPerWoPage);
+        if (page === 'prev') {
+            if (currentWoPage > 1) currentWoPage--;
+        } else if (page === 'next') {
+            if (currentWoPage < totalPages) currentWoPage++;
+        } else {
+            currentWoPage = page;
+        }
+        renderWorkOrderTable();
+    }
+
+    // Event listener 'Show entries' WO
+    const woEntriesSelect = document.getElementById('woEntriesSelect');
+    if (woEntriesSelect) {
+        woEntriesSelect.addEventListener('change', function() {
+            entriesPerWoPage = parseInt(this.value);
+            currentWoPage = 1;
+            renderWorkOrderTable();
+        });
+    }
+
+    // Event listener pencarian WO
+    const woSearchInput = document.getElementById('woSearchInput');
+    if (woSearchInput) {
+        woSearchInput.addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            filteredWoData = workOrderData.filter(row => {
+                return Object.values(row).some(val =>
+                    String(val).toLowerCase().includes(searchTerm)
+                );
+            });
+            currentWoPage = 1;
+            renderWorkOrderTable();
+        });
+    }
+
+    // Event listener tombol 'Simpan' WO (AJAX)
+    const simpanWoBtn = document.getElementById('simpanWoBtn');
+    if (simpanWoBtn) {
+        simpanWoBtn.addEventListener('click', async () => {
+            const personalId = document.getElementById('modalPersonalId').value;
+            const newData = {
+                tanggal: document.getElementById('woTanggal').value,
+                fasilitas: document.getElementById('woKategori').value,
+                jenis: document.getElementById('woJenis').value,
+                deskripsi: document.getElementById('woDeskripsi').value,
+            };
+
+            if (!newData.tanggal || !newData.fasilitas || !newData.jenis) {
+                alert('Tanggal, Kategori, dan Jenis Peralatan tidak boleh kosong!');
+                return;
+            }
+
+            try {
+                const response = await fetch(`/personal/${personalId}/workorders`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': csrfToken
+                    },
+                    body: JSON.stringify(newData)
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(Object.values(errorData.errors).join('\n'));
+                }
+
+                const addedWorkOrder = await response.json();
+
+                // Tambahkan ke data global dan render ulang
+                workOrderData.unshift(addedWorkOrder); // Tambah ke awal
+                filteredWoData = [...workOrderData]; // Update data filter
+
+                currentWoPage = 1;
+                renderWorkOrderTable();
+
+                // Kosongkan form
+                document.getElementById('woTanggal').value = '';
+                document.getElementById('woKategori').value = '';
+                document.getElementById('woJenis').value = '';
+                document.getElementById('woDeskripsi').value = '';
+
+            } catch (error) {
+                console.error('Gagal menambah WO:', error);
+                alert('Gagal menambah Work Order:\n' + error.message);
+            }
+        });
+    }
+
+    // Fungsi Modal Detail WO
+    window.openDetailModal = (id) => {
+        // Cari data di variabel global
+        const wo = workOrderData.find(item => item.id === id);
+        if (wo) {
+            document.getElementById('detailTanggal').textContent = wo.tanggal;
+            document.getElementById('detailKategori').textContent = wo.fasilitas;
+            document.getElementById('detailJenis').textContent = wo.jenis;
+            document.getElementById('detailDeskripsi').textContent = wo.deskripsi;
+            document.getElementById('workOrderDetailModal').style.display = 'flex';
+        }
+    }
+
+    window.closeDetailModal = () => {
+        document.getElementById('workOrderDetailModal').style.display = 'none';
+    }
+
 });
 </script>
 

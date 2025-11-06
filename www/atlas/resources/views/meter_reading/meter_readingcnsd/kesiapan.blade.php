@@ -171,90 +171,26 @@
     }
 
     @media print {
-        @page {
-            size: A4 portrait;
-            margin: 6mm; /* Margin cetak */
-        }
-
-        body {
-            padding: 0 !important;
-            margin: 0 !important;
-            font-size: 12px !important;
-            background: none !important;
-        }
-
-        /* [KUNCI] Sembunyikan SEMUA elemen di halaman */
-        body * {
-            visibility: hidden;
-        }
-
-        /* [KUNCI] Tampilkan HANYA form dan semua isinya */
-        #form-container, #form-container * {
-            visibility: visible;
-        }
-
-        /* [KUNCI] Posisikan form agar mengisi 100% kertas */
-        #form-container {
-            position: absolute;
-            left: 0;
-            top: 0;
-            right: 0;
-            padding: 0 !important;
-            margin: 0 !important;
-            overflow: visible !important;
-            background: none !important;
-        }
-
-        .no-print {
-            display: none !important;
-        }
-        .form-container-inner {
-            min-width: 0 !important;
-            width: 100% !important;
-            margin: 0 !important;
-            border: 3px solid #000 !important;
-            box-shadow: none !important;
-        }
-
-        /* Sembunyikan border input saat print */
-        .form-input, .form-select, .signature-input-line {
-            border: none !important;
-            background-color: transparent !important;
-            -webkit-appearance: none;
-            appearance: none;
-        }
-
-        /* Tampilkan value dari input text */
-        .form-input::after {
-            content: attr(value);
-        }
-
-        /* Tampilkan value dari select box */
-        .form-select {
-            padding: 4px; font-size: 10px;
-        }
-        select.form-select option {
-            display: none;
-        }
-        select.form-select option[selected] {
-            display: block;
-        }
-        /* Trik untuk menampilkan value terpilih */
-        select.form-select {
-             -webkit-appearance: none;
-             -moz-appearance: none;
-             appearance: none;
-             padding: 4px;
-             font-size: 10px;
-             text-align: center; /* Sesuaikan jika perlu */
-        }
-
-        .signature-input-line {
-            border-bottom: 1px solid #000 !important;
-        }
-        .header {
-            flex-wrap: nowrap !important;
-        }
+            @page { size: A4 portrait; margin: 6mm; }
+            body { margin: 0; background-color: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .no-print { display: none !important; }
+            #form-container { display: block !important; padding: 0 !important; }
+            #list-container, #main-controls { display: none !important; }
+            .form-container-inner { box-shadow: none; border: 1.5px solid #000; margin: 0; max-width: 100%; }
+            .header-section, .equipment-section { padding: 8px; }
+            .info-left, .info-right { padding: 5px 8px; }
+            .info-row { margin-bottom: 2px; }
+            .logo { width: 50px; height: 50px; }
+            table.form-table th, table.form-table td { padding: 3px 5px !important; font-size: 9px !important; }
+            td[rowspan="6"] div { height: 40px !important; }
+            td[rowspan="6"] { padding-bottom: 5px !important; }
+            input, select, .print-value {
+                border: none !important;
+                background: transparent !important;
+                padding: 1px !important;
+                font-size: 9px !important;
+                color: black !important;
+            }
     }
 </style>
 @endpush

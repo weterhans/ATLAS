@@ -36,4 +36,9 @@ class MeterReadingController extends Controller
     {
         return view('meter_reading.meter_readingcnsd.kesiapan');
     }
+
+    public function cnsdatis()
+    {
+        return view('meter_reading.meter_readingcnsd.atis');
+    }
 }

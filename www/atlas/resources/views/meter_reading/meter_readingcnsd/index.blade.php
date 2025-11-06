@@ -69,7 +69,7 @@
                  <img src="https://i.ibb.co/yqg0NTz/undraw_Wireframing_re_qawp_1.png" alt="AMSC" class="rounded-lg mb-4 w-full h-48 object-cover">
                 <h3 class="font-semibold text-gray-800">AMSC</h3>
             </a>
-            <a href="#" class="card bg-white p-4 rounded-xl shadow-md text-center">
+            <a href="{{ route('meter_reading.cnsd.atis') }}" class="card bg-white p-4 rounded-xl shadow-md text-center">
                  <img src="https://i.ibb.co/yqg0NTz/undraw_Wireframing_re_qawp_1.png" alt="ATIS" class="rounded-lg mb-4 w-full h-48 object-cover">
                 <h3 class="font-semibold text-gray-800">ATIS</h3>
             </a>
