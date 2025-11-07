@@ -1954,3 +1954,50 @@
 33c4 reset_handle              145 resetting mismatched stdout handle
 33c4 reset_handle              145 resetting mismatched stderr handle
 33c4 history_db::compact      1492 History:  44 active, 107 deleted
+3edc inject                    545 ---- 2025/11/08 00:56:18.347 -------------------------------------------------
+3edc inject                    546 Injecting Clink...
+3edc inject_dll                264 Version: 1.2.46.69fc92
+3edc inject_dll                265 Arch: x64
+3edc inject_dll                266 DLL: C:\Users\jokof\AppData\Local\Temp\clink\dll_cache\1.2.46.69fc92_de0ae14b\clink_dll_x64.dll
+3edc inject_dll                268 Parent pid: 12324
+3edc check_dll_version         168 DLL version: 00010002 002e0000
+3024 start_logger              154 ---- 2025/11/08 00:56:18.383 -------------------------------------------------
+3024 start_logger              160 Host process is 'cmd.exe' (pid 12324)
+3024 start_logger              164 DLL path is 'D:\laragon\bin\cmder\vendor\clink'
+3024 start_logger              178 Windows version 10.0.26100 (x64)
+3024 start_logger              181 Clink version 1.2.46.69fc92 (x64)
+3024 hook_setter::hook_setter  156 >>> Started hook transaction.
+3024 hook_setter::attach_iat   313 Attempting to hook SetEnvironmentVariableW in IAT for module 00007FF61BDB0000.
+3024 pe_info::iterate_imports  160 Found import in 'api-ms-win-core-processenvironment-l1-1-0.dll'
+3024 find_iat                  121 Found import at 00007FF61BDEBE70 (value is 00007FFC14AF4450).
+3024 hook_setter::attach_iat   313 Attempting to hook WriteConsoleW in IAT for module 00007FF61BDB0000.
+3024 pe_info::iterate_imports  160 Found import in 'api-ms-win-core-console-l1-1-0.dll'
+3024 find_iat                  121 Found import at 00007FF61BDEBAB8 (value is 00007FFC14AEE9F0).
+3024 hook_setter::attach_iat   313 Attempting to hook GetEnvironmentVariableW in IAT for module 00007FF61BDB0000.
+3024 pe_info::iterate_imports  160 Found import in 'api-ms-win-core-processenvironment-l1-1-0.dll'
+3024 find_iat                  121 Found import at 00007FF61BDEBE50 (value is 00007FFC14AD0980).
+3024 hook_setter::commit       204 <<< Hook transaction committed.
+3024 hook_setter::hook_setter  156 >>> Started hook transaction.
+3024 hook_setter::detach_iat   356 Attempting to unhook 00007FFB9FECADF0 from GetEnvironmentVariableW in IAT for module 00007FF61BDB0000.
+3024 pe_info::iterate_imports  160 Found import in 'api-ms-win-core-processenvironment-l1-1-0.dll'
+3024 find_iat                  121 Found import at 00007FF61BDEBE50 (value is 00007FFB9FECADF0).
+3024 hook_setter::commit       204 <<< Hook transaction committed.
+3024 hook_setter::hook_setter  156 >>> Started hook transaction.
+3024 hook_setter::attach_iat   313 Attempting to hook ReadConsoleW in IAT for module 00007FF61BDB0000.
+3024 pe_info::iterate_imports  160 Found import in 'api-ms-win-core-console-l1-1-0.dll'
+3024 find_iat                  121 Found import at 00007FF61BDEBAC8 (value is 00007FFC14AD11A0).
+3024 hook_setter::commit       204 <<< Hook transaction committed.
+3024 reset_handle              145 resetting mismatched stdin handle
+3024 reset_handle              145 resetting mismatched stdout handle
+3024 reset_handle              145 resetting mismatched stderr handle
+3024 win_screen_buffer::begin  227 Using native terminal support; found 'ConEmuHk64.dll'.
+3024 reset_handle              145 resetting mismatched stdout handle
+3024 reset_handle              145 resetting mismatched stderr handle
+3024 history_db::initialise   1268 master bank ctag: |CTAG_1663167284_18455859_4204_0
+3024 history_db::compact      1492 History:  44 active, 107 deleted
+3024 reset_handle              145 resetting mismatched stdout handle
+3024 reset_handle              145 resetting mismatched stderr handle
+3024 history_db::compact      1492 History:  44 active, 108 deleted
+3024 reset_handle              145 resetting mismatched stdout handle
+3024 reset_handle              145 resetting mismatched stderr handle
+3024 history_db::compact      1492 History:  45 active, 108 deleted

@@ -77,7 +77,7 @@
 
             {{-- Header Modal --}}
             <div class="flex justify-between items-center border-b p-4 sticky top-0 bg-white rounded-t-xl z-10">
-                <h3 id="modal-title-tfp-daily" class="text-xl font-semibold text-gray-900">DAILY TFP FORM</h3>
+                <h3 id="modal-title-tfp-daily" class="text-xl font-semibold text-gray-900">REPORT TFP FORM</h3>
                 <button type="button" id="close-daily-modal-btn-tfp" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" aria-label="Close modal">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
@@ -93,7 +93,7 @@
                     {{-- Kolom Kiri: ID & Tanggal --}}
                     <div class="space-y-4">
                         <div>
-                            <label for="daily_id_custom_tfp" class="block text-sm font-medium text-gray-700 mb-1">ID_DAILY*</label>
+                            <label for="daily_id_custom_tfp" class="block text-sm font-medium text-gray-700 mb-1">ID_REPORT*</label>
                             <input type="text" id="daily_id_custom_tfp" name="report_id_custom" readonly class="block w-full bg-gray-100 border-gray-300 rounded-lg shadow-sm p-2 text-gray-500 cursor-not-allowed">
                         </div>
                         <div>

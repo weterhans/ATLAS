@@ -30,9 +30,9 @@
         {{-- Nanti ganti href="#" dengan route('tfp.daily') --}}
         <a href="{{ route('tfp.daily') }}" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center">
             <div class="h-40 bg-green-200 rounded-md flex items-center justify-center mb-4">
-                <span class="text-4xl font-bold text-gray-700">Daily</span>
+                <span class="text-4xl font-bold text-gray-700">Report</span>
             </div>
-            <h3 class="font-semibold text-gray-800">DAILY TFP</h3>
+            <h3 class="font-semibold text-gray-800">REPORT TFP</h3>
         </a>
 
         {{-- Kartu Kegiatan --}}

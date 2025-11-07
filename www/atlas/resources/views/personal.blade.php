@@ -6,8 +6,7 @@
   CSS Kustom untuk halaman Data Personal.
 --}}
 <style>
-    /* ... (SEMUA CSS DARI SEBELUMNYA MASIH SAMA, TIDAK PERLU DISALIN ULANG) ... */
-    /* Reset dasar */
+    /* ... (CSS Anda sebelumnya) ... */
     * {
         margin: 0;
         padding: 0;
@@ -19,8 +18,6 @@
         max-width: 1400px;
         margin: 0 auto;
     }
-
-    /* Header */
     .header {
         background: white;
         padding: 1rem 1.5rem;
@@ -93,6 +90,22 @@
         padding: 0; /* Pastikan padding tidak merusak ukuran */
     }
     .btn-danger:hover {
+        background-color: #c0392b;
+    }
+    .btn-secondary {
+        background-color: #f1f1f1;
+        color: #555;
+    }
+    .btn-secondary:hover {
+        background-color: #e0e0e0;
+    }
+
+    /* MODIFIKASI: Tombol konfirmasi hapus (agar tidak bentrok dengan ikon) */
+    .btn-danger-confirm {
+        background-color: #e74c3c;
+        color: white;
+    }
+    .btn-danger-confirm:hover {
         background-color: #c0392b;
     }
 
@@ -252,6 +265,20 @@
     .close-btn:hover {
         background: #c0392b;
     }
+    .close-btn.icon-close {
+        background: none;
+        color: #888;
+        font-size: 24px;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+    }
+    .close-btn.icon-close:hover {
+        background: #f1f1f1;
+    }
+
     .work-order-sections {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -328,6 +355,9 @@
         align-items: center;
         justify-content: center;
     }
+    .modal-detail.active {
+        display: flex;
+    }
     .modal-detail-content {
         background: white;
         border-radius: 10px;
@@ -368,9 +398,24 @@
         white-space: pre-wrap; /* Agar deskripsi panjang bisa wrap */
         word-wrap: break-word;
     }
+
+    /* MODIFIKASI: Style untuk Pop-up Toast (dipindahkan ke tengah) */
+    .toast {
+        display: none;
+        position: fixed;
+        top: 50%; /* Pindah ke tengah */
+        left: 50%; /* Pindah ke tengah */
+        transform: translate(-50%, -50%); /* Centering */
+        background-color: #2ecc71; /* Hijau sukses */
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 5px;
+        z-index: 2000;
+        font-size: 16px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
 </style>
 
-{{-- MODIFIKASI: Menambahkan meta tag CSRF token --}}
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 {{-- Konten HTML dari personal.html --}}
@@ -378,7 +423,6 @@
 
     <div class="flex items-center mb-6 justify-between items-center">
          <div class="flex items-center">
-            {{-- Tombol Kembali ke Dashboard --}}
             <a href="{{ route('dashboard') }}" class="p-2 rounded-md hover:bg-gray-200" aria-label="Kembali ke Dashboard">
                 <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
@@ -446,8 +490,7 @@
     <div class="modal-content">
         <div class="modal-header">
             <h2>Data Work Order Personil : <span id="modalPersonName">Nama Personil</span></h2>
-            <button class="close-btn" onclick="closeModal()"><- Kembali</button>
-            {{-- MODIFIKASI: Menambahkan input tersembunyi untuk menyimpan ID personal --}}
+            <button class="close-btn" onclick="closeModal()">✕</button>
             <input type="hidden" id="modalPersonalId">
         </div>
 
@@ -478,18 +521,12 @@
                     <div class="info-label">Lokasi Induk</div>
                     <div class="info-value" id="modalLokasiInduk"></div>
                 </div>
-                <div class="info-row">
-                    <div class="info-label">Rating</div>
-                    <div class="info-value">
-                        <button class="btn btn-primary">List Rating >></button>
-                    </div>
-                </div>
             </div>
 
             <div class="section">
                 <h3>Tambah Work Order</h3>
                  <div class="info-row">
-                    <div class="info-label">Tgl. Work Order</div>
+                    <div class="info-label">Tanggal</div>
                     <div class="info-value no-padding">
                         <input type="date" id="woTanggal">
                     </div>
@@ -510,13 +547,13 @@
                 <div class="info-row">
                     <div class="info-label">Jenis Peralatan</div>
                     <div class="info-value no-padding">
-                        <input type="text" placeholder="Jenis Peralatan" id="woJenis">
+                        <input type="text" placeholder="Pilih Jenis Peralatan" id="woJenis">
                     </div>
                 </div>
                 <div class="info-row align-start">
                     <div class="info-label">Deskripsi</div>
                     <div class="info-value no-padding">
-                        <textarea id="woDeskripsi" rows="3" placeholder="Deskripsi"></textarea>
+                        <textarea id="woDeskripsi" rows="3" placeholder="Deskripsi singkat pekerjaan..."></textarea>
                     </div>
                 </div>
                 <button class="btn btn-primary simpan-btn" id="simpanWoBtn">Simpan</button>
@@ -565,7 +602,7 @@
     <div class="modal-detail-content">
         <div class="modal-detail-header">
             <h3>Detail Work Order</h3>
-            <button class="close-btn" onclick="closeDetailModal()">✕</button>
+            <button class="close-btn icon-close" onclick="closeDetailModal()">✕</button>
         </div>
         <div class="modal-detail-body">
             <div class="detail-item">
@@ -581,7 +618,7 @@
                 <div class="detail-value" id="detailJenis"></div>
             </div>
             <div class="detail-item">
-                <div class="detail-label">Deskripsi Lengkap</div>
+                <div class="detail-label">Deskripsi</div>
                 <div class="detail-value" id="detailDeskripsi"></div>
             </div>
         </div>
@@ -592,7 +629,7 @@
     <div class="modal-content modal-sm">
         <div class="modal-header">
             <h3>Tambah Staf Personal Baru</h3>
-            <button class="close-btn" onclick="closeAddStaffModal()">✕</button>
+            <button class="close-btn icon-close" onclick="closeAddStaffModal()">✕</button>
         </div>
 
         <div class="section" style="background: white; border: none; padding: 0;">
@@ -646,6 +683,30 @@
     </div>
 </div>
 
+<div id="toast-notification" class="toast">
+    <span id="toast-message"></span>
+</div>
+
+<div id="deleteConfirmModal" class="modal-detail" style="z-index: 1100;">
+    <div class="modal-detail-content" style="max-width: 450px;">
+        <div class="modal-detail-header" style="border-bottom: none; margin-bottom: 0.5rem;">
+            <h3 id="deleteConfirmTitle">Konfirmasi Hapus Data</h3>
+            {{-- MODIFIKASI: Tombol 'X' di modal hapus dihilangkan --}}
+            {{-- <button class="close-btn icon-close" onclick="closeDeleteConfirm()">✕</button> --}}
+        </div>
+        <div class="modal-detail-body">
+            <p style="margin-bottom: 0.5rem; font-size: 16px;">Anda yakin ingin menghapus data:</p>
+            <p id="deleteConfirmMessage" style="font-weight: 600; margin-bottom: 1rem; font-size: 16px;"></p>
+            <p style="color: #e74c3c; font-size: 14px; margin-bottom: 1.5rem;">Tindakan ini tidak dapat dibatalkan.</p>
+            <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+                <button class="btn btn-secondary" style="width: auto;" onclick="closeDeleteConfirm()">Batal</button>
+                {{-- MODIFIKASI: Class diubah dari btn-danger ke btn-danger-confirm --}}
+                <button class="btn btn-danger-confirm" id="confirmDeleteBtn" style="width: auto;">Ya, Hapus</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 {{--
   JavaScript Kustom untuk halaman Data Personal.
@@ -654,23 +715,66 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // =========================================================================
+    // SCRIPT NOTIFIKASI & KONFIRMASI
+    // =========================================================================
+
+    // --- Pop-up Toast Notifikasi ---
+    let toastTimeout;
+    window.showToast = (message) => {
+        const toast = document.getElementById('toast-notification');
+        const messageEl = document.getElementById('toast-message');
+
+        messageEl.textContent = message;
+        toast.style.display = 'block';
+
+        if (toastTimeout) {
+            clearTimeout(toastTimeout);
+        }
+        toastTimeout = setTimeout(() => {
+            toast.style.display = 'none';
+        }, 3000);
+    }
+
+    // --- Pop-up Konfirmasi Hapus ---
+    let deleteCallback = null;
+    const deleteConfirmModal = document.getElementById('deleteConfirmModal');
+    const confirmDeleteBtn = document.getElementById('confirmDeleteBtn');
+    const deleteConfirmMessage = document.getElementById('deleteConfirmMessage');
+
+    window.openDeleteConfirm = (message, callback) => {
+        deleteConfirmMessage.textContent = message;
+        deleteCallback = callback;
+        deleteConfirmModal.classList.add('active');
+    }
+
+    window.closeDeleteConfirm = () => {
+        deleteConfirmModal.classList.remove('active');
+        deleteCallback = null;
+    }
+
+    confirmDeleteBtn.addEventListener('click', () => {
+        if (deleteCallback) {
+            deleteCallback();
+        }
+        closeDeleteConfirm();
+    });
+
+
+    // =========================================================================
     // SCRIPT UTAMA (DATA PERSONAL)
     // =========================================================================
 
-    // MODIFIKASI: Ambil data 'personals' yang dikirim dari Controller
     let allData = @json($personals);
     let currentPage = 1;
     let entriesPerPage = 10;
     let filteredData = [...allData];
 
-    // Ambil token CSRF dari meta tag
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
     // Fungsi untuk membuka modal WO
     window.openModal = async (personalId, nik, nama, jabatan, level) => {
         const modal = document.getElementById('workOrderModal');
 
-        // Isi data personal di modal
         document.getElementById('modalPersonName').textContent = nama;
         document.getElementById('modalPernium').textContent = nik;
         document.getElementById('modalNama').textContent = nama;
@@ -678,20 +782,20 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('modalLevel').textContent = level;
         document.getElementById('modalLokasi').textContent = 'Cabang Surabaya';
         document.getElementById('modalLokasiInduk').textContent = 'Surabaya';
-
-        // Simpan ID personal untuk tambah WO baru
         document.getElementById('modalPersonalId').value = personalId;
 
         modal.classList.add('active');
 
-        // MODIFIKASI: Ambil data WO dari server
+        // Set tanggal hari ini saat modal WO dibuka
+        setTodayDateForWorkOrder();
+
         try {
             const response = await fetch(`/personal/${personalId}/workorders`);
             const data = await response.json();
-            workOrderData = data; // Set data global
-            filteredWoData = data; // Set data filter
-            currentWoPage = 1; // Reset ke halaman 1
-            renderWorkOrderTable(); // Render tabel WO
+            workOrderData = data;
+            filteredWoData = data;
+            currentWoPage = 1;
+            renderWorkOrderTable();
         } catch (error) {
             console.error('Gagal mengambil data Work Order:', error);
             document.getElementById('woTableBody').innerHTML = `<tr><td colspan="6" class="text-center text-red-500">Gagal memuat data</td></tr>`;
@@ -701,7 +805,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fungsi untuk menutup modal WO
     window.closeModal = () => {
         document.getElementById('workOrderModal').classList.remove('active');
-        // Reset data WO
         workOrderData = [];
         filteredWoData = [];
         currentWoPage = 1;
@@ -713,10 +816,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const modal = document.getElementById('workOrderModal');
         const detailModal = document.getElementById('workOrderDetailModal');
         const addStaffModal = document.getElementById('addStaffModal');
+        const deleteModal = document.getElementById('deleteConfirmModal');
 
         if (event.target === modal) closeModal();
         if (event.target === detailModal) closeDetailModal();
         if (event.target === addStaffModal) closeAddStaffModal();
+        if (event.target === deleteModal) closeDeleteConfirm();
     }
 
     // Fungsi untuk merender ulang tabel UTAMA
@@ -724,7 +829,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const tableBody = document.getElementById('tableBody');
         if (!tableBody) return;
 
-        // Urutkan data berdasarkan Level (tertinggi ke terendah)
         filteredData.sort((a, b) => b.level_jabatan - a.level_jabatan);
 
         const start = (currentPage - 1) * entriesPerPage;
@@ -735,7 +839,6 @@ document.addEventListener('DOMContentLoaded', () => {
         pageData.forEach((row, index) => {
             const tr = document.createElement('tr');
 
-            // Escape tanda kutip pada nama dan jabatan
             const safeNama = row.nama.replace(/'/g, "\\'");
             const safeJabatan = row.jabatan.replace(/'/g, "\\'");
 
@@ -752,7 +855,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <button class="action-btn" onclick="openModal(${row.id}, '${row.nik}', '${safeNama}', '${safeJabatan}', '${row.level_jabatan}')" title="Lihat Work Order">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
                     </button>
-                    <button class="btn btn-danger" onclick="deleteStaff(${row.id})" title="Hapus Staf">
+                    <button class="btn btn-danger" onclick="deleteStaff(${row.id}, '${safeNama}')" title="Hapus Staf">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"></path></svg>
                     </button>
                 </td>
@@ -816,7 +919,6 @@ document.addEventListener('DOMContentLoaded', () => {
         searchInput.addEventListener('input', function(e) {
             const searchTerm = e.target.value.toLowerCase();
             filteredData = allData.filter(row => {
-                // Pastikan semua nilai adalah string
                 const nik = String(row.nik).toLowerCase();
                 const nama = String(row.nama).toLowerCase();
                 const jabatan = String(row.jabatan).toLowerCase();
@@ -836,15 +938,14 @@ document.addEventListener('DOMContentLoaded', () => {
     renderTable();
 
     // =========================================================================
-    // SCRIPT BARU UNTUK TAMBAH/HAPUS STAF (AJAX)
+    // SCRIPT TAMBAH/HAPUS STAF (AJAX)
     // =========================================================================
 
-    // Fungsi untuk membuka modal Tambah Staf
     window.openAddStaffModal = () => {
         document.getElementById('addStaffModal').classList.add('active');
+        document.getElementById('staffNik').focus();
     }
 
-    // Fungsi untuk menutup modal Tambah Staf
     window.closeAddStaffModal = () => {
         document.getElementById('addStaffModal').classList.remove('active');
         document.getElementById('staffNik').value = '';
@@ -856,7 +957,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('openAddStaffBtn').addEventListener('click', openAddStaffModal);
 
-    // Event listener untuk "Simpan Staf" (AJAX)
     document.getElementById('simpanStafBtn').addEventListener('click', async () => {
         const newData = {
             nik: document.getElementById('staffNik').value,
@@ -885,19 +985,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (!response.ok) {
                 const errorData = await response.json();
-                // Tampilkan error validasi (misal NIK sudah ada)
                 const errorMessages = Object.values(errorData.errors).join('\n');
                 throw new Error(errorMessages);
             }
 
             const addedStaff = await response.json();
-
-            // Tambahkan ke data global dan data terfilter
             allData.push(addedStaff);
-            filteredData.push(addedStaff);
 
-            renderTable(); // Render ulang tabel
-            closeAddStaffModal(); // Tutup modal
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            filteredData = allData.filter(row => {
+                return Object.values(row).some(val =>
+                    String(val).toLowerCase().includes(searchTerm)
+                );
+            });
+
+            renderTable();
+            closeAddStaffModal();
+            showToast('Staf baru berhasil ditambahkan!');
 
         } catch (error) {
             console.error('Gagal menambah staf:', error);
@@ -905,56 +1009,81 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Fungsi untuk menghapus staf (AJAX)
-    window.deleteStaff = async (id) => {
-        if (confirm('Apakah Anda yakin ingin menghapus staf ini?')) {
+    // Fungsi deleteStaff diubah untuk memanggil modal konfirmasi
+    window.deleteStaff = (id, nama) => {
+        openDeleteConfirm(`Staf: ${nama}?`, async () => {
             try {
                 const response = await fetch(`/personal/${id}`, {
                     method: 'DELETE',
-                    headers: {
-                        'X-CSRF-TOKEN': csrfToken
-                    }
+                    headers: { 'X-CSRF-TOKEN': csrfToken }
                 });
+                if (!response.ok) throw new Error('Gagal menghapus data.');
 
-                if (!response.ok) {
-                    throw new Error('Gagal menghapus data.');
-                }
-
-                // Hapus dari data global
-                allData = allData.filter(staff => staff.id !== id);
-                filteredData = filteredData.filter(staff => staff.id !== id);
-
+                allData = allData.filter(s => s.id !== id);
+                filteredData = filteredData.filter(s => s.id !== id);
                 if (filteredData.length <= (currentPage - 1) * entriesPerPage && currentPage > 1) {
                     currentPage--;
                 }
-
-                renderTable(); // Render ulang tabel
-
+                renderTable();
+                showToast('Staf berhasil dihapus.');
             } catch (error) {
                 console.error('Gagal menghapus staf:', error);
                 alert('Gagal menghapus staf.');
             }
-        }
+        });
     }
 
+    // Navigasi 'Enter' di Modal Tambah Staf
+    const staffModal = document.getElementById('addStaffModal');
+    const focusableInputs = Array.from(
+        staffModal.querySelectorAll('input, select')
+    );
+    focusableInputs.forEach((input, index) => {
+        input.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                const nextInput = focusableInputs[index + 1];
+                if (nextInput) {
+                    nextInput.focus();
+                } else {
+                    document.getElementById('simpanStafBtn').click();
+                }
+            }
+        });
+    });
+
 
     // =========================================================================
-    // SCRIPT UNTUK TABEL MODAL (WORK ORDER) (AJAX)
+    // SCRIPT TABEL MODAL (WORK ORDER) (AJAX)
     // =========================================================================
 
-    // Data ini sekarang dikontrol per-modal
+    // Helper untuk dapatkan tanggal YYYY-MM-DD
+    const getTodayYYYYMMDD = () => {
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        const mm = String(today.getMonth() + 1).padStart(2, '0'); // Bulan 0-indexed
+        const dd = String(today.getDate()).padStart(2, '0');
+        return `${yyyy}-${mm}-${dd}`;
+    };
+
+    // Fungsi untuk set tanggal WO ke hari ini
+    const setTodayDateForWorkOrder = () => {
+        const tanggalInput = document.getElementById('woTanggal');
+        if (tanggalInput) {
+            tanggalInput.value = getTodayYYYYMMDD();
+        }
+    };
+
     let workOrderData = [];
     let filteredWoData = [];
     let currentWoPage = 1;
     let entriesPerWoPage = 5;
 
-    // Fungsi untuk merender tabel Work Order (Data dari variabel global)
     window.renderWorkOrderTable = () => {
         const tableBody = document.getElementById('woTableBody');
         if (!tableBody) return;
 
         let dataToRender = [...filteredWoData];
-        // Urutkan (seharusnya sudah terurut dari controller, tapi double check)
         dataToRender.sort((a, b) => new Date(b.tanggal) - new Date(a.tanggal));
 
         const start = (currentWoPage - 1) * entriesPerWoPage;
@@ -976,7 +1105,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <button class="btn action-btn" onclick="openDetailModal(${row.id})" title="Lihat Detail">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
                     </button>
-                    <button class="btn btn-danger" onclick="deleteWorkOrder(${row.id})" title="Hapus">
+                    <button class="btn btn-danger" onclick="deleteWorkOrder(${row.id}, '${row.jenis}')" title="Hapus">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"></path></svg>
                     </button>
                 </td>
@@ -988,31 +1117,28 @@ document.addEventListener('DOMContentLoaded', () => {
         updateWoEntryInfo(dataToRender.length);
     }
 
-    // Fungsi Hapus WO (AJAX)
-    window.deleteWorkOrder = async (id) => {
-        if (confirm('Apakah Anda yakin ingin menghapus data ini?')) {
+    // Fungsi Hapus WO diubah untuk memanggil modal konfirmasi
+    window.deleteWorkOrder = (id, jenis) => {
+        openDeleteConfirm(`Work Order: ${jenis}?`, async () => {
             try {
                 const response = await fetch(`/workorders/${id}`, {
                     method: 'DELETE',
                     headers: { 'X-CSRF-TOKEN': csrfToken }
                 });
-
                 if (!response.ok) throw new Error('Gagal menghapus WO.');
 
-                // Hapus dari data global
                 workOrderData = workOrderData.filter(item => item.id !== id);
                 filteredWoData = filteredWoData.filter(item => item.id !== id);
-
                 if (filteredWoData.length <= (currentWoPage - 1) * entriesPerWoPage && currentWoPage > 1) {
                     currentWoPage--;
                 }
                 renderWorkOrderTable();
-
+                showToast('Work order berhasil dihapus.');
             } catch (error) {
                 console.error('Gagal menghapus WO:', error);
                 alert('Gagal menghapus WO.');
             }
-        }
+        });
     }
 
     // Paginasi WO
@@ -1113,18 +1239,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const addedWorkOrder = await response.json();
 
-                // Tambahkan ke data global dan render ulang
-                workOrderData.unshift(addedWorkOrder); // Tambah ke awal
-                filteredWoData = [...workOrderData]; // Update data filter
+                workOrderData.unshift(addedWorkOrder);
+                filteredWoData = [...workOrderData];
 
                 currentWoPage = 1;
                 renderWorkOrderTable();
 
-                // Kosongkan form
-                document.getElementById('woTanggal').value = '';
+                setTodayDateForWorkOrder();
                 document.getElementById('woKategori').value = '';
                 document.getElementById('woJenis').value = '';
                 document.getElementById('woDeskripsi').value = '';
+
+                showToast('Work order berhasil disimpan!');
 
             } catch (error) {
                 console.error('Gagal menambah WO:', error);
@@ -1135,19 +1261,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fungsi Modal Detail WO
     window.openDetailModal = (id) => {
-        // Cari data di variabel global
         const wo = workOrderData.find(item => item.id === id);
         if (wo) {
             document.getElementById('detailTanggal').textContent = wo.tanggal;
             document.getElementById('detailKategori').textContent = wo.fasilitas;
             document.getElementById('detailJenis').textContent = wo.jenis;
             document.getElementById('detailDeskripsi').textContent = wo.deskripsi;
-            document.getElementById('workOrderDetailModal').style.display = 'flex';
+            document.getElementById('workOrderDetailModal').classList.add('active');
         }
     }
 
     window.closeDetailModal = () => {
-        document.getElementById('workOrderDetailModal').style.display = 'none';
+        document.getElementById('workOrderDetailModal').classList.remove('active');
     }
 
 });

@@ -30,9 +30,9 @@
         {{-- Nanti ganti href="#" dengan route('cnsd.daily') --}}
         <a href="{{ route('cnsd.daily') }}" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center">
             <div class="h-40 bg-gray-200 rounded-md flex items-center justify-center mb-4">
-                <span class="text-4xl font-bold text-gray-700">Daily</span>
+                <span class="text-4xl font-bold text-gray-700">Report</span>
             </div>
-            <h3 class="font-semibold text-gray-800">DAILY CNSD</h3>
+            <h3 class="font-semibold text-gray-800">REPORT CNSD</h3>
         </a>
 
         {{-- Kartu Kegiatan --}}

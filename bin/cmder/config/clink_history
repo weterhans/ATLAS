@@ -142,11 +142,14 @@ php artisan make:controller MeterReadingController
 |hp artisan serve
 |d atlas
 |hp artisan serve
-cd atlas
+|d atlas
 |hp artisan serve
 |hp artisan serve
 php artisan make:model Personal -m
 php artisan make:model WorkOrder -m
 php artisan migrate
 php artisan make:controller PersonalController
+|hp artisan serve
+cd atlas
+php artisam serve
 php artisan serve
