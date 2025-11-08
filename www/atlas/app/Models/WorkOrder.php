@@ -12,7 +12,14 @@ class WorkOrder extends Model
 
     // Izinkan pengisian massal
     protected $fillable = [
-        'personal_id', 'tanggal', 'fasilitas', 'jenis', 'deskripsi'
+        'personal_id',
+        'tanggal',
+        'fasilitas',
+        'jenis',
+        'deskripsi',
+        'pelaksana_tipe',
+        'pelaksana_nama',
+        'pelaksana_group'
     ];
 
     // Opsional: Definisikan relasi sebaliknya

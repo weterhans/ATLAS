@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('personals', function (Blueprint $table) {
             $table->id();
-            $table->string('nik')->unique();
+            $table->string('nik')->unique(); // Ini untuk GSheet 'id' (224...)
+            $table->string('pernium')->nullable()->unique();
             $table->string('nama');
             $table->string('kelamin', 1); // 'L' or 'P'
             $table->string('jabatan');

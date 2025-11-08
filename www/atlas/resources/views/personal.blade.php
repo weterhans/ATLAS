@@ -6,7 +6,7 @@
   CSS Kustom untuk halaman Data Personal.
 --}}
 <style>
-    /* ... (CSS Anda sebelumnya) ... */
+    /* Reset dasar */
     * {
         margin: 0;
         padding: 0;
@@ -18,6 +18,8 @@
         max-width: 1400px;
         margin: 0 auto;
     }
+
+    /* Header */
     .header {
         background: white;
         padding: 1rem 1.5rem;
@@ -65,6 +67,10 @@
         justify-content: center;
         gap: 0.5rem; /* Jarak antara ikon dan teks */
     }
+    .btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
     .btn-primary {
         background: #1daa1d;
         color: white;
@@ -99,8 +105,6 @@
     .btn-secondary:hover {
         background-color: #e0e0e0;
     }
-
-    /* MODIFIKASI: Tombol konfirmasi hapus (agar tidak bentrok dengan ikon) */
     .btn-danger-confirm {
         background-color: #e74c3c;
         color: white;
@@ -108,8 +112,6 @@
     .btn-danger-confirm:hover {
         background-color: #c0392b;
     }
-
-    /* Data Table */
     .data-section {
         background: white;
         border-radius: 10px;
@@ -209,8 +211,6 @@
         font-size: 13px;
         color: #666;
     }
-
-    /* Modal Styles */
     .modal {
         display: none;
         position: fixed;
@@ -278,7 +278,6 @@
     .close-btn.icon-close:hover {
         background: #f1f1f1;
     }
-
     .work-order-sections {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -306,6 +305,9 @@
     }
     .info-row.align-start {
         align-items: start;
+    }
+    .info-row.conditional-row {
+        display: none; /* Sembunyi by default */
     }
     .info-label {
         font-weight: 600;
@@ -341,8 +343,6 @@
     .simpan-btn {
         float: right;
     }
-
-    /* Style untuk Modal Detail */
     .modal-detail {
         display: none;
         position: fixed;
@@ -381,6 +381,9 @@
     .modal-detail-body .detail-item {
         margin-bottom: 1rem;
     }
+    .modal-detail-body .detail-item.conditional-row {
+        display: none;
+    }
     .modal-detail-body .detail-label {
         font-size: 12px;
         color: #666;
@@ -398,13 +401,11 @@
         white-space: pre-wrap; /* Agar deskripsi panjang bisa wrap */
         word-wrap: break-word;
     }
-
-    /* MODIFIKASI: Style untuk Pop-up Toast (dipindahkan ke tengah) */
     .toast {
         display: none;
         position: fixed;
-        top: 50%; /* Pindah ke tengah */
-        left: 50%; /* Pindah ke tengah */
+        top: 50%;
+        left: 50%;
         transform: translate(-50%, -50%); /* Centering */
         background-color: #2ecc71; /* Hijau sukses */
         color: white;
@@ -419,9 +420,9 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 {{-- Konten HTML dari personal.html --}}
-<div class="p-6 md:p-8">
+<div class="main-container">
 
-    <div class="flex items-center mb-6 justify-between items-center">
+    <div class="p-6 md:p-8 flex justify-between items-center">
          <div class="flex items-center">
             <a href="{{ route('dashboard') }}" class="p-2 rounded-md hover:bg-gray-200" aria-label="Kembali ke Dashboard">
                 <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -431,12 +432,12 @@
             <h1 class="text-2xl font-bold text-gray-800 ml-4">Data Personal</h1>
         </div>
          <div class="flex items-center gap-4">
-            <a href="#" class="btn btn-primary">
+            <button class="btn btn-primary" id="syncDataBtn">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M2 7.5C2 10.5376 4.46243 13 7.5 13C9.07394 13 10.51 12.3524 11.553 11.3093L11.9999 11.7563V10H10.2436L10.6906 10.447C9.88335 11.2543 8.75139 11.75 7.5 11.75C5.13629 11.75 3.25 9.86371 3.25 7.5C3.25 5.13629 5.13629 3.25 7.5 3.25C8.56586 3.25 9.54131 3.63321 10.2854 4.28542L9.20703 5.36377L12.0355 5.64219L12.3139 2.81377L11.2355 3.89219C10.2816 3.04285 9.00122 2.5 7.5 2.5C4.46243 2.5 2 4.96243 2 7.5ZM13.1862 9.68615L10.3578 9.40773L9.27942 10.4861C8.53533 9.83391 7.55987 9.45071 6.5 9.45071C5.24861 9.45071 4.11665 9.94563 3.30938 10.753L3.75635 10.306V12H5.5127L5.06573 11.553C6.01957 12.4024 7.29994 12.9507 8.81377 12.9507C8.95319 12.9507 9.09131 12.9436 9.22784 12.9301L8.91421 13.2437L10.0253 14.3548L11.1364 13.2437L10.0253 12.1326L8.53552 10.6429L9.64663 9.53176L10.7577 10.6429L11.8688 9.53176L13.1862 9.68615Z"/>
                 </svg>
                 <span>Sinkronisasi Data</span>
-            </a>
+            </button>
             <button class="btn btn-info" id="openAddStaffBtn">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path></svg>
                 <span>Tambah Staf</span>
@@ -490,7 +491,7 @@
     <div class="modal-content">
         <div class="modal-header">
             <h2>Data Work Order Personil : <span id="modalPersonName">Nama Personil</span></h2>
-            <button class="close-btn" onclick="closeModal()">✕</button>
+            <button class="close-btn" onclick="closeModal()">✕ Kembali</button>
             <input type="hidden" id="modalPersonalId">
         </div>
 
@@ -498,7 +499,7 @@
             <div class="section">
                 <h3>Data Personal</h3>
                 <div class="info-row">
-                    <div class="info-label">Pernium</div>
+                    <div class="info-label">NIK</div>
                     <div class="info-value" id="modalPernium"></div>
                 </div>
                 <div class="info-row">
@@ -521,6 +522,12 @@
                     <div class="info-label">Lokasi Induk</div>
                     <div class="info-value" id="modalLokasiInduk"></div>
                 </div>
+                <div class="info-row">
+                    <div class="info-label">Kating</div>
+                    <div class="info-value">
+                        <button class="btn btn-primary">List Rating >></button>
+                    </div>
+                </div>
             </div>
 
             <div class="section">
@@ -541,6 +548,7 @@
                             <option value="Surveillance">Surveillance</option>
                             <option value="Automation">Automation</option>
                             <option value="Data Processing">Data Processing</option>
+                            <option value="Fasilitas Penunjang">Fasilitas Penunjang</option>
                         </select>
                     </div>
                 </div>
@@ -556,7 +564,42 @@
                         <textarea id="woDeskripsi" rows="3" placeholder="Deskripsi singkat pekerjaan..."></textarea>
                     </div>
                 </div>
-                <button class="btn btn-primary simpan-btn" id="simpanWoBtn">Simpan</button>
+
+                <div class="info-row">
+                    <div class="info-label">Pelaksana</div>
+                    <div class="info-value no-padding">
+                        <select id="woPelaksanaTipe">
+                            <option value="">--- Pilih Tipe ---</option>
+                            <option value="Personal">Personal</option>
+                            <option value="Group">Group</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="info-row conditional-row" id="woPelaksanaPersonalRow">
+                    <div class="info-label">Nama Personal</div>
+                    <div class="info-value no-padding">
+                        <select id="woPelaksanaNama">
+                            <option value="">--- Pilih Teknisi ---</option>
+                            </select>
+                    </div>
+                </div>
+
+                <div class="info-row conditional-row" id="woPelaksanaGroupRow">
+                    <div class="info-label">Nama Group</div>
+                    <div class="info-value no-padding">
+                        <select id="woPelaksanaGroup">
+                            <option value="">--- Pilih Group ---</option>
+                            <option value="Group 1">Group 1</option>
+                            <option value="Group 2">Group 2</option>
+                            <option value="Group 3">Group 3</option>
+                            <option value="Group 4">Group 4</option>
+                            <option value="Group 5">Group 5</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary simpan-btn" id="simpanWoBtn">📥 Simpan</button>
             </div>
 
             <div class="section work-order-table-section">
@@ -618,9 +661,23 @@
                 <div class="detail-value" id="detailJenis"></div>
             </div>
             <div class="detail-item">
-                <div class="detail-label">Deskripsi</div>
+                <div class="detail-label">Deskripsi Lengkap</div>
                 <div class="detail-value" id="detailDeskripsi"></div>
             </div>
+
+            <div class="detail-item">
+                <div class="detail-label">Tipe Pelaksana</div>
+                <div class="detail-value" id="detailPelaksanaTipe"></div>
+            </div>
+            <div class="detail-item conditional-row" id="detailPelaksanaNamaRow">
+                <div class="detail-label">Nama Pelaksana</div>
+                <div class="detail-value" id="detailPelaksanaNama"></div>
+            </div>
+            <div class="detail-item conditional-row" id="detailPelaksanaGroupRow">
+                <div class="detail-label">Nama Group</div>
+                <div class="detail-value" id="detailPelaksanaGroup"></div>
+            </div>
+
         </div>
     </div>
 </div>
@@ -636,7 +693,7 @@
             <div class="info-row">
                 <div class="info-label">NIK</div>
                 <div class="info-value no-padding">
-                    <input type="text" id="staffNik" placeholder="Nomor Induk Karyawan">
+                    <input type="text" id="staffNik" placeholder="cth: 224160147">
                 </div>
             </div>
             <div class="info-row">
@@ -678,7 +735,7 @@
                     <input type="text" id="staffLokasiInduk" value="Surabaya">
                 </div>
             </div>
-            <button class="btn btn-primary simpan-btn" id="simpanStafBtn">Simpan</button>
+            <button class="btn btn-primary simpan-btn" id="simpanStafBtn">📥 Simpan</button>
         </div>
     </div>
 </div>
@@ -691,17 +748,14 @@
     <div class="modal-detail-content" style="max-width: 450px;">
         <div class="modal-detail-header" style="border-bottom: none; margin-bottom: 0.5rem;">
             <h3 id="deleteConfirmTitle">Konfirmasi Hapus Data</h3>
-            {{-- MODIFIKASI: Tombol 'X' di modal hapus dihilangkan --}}
-            {{-- <button class="close-btn icon-close" onclick="closeDeleteConfirm()">✕</button> --}}
         </div>
         <div class="modal-detail-body">
             <p style="margin-bottom: 0.5rem; font-size: 16px;">Anda yakin ingin menghapus data:</p>
             <p id="deleteConfirmMessage" style="font-weight: 600; margin-bottom: 1rem; font-size: 16px;"></p>
             <p style="color: #e74c3c; font-size: 14px; margin-bottom: 1.5rem;">Tindakan ini tidak dapat dibatalkan.</p>
             <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
-                <button class="btn btn-secondary" style="width: auto;" onclick="closeDeleteConfirm()">Batal</button>
-                {{-- MODIFIKASI: Class diubah dari btn-danger ke btn-danger-confirm --}}
-                <button class="btn btn-danger-confirm" id="confirmDeleteBtn" style="width: auto;">Ya, Hapus</button>
+                <button class="btn btn-secondary" onclick="closeDeleteConfirm()">Batal</button>
+                <button class="btn btn-danger-confirm" id="confirmDeleteBtn">Ya, Hapus</button>
             </div>
         </div>
     </div>
@@ -718,7 +772,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // SCRIPT NOTIFIKASI & KONFIRMASI
     // =========================================================================
 
-    // --- Pop-up Toast Notifikasi ---
     let toastTimeout;
     window.showToast = (message) => {
         const toast = document.getElementById('toast-notification');
@@ -735,7 +788,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     }
 
-    // --- Pop-up Konfirmasi Hapus ---
     let deleteCallback = null;
     const deleteConfirmModal = document.getElementById('deleteConfirmModal');
     const confirmDeleteBtn = document.getElementById('confirmDeleteBtn');
@@ -769,9 +821,26 @@ document.addEventListener('DOMContentLoaded', () => {
     let entriesPerPage = 10;
     let filteredData = [...allData];
 
+    let allTechnicians = [];
+    const populateTechnicianList = () => {
+        allTechnicians = allData
+            .filter(staff => staff.level_jabatan && parseInt(staff.level_jabatan) < 13)
+            .sort((a, b) => a.nama.localeCompare(b.nama));
+
+        const selectEl = document.getElementById('woPelaksanaNama');
+        selectEl.innerHTML = '<option value="">--- Pilih Teknisi ---</option>';
+        allTechnicians.forEach(tech => {
+            const option = document.createElement('option');
+            option.value = tech.nama;
+            option.textContent = tech.nama;
+            selectEl.appendChild(option);
+        });
+    };
+    populateTechnicianList();
+
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-    // Fungsi untuk membuka modal WO
+    // MODIFIKASI: Parameter 'pernium' dihapus, 'nik' digunakan di modal
     window.openModal = async (personalId, nik, nama, jabatan, level) => {
         const modal = document.getElementById('workOrderModal');
 
@@ -782,11 +851,10 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('modalLevel').textContent = level;
         document.getElementById('modalLokasi').textContent = 'Cabang Surabaya';
         document.getElementById('modalLokasiInduk').textContent = 'Surabaya';
-        document.getElementById('modalPersonalId').value = personalId;
+        document.getElementById('modalPersonalId').value = personalId; // local DB id
 
         modal.classList.add('active');
 
-        // Set tanggal hari ini saat modal WO dibuka
         setTodayDateForWorkOrder();
 
         try {
@@ -802,16 +870,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Fungsi untuk menutup modal WO
     window.closeModal = () => {
         document.getElementById('workOrderModal').classList.remove('active');
         workOrderData = [];
         filteredWoData = [];
         currentWoPage = 1;
         document.getElementById('woSearchInput').value = '';
+        document.getElementById('woPelaksanaPersonalRow').style.display = 'none';
+        document.getElementById('woPelaksanaGroupRow').style.display = 'none';
     }
 
-    // Menutup modal saat mengklik di luar area konten modal
     window.onclick = function(event) {
         const modal = document.getElementById('workOrderModal');
         const detailModal = document.getElementById('workOrderDetailModal');
@@ -824,12 +892,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (event.target === deleteModal) closeDeleteConfirm();
     }
 
-    // Fungsi untuk merender ulang tabel UTAMA
     const renderTable = () => {
         const tableBody = document.getElementById('tableBody');
         if (!tableBody) return;
 
-        filteredData.sort((a, b) => b.level_jabatan - a.level_jabatan);
+        filteredData.sort((a, b) => (b.level_jabatan || 0) - (a.level_jabatan || 0));
 
         const start = (currentPage - 1) * entriesPerPage;
         const end = start + entriesPerPage;
@@ -839,18 +906,19 @@ document.addEventListener('DOMContentLoaded', () => {
         pageData.forEach((row, index) => {
             const tr = document.createElement('tr');
 
-            const safeNama = row.nama.replace(/'/g, "\\'");
-            const safeJabatan = row.jabatan.replace(/'/g, "\\'");
+            const safeNama = (row.nama || '').replace(/'/g, "\\'");
+            const safeJabatan = (row.jabatan || '').replace(/'/g, "\\'");
 
+            // MODIFIKASI: 'pernium' dihapus dari onclick
             tr.innerHTML = `
                 <td>${start + index + 1}</td>
-                <td>${row.nik}</td>
-                <td>${row.nama}</td>
-                <td>${row.kelamin}</td>
-                <td>${row.jabatan}</td>
-                <td>${row.level_jabatan}</td>
-                <td>${row.lokasi}</td>
-                <td>${row.lokasi_induk}</td>
+                <td>${row.nik || ''}</td>
+                <td>${row.nama || ''}</td>
+                <td>${row.kelamin || ''}</td>
+                <td>${row.jabatan || ''}</td>
+                <td>${row.level_jabatan || ''}</td>
+                <td>${row.lokasi || ''}</td>
+                <td>${row.lokasi_induk || ''}</td>
                 <td class="actions-cell">
                     <button class="action-btn" onclick="openModal(${row.id}, '${row.nik}', '${safeNama}', '${safeJabatan}', '${row.level_jabatan}')" title="Lihat Work Order">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
@@ -867,7 +935,6 @@ document.addEventListener('DOMContentLoaded', () => {
         updateEntryInfo();
     }
 
-    // Paginasi UTAMA
     const updatePagination = () => {
         const paginationDiv = document.getElementById('mainPagination');
         if (!paginationDiv) return;
@@ -881,7 +948,6 @@ document.addEventListener('DOMContentLoaded', () => {
         paginationDiv.innerHTML = paginationHTML;
     }
 
-    // Info Entri UTAMA
     const updateEntryInfo = () => {
         const entryInfo = document.getElementById('mainEntryInfo');
         if (!entryInfo) return;
@@ -890,7 +956,6 @@ document.addEventListener('DOMContentLoaded', () => {
         entryInfo.textContent = `Showing ${start} to ${end} of ${filteredData.length} entries`;
     }
 
-    // Ganti Halaman UTAMA
     window.changePage = (page) => {
         const totalPages = Math.ceil(filteredData.length / entriesPerPage);
         if (page === 'prev') {
@@ -903,7 +968,6 @@ document.addEventListener('DOMContentLoaded', () => {
         renderTable();
     }
 
-    // Event listener 'Show entries' UTAMA
     const entriesSelect = document.getElementById('entriesSelect');
     if (entriesSelect) {
         entriesSelect.addEventListener('change', function() {
@@ -913,7 +977,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Fungsionalitas pencarian UTAMA
     const searchInput = document.getElementById('searchInput');
     if (searchInput) {
         searchInput.addEventListener('input', function(e) {
@@ -934,13 +997,47 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Render tabel utama saat pertama kali halaman dimuat
     renderTable();
 
     // =========================================================================
-    // SCRIPT TAMBAH/HAPUS STAF (AJAX)
+    // SCRIPT SINKRONISASI, TAMBAH, HAPUS STAF
     // =========================================================================
 
+    // --- SINKRONISASI ---
+    const syncBtn = document.getElementById('syncDataBtn');
+    syncBtn.addEventListener('click', async () => {
+        const originalText = syncBtn.innerHTML;
+        syncBtn.innerHTML = 'Menyinkronkan...';
+        syncBtn.disabled = true;
+
+        try {
+            const response = await fetch('{{ route("personal.sync") }}', {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': csrfToken,
+                    'Accept': 'application/json'
+                }
+            });
+
+            const data = await response.json();
+            if (!response.ok) {
+                throw new Error(data.message || 'Gagal melakukan sinkronisasi.');
+            }
+
+            showToast(data.message);
+            setTimeout(() => {
+                location.reload();
+            }, 2000);
+
+        } catch (error) {
+            console.error('Gagal sinkronisasi:', error);
+            alert('Gagal sinkronisasi:\n' + error.message);
+            syncBtn.innerHTML = originalText;
+            syncBtn.disabled = false;
+        }
+    });
+
+    // --- TAMBAH STAF ---
     window.openAddStaffModal = () => {
         document.getElementById('addStaffModal').classList.add('active');
         document.getElementById('staffNik').focus();
@@ -960,6 +1057,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('simpanStafBtn').addEventListener('click', async () => {
         const newData = {
             nik: document.getElementById('staffNik').value,
+            // 'pernium' dihapus
             nama: document.getElementById('staffNama').value,
             kelamin: document.getElementById('staffKelamin').value,
             jabatan: document.getElementById('staffJabatan').value,
@@ -978,15 +1076,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': csrfToken
+                    'X-CSRF-TOKEN': csrfToken,
+                    'Accept': 'application/json'
                 },
                 body: JSON.stringify(newData)
             });
 
+            // MODIFIKASI: Penanganan eror yang lebih baik
             if (!response.ok) {
                 const errorData = await response.json();
-                const errorMessages = Object.values(errorData.errors).join('\n');
-                throw new Error(errorMessages);
+                if (errorData.errors) {
+                    throw new Error(Object.values(errorData.errors).join('\n'));
+                }
+                throw new Error(errorData.message || 'Gagal menambah staf.');
             }
 
             const addedStaff = await response.json();
@@ -999,6 +1101,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 );
             });
 
+            populateTechnicianList();
             renderTable();
             closeAddStaffModal();
             showToast('Staf baru berhasil ditambahkan!');
@@ -1009,18 +1112,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Fungsi deleteStaff diubah untuk memanggil modal konfirmasi
+    // --- HAPUS STAF ---
     window.deleteStaff = (id, nama) => {
         openDeleteConfirm(`Staf: ${nama}?`, async () => {
             try {
                 const response = await fetch(`/personal/${id}`, {
                     method: 'DELETE',
-                    headers: { 'X-CSRF-TOKEN': csrfToken }
+                    headers: {
+                        'X-CSRF-TOKEN': csrfToken,
+                        'Accept': 'application/json'
+                    }
                 });
                 if (!response.ok) throw new Error('Gagal menghapus data.');
 
                 allData = allData.filter(s => s.id !== id);
                 filteredData = filteredData.filter(s => s.id !== id);
+
+                populateTechnicianList();
+
                 if (filteredData.length <= (currentPage - 1) * entriesPerPage && currentPage > 1) {
                     currentPage--;
                 }
@@ -1033,10 +1142,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Navigasi 'Enter' di Modal Tambah Staf
+    // --- Navigasi 'Enter' di Modal Tambah Staf ---
     const staffModal = document.getElementById('addStaffModal');
+    // MODIFIKASI: Hapus 'staffPernium' dari daftar
     const focusableInputs = Array.from(
-        staffModal.querySelectorAll('input, select')
+        staffModal.querySelectorAll('#staffNik, #staffNama, #staffKelamin, #staffJabatan, #staffLevel, #staffLokasi, #staffLokasiInduk')
     );
     focusableInputs.forEach((input, index) => {
         input.addEventListener('keydown', (event) => {
@@ -1057,16 +1167,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // SCRIPT TABEL MODAL (WORK ORDER) (AJAX)
     // =========================================================================
 
-    // Helper untuk dapatkan tanggal YYYY-MM-DD
     const getTodayYYYYMMDD = () => {
         const today = new Date();
         const yyyy = today.getFullYear();
-        const mm = String(today.getMonth() + 1).padStart(2, '0'); // Bulan 0-indexed
+        const mm = String(today.getMonth() + 1).padStart(2, '0');
         const dd = String(today.getDate()).padStart(2, '0');
         return `${yyyy}-${mm}-${dd}`;
     };
 
-    // Fungsi untuk set tanggal WO ke hari ini
     const setTodayDateForWorkOrder = () => {
         const tanggalInput = document.getElementById('woTanggal');
         if (tanggalInput) {
@@ -1117,13 +1225,15 @@ document.addEventListener('DOMContentLoaded', () => {
         updateWoEntryInfo(dataToRender.length);
     }
 
-    // Fungsi Hapus WO diubah untuk memanggil modal konfirmasi
     window.deleteWorkOrder = (id, jenis) => {
         openDeleteConfirm(`Work Order: ${jenis}?`, async () => {
             try {
                 const response = await fetch(`/workorders/${id}`, {
                     method: 'DELETE',
-                    headers: { 'X-CSRF-TOKEN': csrfToken }
+                    headers: {
+                        'X-CSRF-TOKEN': csrfToken,
+                        'Accept': 'application/json'
+                    }
                 });
                 if (!response.ok) throw new Error('Gagal menghapus WO.');
 
@@ -1141,7 +1251,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Paginasi WO
     const updateWoPagination = (totalFilteredItems) => {
         const paginationDiv = document.getElementById('woPagination');
         if (!paginationDiv) return;
@@ -1158,7 +1267,6 @@ document.addEventListener('DOMContentLoaded', () => {
         paginationDiv.innerHTML = paginationHTML;
     }
 
-    // Info Entri WO
     const updateWoEntryInfo = (totalFilteredItems) => {
         const entryInfo = document.getElementById('woEntryInfo');
         if (!entryInfo) return;
@@ -1167,7 +1275,6 @@ document.addEventListener('DOMContentLoaded', () => {
         entryInfo.textContent = `Showing ${start} to ${end} of ${totalFilteredItems} entries`;
     }
 
-    // Ganti Halaman WO
     window.changeWoPage = (page) => {
         const totalPages = Math.ceil(filteredWoData.length / entriesPerWoPage);
         if (page === 'prev') {
@@ -1180,7 +1287,6 @@ document.addEventListener('DOMContentLoaded', () => {
         renderWorkOrderTable();
     }
 
-    // Event listener 'Show entries' WO
     const woEntriesSelect = document.getElementById('woEntriesSelect');
     if (woEntriesSelect) {
         woEntriesSelect.addEventListener('change', function() {
@@ -1190,7 +1296,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Event listener pencarian WO
     const woSearchInput = document.getElementById('woSearchInput');
     if (woSearchInput) {
         woSearchInput.addEventListener('input', function(e) {
@@ -1205,36 +1310,57 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Event listener tombol 'Simpan' WO (AJAX)
     const simpanWoBtn = document.getElementById('simpanWoBtn');
     if (simpanWoBtn) {
         simpanWoBtn.addEventListener('click', async () => {
             const personalId = document.getElementById('modalPersonalId').value;
+
+            const pelaksanaTipe = document.getElementById('woPelaksanaTipe').value;
+            const pelaksanaNama = document.getElementById('woPelaksanaNama').value;
+            const pelaksanaGroup = document.getElementById('woPelaksanaGroup').value;
+
             const newData = {
                 tanggal: document.getElementById('woTanggal').value,
                 fasilitas: document.getElementById('woKategori').value,
                 jenis: document.getElementById('woJenis').value,
                 deskripsi: document.getElementById('woDeskripsi').value,
+                pelaksana_tipe: pelaksanaTipe,
+                pelaksana_nama: pelaksanaTipe === 'Personal' ? pelaksanaNama : null,
+                pelaksana_group: pelaksanaTipe === 'Group' ? pelaksanaGroup : null,
             };
 
-            if (!newData.tanggal || !newData.fasilitas || !newData.jenis) {
-                alert('Tanggal, Kategori, dan Jenis Peralatan tidak boleh kosong!');
+            if (!newData.tanggal || !newData.fasilitas || !newData.jenis || !newData.pelaksana_tipe) {
+                alert('Tanggal, Kategori, Jenis, dan Tipe Pelaksana tidak boleh kosong!');
                 return;
             }
+            if (newData.pelaksana_tipe === 'Personal' && !newData.pelaksana_nama) {
+                alert('Nama Personal harus dipilih!');
+                return;
+            }
+            if (newData.pelaksana_tipe === 'Group' && !newData.pelaksana_group) {
+                alert('Nama Group harus dipilih!');
+                return;
+            }
+
 
             try {
                 const response = await fetch(`/personal/${personalId}/workorders`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'X-CSRF-TOKEN': csrfToken
+                        'X-CSRF-TOKEN': csrfToken,
+                        'Accept': 'application/json'
                     },
                     body: JSON.stringify(newData)
                 });
 
+                // MODIFIKASI: Penanganan eror yang lebih baik
                 if (!response.ok) {
                     const errorData = await response.json();
-                    throw new Error(Object.values(errorData.errors).join('\n'));
+                    if (errorData.errors) {
+                        throw new Error(Object.values(errorData.errors).join('\n'));
+                    }
+                    throw new Error(errorData.message || 'Gagal menyimpan work order.');
                 }
 
                 const addedWorkOrder = await response.json();
@@ -1245,10 +1371,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentWoPage = 1;
                 renderWorkOrderTable();
 
+                // Reset form
                 setTodayDateForWorkOrder();
                 document.getElementById('woKategori').value = '';
                 document.getElementById('woJenis').value = '';
                 document.getElementById('woDeskripsi').value = '';
+                document.getElementById('woPelaksanaTipe').value = '';
+                document.getElementById('woPelaksanaNama').value = '';
+                document.getElementById('woPelaksanaGroup').value = '';
+                document.getElementById('woPelaksanaPersonalRow').style.display = 'none';
+                document.getElementById('woPelaksanaGroupRow').style.display = 'none';
 
                 showToast('Work order berhasil disimpan!');
 
@@ -1259,14 +1391,48 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Fungsi Modal Detail WO
+    document.getElementById('woPelaksanaTipe').addEventListener('change', function() {
+        const personalRow = document.getElementById('woPelaksanaPersonalRow');
+        const groupRow = document.getElementById('woPelaksanaGroupRow');
+
+        if (this.value === 'Personal') {
+            personalRow.style.display = 'grid';
+            groupRow.style.display = 'none';
+        } else if (this.value === 'Group') {
+            personalRow.style.display = 'none';
+            groupRow.style.display = 'grid';
+        } else {
+            personalRow.style.display = 'none';
+            groupRow.style.display = 'none';
+        }
+    });
+
     window.openDetailModal = (id) => {
         const wo = workOrderData.find(item => item.id === id);
         if (wo) {
-            document.getElementById('detailTanggal').textContent = wo.tanggal;
-            document.getElementById('detailKategori').textContent = wo.fasilitas;
-            document.getElementById('detailJenis').textContent = wo.jenis;
-            document.getElementById('detailDeskripsi').textContent = wo.deskripsi;
+            document.getElementById('detailTanggal').textContent = wo.tanggal || '-';
+            document.getElementById('detailKategori').textContent = wo.fasilitas || '-';
+            document.getElementById('detailJenis').textContent = wo.jenis || '-';
+            document.getElementById('detailDeskripsi').textContent = wo.deskripsi || '-';
+
+            document.getElementById('detailPelaksanaTipe').textContent = wo.pelaksana_tipe || 'N/A';
+
+            const namaRow = document.getElementById('detailPelaksanaNamaRow');
+            const groupRow = document.getElementById('detailPelaksanaGroupRow');
+
+            if (wo.pelaksana_tipe === 'Personal') {
+                document.getElementById('detailPelaksanaNama').textContent = wo.pelaksana_nama || '-';
+                namaRow.style.display = 'block';
+                groupRow.style.display = 'none';
+            } else if (wo.pelaksana_tipe === 'Group') {
+                document.getElementById('detailPelaksanaGroup').textContent = wo.pelaksana_group || '-';
+                namaRow.style.display = 'none';
+                groupRow.style.display = 'block';
+            } else {
+                namaRow.style.display = 'none';
+                groupRow.style.display = 'none';
+            }
+
             document.getElementById('workOrderDetailModal').classList.add('active');
         }
     }

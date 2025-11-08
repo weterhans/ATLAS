@@ -111,27 +111,18 @@ Route::middleware('auth')->group(function () {
 });
 
 
+Route::post('/personal/sync', [PersonalController::class, 'syncFromGoogleSheet'])->name('personal.sync');
+
 Route::controller(PersonalController::class)->group(function () {
-    // MENAMPILKAN halaman dan data
     Route::get('/personal', 'index')->name('personal.index');
-
-    // MENAMBAH staf baru
     Route::post('/personal', 'store')->name('personal.store');
-
-    // MENGHAPUS staf
     Route::delete('/personal/{personal}', 'destroy')->name('personal.destroy');
-
-    // MENGAMBIL data Work Order untuk satu staf (API)
     Route::get('/personal/{personal}/workorders', 'getWorkOrders')->name('personal.workorders.get');
-
-    // MENAMBAH Work Order untuk satu staf
     Route::post('/personal/{personal}/workorders', 'storeWorkOrder')->name('personal.workorders.store');
 });
 
-// Rute terpisah untuk menghapus Work Order
 Route::delete('/workorders/{workOrder}', [PersonalController::class, 'destroyWorkOrder'])->name('workorders.destroy');
 
-// Asumsi rute dashboard Anda
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

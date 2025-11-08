@@ -655,3 +655,15 @@
 2025-11-07T17:56:14.530515Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
 2025-11-07T17:56:14.747527Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
 2025-11-07T17:56:14.747619Z 0 [System] [MY-010931] [Server] D:\laragon\bin\mysql\mysql-8.4.3-winx64\bin\mysqld: ready for connections. Version: '8.4.3'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2025-11-08T14:34:26.290687Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+2025-11-08T14:34:26.553671Z 0 [Warning] [MY-010097] [Server] Insecure configuration for --secure-file-priv: Current value does not restrict location of generated files. Consider setting it to a valid, non-empty path.
+2025-11-08T14:34:26.554420Z 0 [System] [MY-010116] [Server] D:\laragon\bin\mysql\mysql-8.4.3-winx64\bin\mysqld (mysqld 8.4.3) starting as process 20036
+2025-11-08T14:34:26.737917Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2025-11-08T14:34:27.985264Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2025-11-08T14:34:28.443608Z 0 [System] [MY-010229] [Server] Starting XA crash recovery...
+2025-11-08T14:34:28.451733Z 0 [System] [MY-010232] [Server] XA crash recovery finished.
+2025-11-08T14:34:28.590604Z 0 [Warning] [MY-013829] [Server] Missing data directory for ICU regular expressions: D:\laragon\bin\mysql\mysql-8.4.3-winx64\lib\private\.
+2025-11-08T14:34:28.697868Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2025-11-08T14:34:28.698503Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2025-11-08T14:34:28.846497Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2025-11-08T14:34:28.846776Z 0 [System] [MY-010931] [Server] D:\laragon\bin\mysql\mysql-8.4.3-winx64\bin\mysqld: ready for connections. Version: '8.4.3'  socket: ''  port: 3306  MySQL Community Server - GPL.

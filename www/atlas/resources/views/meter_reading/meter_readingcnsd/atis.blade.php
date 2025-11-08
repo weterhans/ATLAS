@@ -1,7 +1,7 @@
 <!-- index.php -->
-@extends('layouts.main_dashboard')
 
-@push('styles')
+
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -11,6 +11,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
     <style>
         body { font-family: 'Arial', sans-serif; }
         .form-container-inner {
@@ -72,9 +74,7 @@
             }
         }
     </style>
-@endpush
 
-@section('content')
 </head>
 <body class="bg-gray-100">
 
@@ -194,9 +194,7 @@
             <div id="tableContent" class="overflow-x-auto"></div>
         </div>
     </div>
-@endsection
 
-@push('scripts')
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const formContainer = document.getElementById('form-container');
@@ -429,4 +427,4 @@
     </script>
 </body>
 </html>
-@endpush
+

@@ -15,42 +15,34 @@
     </div>
 
     {{-- Konten Grid 4 Kartu --}}
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-6">
 
         {{-- Kartu Jadwal --}}
         {{-- Nanti ganti href="#" dengan route('tfp.jadwal') --}}
-        <a href="{{ route('tfp.jadwal') }}" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center">
-            <div class="h-40 bg-green-200 rounded-md flex items-center justify-center mb-4">
-                <span class="text-4xl font-bold text-gray-700">Jadwal</span>
-            </div>
-            <h3 class="font-semibold text-gray-800">JADWAL TFP</h3>
+        <a href="{{ route('tfp.jadwal') }}" class="card bg-white p-4 rounded-xl shadow-md text-center">
+            <img src="{{ asset('img/Jadwal.png') }}" alt="Ilustrasi Jadwal TFP" class="rounded-lg mb-4 w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/A7F3D0/10B981?text=Jadwal';">
+            <h3 class="font-semibold text-gray-800">JADWAL</h3>
         </a>
 
         {{-- Kartu Daily --}}
         {{-- Nanti ganti href="#" dengan route('tfp.daily') --}}
-        <a href="{{ route('tfp.daily') }}" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center">
-            <div class="h-40 bg-green-200 rounded-md flex items-center justify-center mb-4">
-                <span class="text-4xl font-bold text-gray-700">Report</span>
-            </div>
-            <h3 class="font-semibold text-gray-800">REPORT TFP</h3>
+        <a href="{{ route('tfp.daily') }}" class="card bg-white p-4 rounded-xl shadow-md text-center">
+            <img src="{{ asset('img/Daily.png') }}" alt="Ilustrasi Jadwal TFP" class="rounded-md mb-4 w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/A7F3D0/10B981?text=Daily';">
+            <h3 class="font-semibold text-gray-800">REPORT</h3>
         </a>
 
         {{-- Kartu Kegiatan --}}
         {{-- Nanti ganti href="#" dengan route('tfp.kegiatan') --}}
-        <a href="{{ route('tfp.kegiatan') }}" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center">
-            <div class="h-40 bg-green-200 rounded-md flex items-center justify-center mb-4">
-                <span class="text-4xl font-bold text-gray-700">Kegiatan</span>
-            </div>
-            <h3 class="font-semibold text-gray-800">KEGIATAN TFP</h3>
+        <a href="{{ route('tfp.kegiatan') }}" class="card bg-white p-4 rounded-xl shadow-md text-center">
+            <img src="{{ asset('img/Kegiatan TFP.png') }}" alt="Ilustrasi Jadwal TFP" class="rounded-md mb-4 w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/A7F3D0/10B981?text=Kegiatan';">
+            <h3 class="font-semibold text-gray-800">KEGIATAN</h3>
         </a>
 
         {{-- Kartu Save --}}
         {{-- Nanti ganti href="#" dengan route('tfp.save') --}}
-        <a href="{{ route('tfp.save_data') }}" class="block bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow text-center">
-            <div class="h-40 bg-green-200 rounded-md flex items-center justify-center mb-4">
-                <span class="text-4xl font-bold text-gray-700">Save</span>
-            </div>
-            <h3 class="font-semibold text-gray-800">SAVE DATA TFP</h3>
+        <a href="{{ route('tfp.save_data') }}" class="card bg-white p-4 rounded-xl shadow-md text-center">
+            <img src="{{ asset('img/Save Data.png') }}" alt="Ilustrasi Jadwal TFP" class="rounded-md mb-4 w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/A7F3D0/10B981?text=Save';">
+            <h3 class="font-semibold text-gray-800">DATA SAVE</h3>
         </a>
 
     </div>
