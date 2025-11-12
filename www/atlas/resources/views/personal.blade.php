@@ -6,7 +6,7 @@
   CSS Kustom untuk halaman Data Personal.
 --}}
 <style>
-    /* Reset dasar */
+    /* ... (SEMUA CSS ANDA TETAP SAMA) ... */
     * {
         margin: 0;
         padding: 0;
@@ -18,8 +18,6 @@
         max-width: 1400px;
         margin: 0 auto;
     }
-
-    /* Header */
     .header {
         background: white;
         padding: 1rem 1.5rem;
@@ -546,7 +544,6 @@
                             <option value="Communication">Communication</option>
                             <option value="Navigation">Navigation</option>
                             <option value="Surveillance">Surveillance</option>
-                            <option value="Automation">Automation</option>
                             <option value="Data Processing">Data Processing</option>
                             <option value="Fasilitas Penunjang">Fasilitas Penunjang</option>
                         </select>
@@ -580,8 +577,8 @@
                     <div class="info-label">Nama Personal</div>
                     <div class="info-value no-padding">
                         <select id="woPelaksanaNama">
-                            <option value="">--- Pilih Teknisi ---</option>
-                            </select>
+                            <option value="">--- Pilih Kategori Dahulu ---</option>
+                        </select>
                     </div>
                 </div>
 
@@ -816,31 +813,58 @@ document.addEventListener('DOMContentLoaded', () => {
     // SCRIPT UTAMA (DATA PERSONAL)
     // =========================================================================
 
-    let allData = @json($personals);
+    let allData = @json($personals); // Ini adalah master list dari DB
     let currentPage = 1;
     let entriesPerPage = 10;
     let filteredData = [...allData];
 
-    let allTechnicians = [];
-    const populateTechnicianList = () => {
-        allTechnicians = allData
-            .filter(staff => staff.level_jabatan && parseInt(staff.level_jabatan) < 13)
-            .sort((a, b) => a.nama.localeCompare(b.nama));
-
-        const selectEl = document.getElementById('woPelaksanaNama');
-        selectEl.innerHTML = '<option value="">--- Pilih Teknisi ---</option>';
-        allTechnicians.forEach(tech => {
-            const option = document.createElement('option');
-            option.value = tech.nama;
-            option.textContent = tech.nama;
-            selectEl.appendChild(option);
-        });
-    };
-    populateTechnicianList();
+    // MODIFIKASI: Hapus 'allTechnicians' global, kita akan filter lgsg
+    // const populateTechnicianList = () => { ... } // FUNGSI LAMA DIHAPUS
 
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-    // MODIFIKASI: Parameter 'pernium' dihapus, 'nik' digunakan di modal
+    // MODIFIKASI: Fungsi baru untuk memfilter dan mengisi dropdown pelaksana
+    const updatePelaksanaDropdown = (kategori) => {
+        const selectEl = document.getElementById('woPelaksanaNama');
+        selectEl.innerHTML = ''; // Kosongkan
+
+        const cnsdKategori = ["Communication", "Navigation", "Surveillance", "Data Processing"];
+        const tfpJabatan = "TEKNIK FASILITAS PENUNJANG";
+        const cnsdJabatan = "TEKNIK TELEKOMUNIKASI";
+
+        let targetJabatan = null;
+        let optionLabel = "--- Pilih Kategori Dahulu ---";
+
+        if (kategori === "Fasilitas Penunjang") {
+            targetJabatan = tfpJabatan;
+            optionLabel = "--- Pilih Teknisi TFP ---";
+        } else if (cnsdKategori.includes(kategori)) {
+            targetJabatan = cnsdJabatan;
+            optionLabel = "--- Pilih Teknisi CNSD ---";
+        }
+
+        selectEl.innerHTML = `<option value="">${optionLabel}</option>`;
+
+        if (targetJabatan) {
+            // Filter dari master data (allData)
+            const filteredTechnicians = allData.filter(staff =>
+                staff.jabatan === targetJabatan &&
+                staff.level_jabatan &&
+                parseInt(staff.level_jabatan) < 13
+            );
+
+            filteredTechnicians.sort((a, b) => a.nama.localeCompare(b.nama));
+
+            filteredTechnicians.forEach(tech => {
+                const option = document.createElement('option');
+                option.value = tech.nama;
+                option.textContent = tech.nama;
+                selectEl.appendChild(option);
+            });
+        }
+    };
+
+
     window.openModal = async (personalId, nik, nama, jabatan, level) => {
         const modal = document.getElementById('workOrderModal');
 
@@ -851,11 +875,18 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('modalLevel').textContent = level;
         document.getElementById('modalLokasi').textContent = 'Cabang Surabaya';
         document.getElementById('modalLokasiInduk').textContent = 'Surabaya';
-        document.getElementById('modalPersonalId').value = personalId; // local DB id
+        document.getElementById('modalPersonalId').value = personalId;
 
         modal.classList.add('active');
 
         setTodayDateForWorkOrder();
+
+        // Reset dropdown saat modal dibuka
+        document.getElementById('woKategori').value = '';
+        updatePelaksanaDropdown(''); // Panggil dengan kategori kosong
+        document.getElementById('woPelaksanaTipe').value = '';
+        document.getElementById('woPelaksanaPersonalRow').style.display = 'none';
+        document.getElementById('woPelaksanaGroupRow').style.display = 'none';
 
         try {
             const response = await fetch(`/personal/${personalId}/workorders`);
@@ -909,7 +940,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const safeNama = (row.nama || '').replace(/'/g, "\\'");
             const safeJabatan = (row.jabatan || '').replace(/'/g, "\\'");
 
-            // MODIFIKASI: 'pernium' dihapus dari onclick
             tr.innerHTML = `
                 <td>${start + index + 1}</td>
                 <td>${row.nik || ''}</td>
@@ -1057,7 +1087,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('simpanStafBtn').addEventListener('click', async () => {
         const newData = {
             nik: document.getElementById('staffNik').value,
-            // 'pernium' dihapus
             nama: document.getElementById('staffNama').value,
             kelamin: document.getElementById('staffKelamin').value,
             jabatan: document.getElementById('staffJabatan').value,
@@ -1082,7 +1111,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: JSON.stringify(newData)
             });
 
-            // MODIFIKASI: Penanganan eror yang lebih baik
             if (!response.ok) {
                 const errorData = await response.json();
                 if (errorData.errors) {
@@ -1101,7 +1129,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 );
             });
 
-            populateTechnicianList();
+            updatePelaksanaDropdown(document.getElementById('woKategori').value); // Perbarui daftar teknisi
             renderTable();
             closeAddStaffModal();
             showToast('Staf baru berhasil ditambahkan!');
@@ -1128,7 +1156,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 allData = allData.filter(s => s.id !== id);
                 filteredData = filteredData.filter(s => s.id !== id);
 
-                populateTechnicianList();
+                updatePelaksanaDropdown(document.getElementById('woKategori').value); // Perbarui daftar teknisi
 
                 if (filteredData.length <= (currentPage - 1) * entriesPerPage && currentPage > 1) {
                     currentPage--;
@@ -1144,7 +1172,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Navigasi 'Enter' di Modal Tambah Staf ---
     const staffModal = document.getElementById('addStaffModal');
-    // MODIFIKASI: Hapus 'staffPernium' dari daftar
     const focusableInputs = Array.from(
         staffModal.querySelectorAll('#staffNik, #staffNama, #staffKelamin, #staffJabatan, #staffLevel, #staffLokasi, #staffLokasiInduk')
     );
@@ -1354,7 +1381,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     body: JSON.stringify(newData)
                 });
 
-                // MODIFIKASI: Penanganan eror yang lebih baik
                 if (!response.ok) {
                     const errorData = await response.json();
                     if (errorData.errors) {
@@ -1391,11 +1417,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // MODIFIKASI: Event listener untuk dropdown Kategori (untuk filter)
+    document.getElementById('woKategori').addEventListener('change', function() {
+        updatePelaksanaDropdown(this.value);
+        // Jika tipe pelaksana sudah 'Personal', perbarui juga tampilannya
+        if (document.getElementById('woPelaksanaTipe').value === 'Personal') {
+            document.getElementById('woPelaksanaPersonalRow').style.display = 'grid';
+        } else {
+            document.getElementById('woPelaksanaPersonalRow').style.display = 'none';
+        }
+    });
+
     document.getElementById('woPelaksanaTipe').addEventListener('change', function() {
         const personalRow = document.getElementById('woPelaksanaPersonalRow');
         const groupRow = document.getElementById('woPelaksanaGroupRow');
 
         if (this.value === 'Personal') {
+            // Panggil filter SEBELUM menampilkan
+            const kategori = document.getElementById('woKategori').value;
+            updatePelaksanaDropdown(kategori);
             personalRow.style.display = 'grid';
             groupRow.style.display = 'none';
         } else if (this.value === 'Group') {

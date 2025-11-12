@@ -10,8 +10,8 @@ class ScheduleController extends Controller
 {
     public function getScheduleData()
     {
-        // Ganti dengan URL CSV dari Google Sheet Anda (hasil publish to web)
-        $googleSheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTTgyK8hLDZajIXckdGcBuV9W4zVgT_QGqVK7irDc0fqPUNHgpxai2X9Pk6vj5qz22xBozTruWkWx8z/pub?output=csv';
+        // PASTIKAN LINK INI ADALAH LINK DARI TAB (SHEET) YANG BENAR (MISAL: NOVEMBER)
+        $googleSheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTTgyK8hLDZajIXckdGcBuV9W4zVgT_QGqVK7irDc0fqPUNHgpxai2X9Pk6vj5qz22xBozTruWkWx8z/pub?gid=1358398093&single=true&output=csv';
 
         try {
             $response = Http::get($googleSheetUrl);
@@ -24,11 +24,10 @@ class ScheduleController extends Controller
             $allRows = str_getcsv($csvData, "\n"); // Pisahkan per baris
             array_shift($allRows); // Hapus baris header
 
-            // 1. Pembersihan Data (Mirip .filter di JS)
+            // 1. Pembersihan Data
             $cleanedRows = [];
             foreach ($allRows as $rowStr) {
                 $row = str_getcsv($rowStr, ",");
-                // Cek kondisi: harus array, punya > 3 kolom, nama (indeks 1) dan jabatan (indeks 3) tidak kosong
                 if (is_array($row) && count($row) > 3 && !empty(trim($row[1] ?? '')) && !empty(trim($row[3] ?? ''))) {
                     $cleanedRows[] = $row;
                 }
@@ -36,12 +35,11 @@ class ScheduleController extends Controller
 
             // 2. Setup tanggal & kolom
             $today = Carbon::now('Asia/Jakarta');
-            $displayDate = $today->translatedFormat('l, d F Y'); // Format: Senin, 27 Oktober 2025
+            $displayDate = $today->translatedFormat('l, d F Y');
             $todayDate = $today->day;
-            $offsetColumns = 4; // Kolom: NO, NAMA, KELAS JABATAN, JABATAN
+            $offsetColumns = 4; // NO, NAMA, KELAS JABATAN, JABATAN
             $columnIndexForToday = $offsetColumns + $todayDate - 1;
-
-            $ketColumnIndex = 35;
+            $ketColumnIndex = 34; // Kolom Keterangan (AI)
 
             // 3. Kamus shift
             $shiftDictionary = ['P' => 'PAGI', 'S' => 'SIANG', 'M' => 'MALAM'];
@@ -50,50 +48,111 @@ class ScheduleController extends Controller
             $managerSchedule = [];
             $cnsSchedule = [];
             $tfpSchedule = [];
+            $phTechnicians = []; // Simpan PH MT sementara
+            $realManagerShifts = []; // Catat shift yang sudah diisi MT asli
+            $processedNames = []; // --- PERBAIKAN: Untuk mencegah duplikat
 
-            // 5. Proses dan kategorikan (Logika dari JS)
+            // --- LOGIKA BARU: Langkah 1 (First Pass) ---
+            // Buat daftar nama semua orang yang berstatus "PT MT" untuk bulan ini
+            $ptManagerNames = [];
             foreach ($cleanedRows as $row) {
+                $nama = $row[1] ?? '';
+                $keterangan = isset($row[$ketColumnIndex]) ? strtoupper(trim($row[$ketColumnIndex])) : '';
 
+                if (str_contains($keterangan, 'PT MT') && !in_array($nama, $ptManagerNames)) {
+                    $ptManagerNames[] = $nama;
+                }
+            }
+
+            // --- LOGIKA BARU: Langkah 2 (Second Pass) ---
+            // 5. Proses dan kategorikan jadwal HARI INI
+            foreach ($cleanedRows as $row) {
+                $nama = $row[1] ?? '';
+
+                // --- PERBAIKAN: Cek apakah nama ini sudah diproses dari baris duplikat
+                if (in_array($nama, $processedNames)) {
+                    continue; // Lewati, nama ini sudah diproses
+                }
 
                 if (!isset($row[$columnIndexForToday])) {
                     continue;
                 }
 
-                $nama = $row[1] ?? ''; // Menggunakan 'nama' sesuai perbaikan sebelumnya
                 $jabatan = strtoupper(trim($row[3] ?? ''));
-                $shiftCode = strtoupper(trim($row[$columnIndexForToday])); // Sekarang ini aman
-
+                $shiftCode = strtoupper(trim($row[$columnIndexForToday]));
                 $keterangan = isset($row[$ketColumnIndex]) ? strtoupper(trim($row[$ketColumnIndex])) : '';
 
                 if (isset($shiftDictionary[$shiftCode])) {
-                    $scheduleEntry = ['name' => $nama, 'shift' => $shiftDictionary[$shiftCode]];
+                    $shiftName = $shiftDictionary[$shiftCode];
+                    $scheduleEntry = ['name' => $nama, 'shift' => $shiftName, 'jabatan' => $jabatan];
 
-                    // MODIFIKASI: Tambahkan pengecekan untuk kolom Keterangan
-                    // Cek #1: Apakah jabatan DIMULAI DENGAN "MT" ATAU mengandung "PT MT" ATAU Keterangan mengandung "PH MT"
-                    if (str_starts_with($jabatan, 'MT') || str_contains($jabatan, 'PT MT') || str_contains($keterangan, 'PH MT')) {
+                    // Cek #1: Apakah nama ini ada di daftar "PT MT" bulanan?
+                    if (in_array($nama, $ptManagerNames)) {
                         $managerSchedule[] = $scheduleEntry;
+                        $processedNames[] = $nama; // Catat nama
+                        if (!in_array($shiftName, $realManagerShifts)) {
+                            $realManagerShifts[] = $shiftName;
+                        }
+                        continue;
                     }
-                    // Cek #2: Jika BUKAN manager, apakah jabatannya mengandung 'TFP'?
+
+                    // Cek #2: Apakah ini Manajer Asli (Jabatan MT)?
+                    else if (str_starts_with($jabatan, 'MT') || str_contains($jabatan, 'PT MT')) {
+                        $managerSchedule[] = $scheduleEntry;
+                        $processedNames[] = $nama; // Catat nama
+                        if (!in_array($shiftName, $realManagerShifts)) {
+                            $realManagerShifts[] = $shiftName;
+                        }
+                        continue;
+                    }
+
+                    // Cek #3: Apakah ini Pelaksana Harian (PH MT di Keterangan)
+                    else if (str_contains($keterangan, 'PH MT')) {
+                        $phTechnicians[] = $scheduleEntry;
+                        $processedNames[] = $nama; // Catat nama
+                        continue;
+                    }
+
+                    // Cek #4: Jika BUKAN manager, apakah TFP?
                     else if (str_contains($jabatan, 'TFP')) {
                         $tfpSchedule[] = $scheduleEntry;
+                        $processedNames[] = $nama; // Catat nama
                     }
-                    // Cek #3: ...
+
+                    // Cek #5: Jika bukan semua di atas, berarti CNS
                     else {
                         $cnsSchedule[] = $scheduleEntry;
+                        $processedNames[] = $nama; // Catat nama
                     }
                 }
             }
 
-            // 6. Pengurutan (Logika dari JS)
-            $shiftOrder = ['PAGI' => 1, 'SIANG' => 2, 'MALAM' => 3];
+            // 5b. Proses PH Teknik (Pelaksana Harian)
+            foreach ($phTechnicians as $phTech) {
+                // Cek: Apakah shift PH ini SUDAH diisi oleh MT Asli?
+                if (in_array($phTech['shift'], $realManagerShifts)) {
+                    // YA: Shift sudah terisi. Kembalikan dia ke grup aslinya (CNS/TFP).
+                    if (str_contains($phTech['jabatan'], 'TFP')) {
+                        $tfpSchedule[] = $phTech;
+                    } else {
+                        $cnsSchedule[] = $phTech;
+                    }
+                } else {
+                    // TIDAK: Shift kosong. Promosikan dia menjadi Manajer.
+                    $managerSchedule[] = $phTech;
+                }
+            }
 
+
+            // 6. Pengurutan
+            $shiftOrder = ['PAGI' => 1, 'SIANG' => 2, 'MALAM' => 3];
             $sortByShift = function ($a, $b) use ($shiftOrder) {
                 $orderA = $shiftOrder[$a['shift']] ?? 99;
                 $orderB = $shiftOrder[$b['shift']] ?? 99;
                 if ($orderA !== $orderB) {
                     return $orderA - $orderB;
                 }
-                return strcmp($a['name'], $b['name']); // strcmp mirip localeCompare di JS
+                return strcmp($a['name'], $b['name']);
             };
 
             usort($managerSchedule, $sortByShift);
@@ -113,6 +172,7 @@ class ScheduleController extends Controller
             return response()->json(['error' => 'Terjadi kesalahan pada server: ' . $e->getMessage()], 500);
         }
     }
+
     public function getTechniciansBySchedule(Request $request)
     {
         // Mengambil tanggal dan dinas dari permintaan JavaScript
@@ -138,4 +198,3 @@ class ScheduleController extends Controller
         ]);
     }
 }
-

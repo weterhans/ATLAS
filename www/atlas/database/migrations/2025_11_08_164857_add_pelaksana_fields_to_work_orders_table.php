@@ -8,12 +8,12 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
+        // Perintah ini HANYA MENGUBAH tabel, tidak membuat baru
         Schema::table('work_orders', function (Blueprint $table) {
+            // Tambahkan 3 kolom baru setelah kolom 'deskripsi'
             $table->string('pelaksana_tipe')->nullable()->after('deskripsi');
             $table->string('pelaksana_nama')->nullable()->after('pelaksana_tipe');
             $table->string('pelaksana_group')->nullable()->after('pelaksana_nama');
@@ -22,10 +22,8 @@ return new class extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::table('work_orders', function (Blueprint $table) {
             $table->dropColumn(['pelaksana_tipe', 'pelaksana_nama', 'pelaksana_group']);

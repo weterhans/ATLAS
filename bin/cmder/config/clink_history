@@ -157,7 +157,7 @@ php artisam serve
 |hp artisan serve
 php artisan make:migration add_pelaksana_fields_to_work_orders_table --table=work_orders
 |hp artisan migrate
-cd atlas
+|d atlas
 php artisan serrve]
 |hp artisan serve
 |hp artisan migrate
@@ -166,5 +166,43 @@ php artisan make:migration add_pernium_to_personals_table --table=personals
 |hp artisan migrate
 |hp artisan serve
 php artisan make:migration remove_pernium_from_personals_table --table=personals
+|hp artisan migrate
+|hp artisan serve
+|d atlas
+|hp artisan serve
+|hp artisan migrate
+|hp artisan serve
+|hp artisan migrate
 php artisan migrate
+|hp artisan serve
+|hp artisan serve
+|d atlas
+|hp artisan serve
+|d atlas
+|hp artisan serve
+|hp artisan serve
+|hp artisan optimize:clear
+|hp artisan serve
+|d atlas
+|hp artisan serve
+|hp artisan optimize:clear
+|hp artisan serve
+|hp artisan optimize:clear
+|hp artisan serve
+|hp artisan optimize:clear
+|hp artisan serve
+cd atlas
+|hp artisan serve
+|hp artisan optimize:clear
+|hp artisan serve
+|hp artisan optimize:clear
+|hp artisan serve
+|hp artisan optimize:clear
+|hp artisan optimize:clear
+|hp artisan serve
+|hp artisan serve
+|hp artisan optimize:clear
+|hp artisan serve
+php artisan optimize:clear
+|hp artisan serve
 php artisan serve
